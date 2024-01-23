@@ -1,12 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://piulkhxfpb7e"]
+[gd_scene load_steps=4 format=3 uid="uid://piulkhxfpb7e"]
 
-[ext_resource type="PackedScene" path="res://scenes/player.tscn" id="1_4nyul"]
+[ext_resource type="PackedScene" uid="uid://cc2tnqso80rdb" path="res://scenes/player.tscn" id="1_4nyul"]
 [ext_resource type="PackedScene" uid="uid://cf0vg17dh1xxx" path="res://scenes/tile_map.tscn" id="2_l4ah0"]
+[ext_resource type="PackedScene" uid="uid://o1rwg5twohkm" path="res://scenes/background_church.tscn" id="3_s1ku1"]
 
 [node name="Level1" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_4nyul")]
-position = Vector2(42, -59)
+position = Vector2(69, 166)
 
 [node name="TileMap" parent="." instance=ExtResource("2_l4ah0")]
+position = Vector2(42, 232)
 layer_0/tile_data = PackedInt32Array(3, 720896, 0, 4, 655360, 0, 5, 524288, 0, 6, 720896, 0, 7, 655360, 0, 8, 720896, 0, 9, 720896, 0, 10, 589824, 0, 11, 589824, 0, 12, 524288, 0, 13, 589824, 0, 14, 589824, 0, 15, 524288, 0, 16, 655360, 0, 17, 655360, 0, 18, 589824, 0, 19, 720896, 0, 65539, 786432, 1, 65540, 720896, 1, 65541, 524288, 1, 65542, 655360, 1, 65543, 655360, 1, 65544, 786432, 1, 65545, 524288, 1, 65546, 786432, 1, 65547, 655360, 1, 65548, 655360, 1, 65549, 720896, 1, 65550, 524288, 1, 65551, 589824, 1, 65552, 589824, 1, 65553, 589824, 1, 65554, 524288, 1, 65555, 589824, 1, 20, 851968, 0, 0, 655360, 0, 1, 524288, 0, 2, 720896, 0, 65536, 720896, 1, 65537, 589824, 1, 65538, 589824, 1, 65535, 720896, 0, 65534, 786432, 0, 65533, 655360, 0, 65531, 458752, 0, 65532, 524288, 0, 131071, 786432, 1, 131070, 720896, 1, 131069, 655360, 1, 131068, 786432, 1, 131067, 458752, 1, 65556, 851968, 1)
+
+[node name="BackgroundChurch" parent="." instance=ExtResource("3_s1ku1")]

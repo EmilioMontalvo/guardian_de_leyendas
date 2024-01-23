@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://o1rwg5twohkm"]
+
+[ext_resource type="Texture2D" uid="uid://4vv1065n6a48" path="res://assets/backgrounds/Iglesia_de_San_Francisco,_Quito.png" id="1_s0sjb"]
+
+[node name="BackgroundChurch" type="ParallaxBackground"]
+
+[node name="Church" type="ParallaxLayer" parent="."]
+scale = Vector2(2, 2)
+motion_scale = Vector2(0.01, 0.01)
+
+[node name="Sprite2D" type="Sprite2D" parent="Church"]
+texture = ExtResource("1_s0sjb")
