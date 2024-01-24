@@ -12,7 +12,7 @@ func _ready():
 		enemy.touch_player.connect(_get_damage)
 
 func _get_damage():
-	print("Damage")
+	# print("Damage")
 	health-=20	
 	hud.set_life_bar_value(health)
 	if health<=0:
