@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://o1rwg5twohkm"]
 
-[ext_resource type="Texture2D" uid="uid://4vv1065n6a48" path="res://assets/backgrounds/Iglesia_de_San_Francisco,_Quito.png" id="1_s0sjb"]
+[ext_resource type="Texture2D" uid="uid://bq2fua7frtrir" path="res://assets/backgrounds/Background_0.png" id="1_jn6aj"]
 
 [node name="BackgroundChurch" type="ParallaxBackground"]
 
@@ -9,4 +9,4 @@ scale = Vector2(2, 2)
 motion_scale = Vector2(0.01, 0.01)
 
 [node name="Sprite2D" type="Sprite2D" parent="Church"]
-texture = ExtResource("1_s0sjb")
+texture = ExtResource("1_jn6aj")
