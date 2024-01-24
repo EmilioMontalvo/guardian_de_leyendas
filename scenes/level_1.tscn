@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://piulkhxfpb7e"]
+[gd_scene load_steps=6 format=3 uid="uid://piulkhxfpb7e"]
 
 [ext_resource type="PackedScene" uid="uid://cc2tnqso80rdb" path="res://scenes/player.tscn" id="1_4nyul"]
 [ext_resource type="PackedScene" uid="uid://cf0vg17dh1xxx" path="res://scenes/tile_map.tscn" id="2_l4ah0"]
 [ext_resource type="PackedScene" uid="uid://o1rwg5twohkm" path="res://scenes/background_church.tscn" id="3_s1ku1"]
 [ext_resource type="PackedScene" uid="uid://c35t54lh48252" path="res://scenes/hud.tscn" id="4_dvg1w"]
+[ext_resource type="PackedScene" uid="uid://nxye476wpqax" path="res://scenes/rock.tscn" id="5_rfayy"]
 
 [node name="Level1" type="Node2D"]
 
@@ -19,3 +20,6 @@ layer_0/tile_data = PackedInt32Array(3, 720896, 0, 4, 655360, 0, 5, 524288, 0, 6
 [node name="Hud" type="CanvasLayer" parent="."]
 
 [node name="HUD" parent="Hud" instance=ExtResource("4_dvg1w")]
+
+[node name="rock" parent="." instance=ExtResource("5_rfayy")]
+position = Vector2(356, 196)

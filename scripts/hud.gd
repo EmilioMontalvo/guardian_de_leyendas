@@ -1,11 +1,16 @@
 extends Control
-
+@export var player: Player
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	$bar/lifeBar.value+=1
+	pass
+
+func set_life_bar_value(value):
+	$bar/lifeBar.value=value
+
+func update():
+	set_life_bar_value(player.health)

@@ -1,10 +1,46 @@
-[gd_scene load_steps=6 format=3 uid="uid://c35t54lh48252"]
+[gd_scene load_steps=9 format=3 uid="uid://c35t54lh48252"]
 
 [ext_resource type="Script" path="res://scripts/hud.gd" id="1_66meu"]
 [ext_resource type="Texture2D" uid="uid://c06oc0bcalheo" path="res://assets/HUD/weapon_icon.png" id="1_fsy6c"]
 [ext_resource type="Texture2D" uid="uid://bgstinp5y4l6" path="res://assets/HUD/bar_background.png" id="3_rjy6p"]
 [ext_resource type="Texture2D" uid="uid://cuhlhn5ngo1l0" path="res://assets/HUD/bar.png" id="4_oxllw"]
 [ext_resource type="Texture2D" uid="uid://bg57ohwgdxvgm" path="res://assets/HUD/health_bar.png" id="5_qsa0s"]
+
+[sub_resource type="Animation" id="Animation_or875"]
+resource_name = "initial_charge"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bar/lifeBar:value")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 100.0]
+}
+
+[sub_resource type="Animation" id="Animation_6l38h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bar/lifeBar:value")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bucek"]
+_data = {
+"RESET": SubResource("Animation_6l38h"),
+"initial_charge": SubResource("Animation_or875")
+}
 
 [node name="HUD" type="Control"]
 layout_mode = 3
@@ -35,15 +71,22 @@ layout_mode = 0
 offset_left = 135.0
 offset_top = 48.0
 offset_right = 235.0
-offset_bottom = 56.0
-scale = Vector2(3, 3)
+offset_bottom = 55.0
+scale = Vector2(2.5, 2.5)
 texture_under = ExtResource("3_rjy6p")
 texture_progress = ExtResource("5_qsa0s")
 
 [node name="frame" type="TextureRect" parent="bar"]
 layout_mode = 0
-offset_left = 120.0
-offset_top = 39.0
-offset_right = 458.0
-offset_bottom = 78.0
+offset_left = 114.0
+offset_top = 42.0
+offset_right = 407.0
+offset_bottom = 71.0
 texture = ExtResource("4_oxllw")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="bar"]
+root_node = NodePath("../..")
+autoplay = "initial_charge"
+libraries = {
+"": SubResource("AnimationLibrary_bucek")
+}
