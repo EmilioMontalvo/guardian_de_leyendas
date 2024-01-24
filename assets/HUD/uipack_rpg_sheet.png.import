@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://47qqnjs4jivv"
-path="res://.godot/imported/player_no_shadow.png-2f729714eab5fc1e083adcda5ed65e8d.ctex"
+uid="uid://bjrp2it6n0n7n"
+path="res://.godot/imported/uipack_rpg_sheet.png-a312aaf9c933a1620bfb596524ee5403.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/player/player_no_shadow.png"
-dest_files=["res://.godot/imported/player_no_shadow.png-2f729714eab5fc1e083adcda5ed65e8d.ctex"]
+source_file="res://assets/HUD/uipack_rpg_sheet.png"
+dest_files=["res://.godot/imported/uipack_rpg_sheet.png-a312aaf9c933a1620bfb596524ee5403.ctex"]
 
 [params]
 
