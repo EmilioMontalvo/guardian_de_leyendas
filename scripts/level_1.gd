@@ -24,3 +24,7 @@ func reset_player():
 	player.global_position=start_position.global_position
 	health=100
 	hud.set_life_bar_value(health)
+
+
+func _on_item_collected():
+	print("Nivel completado")

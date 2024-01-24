@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://nxye476wpqax"]
+[gd_scene load_steps=12 format=3 uid="uid://nxye476wpqax"]
 
 [ext_resource type="Script" path="res://scripts/item.gd" id="1_vdcwk"]
 [ext_resource type="Texture2D" uid="uid://dxl6ioc4qx6ug" path="res://assets/items/Transparent Icons.png" id="1_x2jte"]
+[ext_resource type="Script" path="res://scripts/item_rock.gd" id="2_07we3"]
 [ext_resource type="Texture2D" uid="uid://c0luotqqbrqll" path="res://assets/items/circulo.png" id="2_kwc05"]
 
 [sub_resource type="Gradient" id="Gradient_o4js5"]
@@ -63,11 +64,12 @@ _data = {
 "idle": SubResource("Animation_cvbj0")
 }
 
-[node name="Node2D" type="Node2D"]
+[node name="Item" type="Node2D"]
+script = ExtResource("1_vdcwk")
 
 [node name="rock" type="Area2D" parent="."]
 collision_layer = 8
-script = ExtResource("1_vdcwk")
+script = ExtResource("2_07we3")
 
 [node name="circle" type="Sprite2D" parent="rock"]
 visible = false
@@ -94,3 +96,5 @@ autoplay = "idle"
 libraries = {
 "": SubResource("AnimationLibrary_ymtxp")
 }
+
+[connection signal="body_entered" from="rock" to="." method="_on_rock_body_entered"]
