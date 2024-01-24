@@ -63,6 +63,7 @@ _data = {
 
 [node name="rock" type="Area2D"]
 position = Vector2(0, 2.10658)
+collision_layer = 8
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 process_material = SubResource("ParticleProcessMaterial_j5jhs")
