@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://c35t54lh48252"]
+
+[ext_resource type="Script" path="res://scripts/hud.gd" id="1_66meu"]
+[ext_resource type="Texture2D" uid="uid://c06oc0bcalheo" path="res://assets/HUD/weapon_icon.png" id="1_fsy6c"]
+[ext_resource type="Texture2D" uid="uid://bgstinp5y4l6" path="res://assets/HUD/bar_background.png" id="3_rjy6p"]
+[ext_resource type="Texture2D" uid="uid://cuhlhn5ngo1l0" path="res://assets/HUD/bar.png" id="4_oxllw"]
+[ext_resource type="Texture2D" uid="uid://bg57ohwgdxvgm" path="res://assets/HUD/health_bar.png" id="5_qsa0s"]
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_66meu")
+
+[node name="weapon" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 120.0
+offset_bottom = 120.0
+texture = ExtResource("1_fsy6c")
+
+[node name="bar" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 9.0
+offset_top = 12.0
+offset_right = 49.0
+offset_bottom = 52.0
+
+[node name="lifeBar" type="TextureProgressBar" parent="bar"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 48.0
+offset_right = 235.0
+offset_bottom = 56.0
+scale = Vector2(3, 3)
+texture_under = ExtResource("3_rjy6p")
+texture_progress = ExtResource("5_qsa0s")
+
+[node name="frame" type="TextureRect" parent="bar"]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 39.0
+offset_right = 458.0
+offset_bottom = 78.0
+texture = ExtResource("4_oxllw")
