@@ -6,7 +6,7 @@
 
 [node name="Church" type="ParallaxLayer" parent="."]
 scale = Vector2(2, 2)
-motion_scale = Vector2(0.01, 0.01)
+motion_scale = Vector2(0.1, 0.1)
 
 [node name="Sprite2D" type="Sprite2D" parent="Church"]
 texture = ExtResource("1_jn6aj")
