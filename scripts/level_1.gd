@@ -29,7 +29,8 @@ func reset_player():
 
 
 func _on_item_collected():
-	print("Nivel completado")
+	var ws=win_screen.instantiate()		
+	hud.add_child(ws)
 
 
 func _on_deathzone_body_entered(body):
