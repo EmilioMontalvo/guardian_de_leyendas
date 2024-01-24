@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=3 uid="uid://c2cu3j8r64utb"]
+
+[ext_resource type="Texture2D" uid="uid://c1qmlykgmqd3d" path="res://assets/decorations/candelabrum_tall_1.png" id="1_mxntl"]
+[ext_resource type="Texture2D" uid="uid://ctwkh5vb3k5aa" path="res://assets/decorations/candelabrum_tall_2.png" id="2_vqtkh"]
+[ext_resource type="Texture2D" uid="uid://8p7p8lyn0vgm" path="res://assets/decorations/candelabrum_tall_3.png" id="3_scgev"]
+[ext_resource type="Texture2D" uid="uid://c1cw3lgkcohh2" path="res://assets/decorations/candelabrum_tall_4.png" id="4_b3y2w"]
+[ext_resource type="Texture2D" uid="uid://d1l1xnwkjq31g" path="res://assets/decorations/candelabrum_tall_5.png" id="5_rym1o"]
+[ext_resource type="Texture2D" uid="uid://dgqb2vgt5g0s3" path="res://assets/decorations/candelabrum_tall_6.png" id="6_7hlvg"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o0l1i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_mxntl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_vqtkh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_scgev")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_b3y2w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_rym1o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_7hlvg")
+}],
+"loop": true,
+"name": &"candelabrum",
+"speed": 8.0
+}]
+
+[node name="Candelabrum" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_o0l1i")
+animation = &"candelabrum"
+autoplay = "candelabrum"
+frame_progress = 0.838847

@@ -1,10 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://piulkhxfpb7e"]
+[gd_scene load_steps=11 format=3 uid="uid://piulkhxfpb7e"]
 
 [ext_resource type="PackedScene" uid="uid://cc2tnqso80rdb" path="res://scenes/player.tscn" id="1_4nyul"]
 [ext_resource type="Script" path="res://scripts/level_1.gd" id="1_jtnc5"]
 [ext_resource type="PackedScene" uid="uid://cf0vg17dh1xxx" path="res://scenes/tile_map.tscn" id="2_l4ah0"]
+[ext_resource type="PackedScene" uid="uid://dwfd3wudwun0y" path="res://scenes/decorations/rock_3.tscn" id="3_45nr6"]
 [ext_resource type="PackedScene" uid="uid://o1rwg5twohkm" path="res://scenes/background_church.tscn" id="3_s1ku1"]
+[ext_resource type="PackedScene" uid="uid://c3dqv5dy6rgrq" path="res://scenes/decorations/rock_1.tscn" id="4_dl8qc"]
 [ext_resource type="PackedScene" uid="uid://c35t54lh48252" path="res://scenes/hud.tscn" id="4_dvg1w"]
+[ext_resource type="PackedScene" uid="uid://c2cu3j8r64utb" path="res://scenes/decorations/candelabrum.tscn" id="5_kbd37"]
 [ext_resource type="PackedScene" uid="uid://nxye476wpqax" path="res://scenes/rock.tscn" id="5_rfayy"]
 [ext_resource type="PackedScene" uid="uid://cv44tt0pd3axe" path="res://scenes/enemy.tscn" id="6_nn0oj"]
 
@@ -14,9 +17,20 @@ script = ExtResource("1_jtnc5")
 [node name="Player" parent="." instance=ExtResource("1_4nyul")]
 position = Vector2(69, 166)
 
+[node name="Decorations" type="Node2D" parent="."]
+
+[node name="Rock3" parent="Decorations" instance=ExtResource("3_45nr6")]
+position = Vector2(197, 226)
+
+[node name="Rock1" parent="Decorations" instance=ExtResource("4_dl8qc")]
+position = Vector2(393, 223)
+
+[node name="Candelabrum" parent="Decorations" instance=ExtResource("5_kbd37")]
+position = Vector2(110, 196)
+
 [node name="TileMap" parent="." instance=ExtResource("2_l4ah0")]
 position = Vector2(42, 232)
-layer_0/tile_data = PackedInt32Array(3, 720896, 0, 4, 655360, 0, 5, 524288, 0, 6, 720896, 0, 7, 655360, 0, 8, 720896, 0, 9, 720896, 0, 10, 589824, 0, 11, 589824, 0, 12, 524288, 0, 13, 589824, 0, 14, 589824, 0, 15, 524288, 0, 16, 655360, 0, 17, 655360, 0, 18, 589824, 0, 19, 720896, 0, 65539, 786432, 1, 65540, 720896, 1, 65541, 524288, 1, 65542, 655360, 1, 65543, 655360, 1, 65544, 786432, 1, 65545, 524288, 1, 65546, 786432, 1, 65547, 655360, 1, 65548, 655360, 1, 65549, 720896, 1, 65550, 524288, 1, 65551, 589824, 1, 65552, 589824, 1, 65553, 589824, 1, 65554, 524288, 1, 65555, 589824, 1, 20, 851968, 0, 0, 655360, 0, 1, 524288, 0, 2, 720896, 0, 65536, 720896, 1, 65537, 589824, 1, 65538, 589824, 1, 65535, 720896, 0, 65534, 786432, 0, 65533, 655360, 0, 65531, 458752, 0, 65532, 524288, 0, 131071, 786432, 1, 131070, 720896, 1, 131069, 655360, 1, 131068, 786432, 1, 131067, 458752, 1, 65556, 851968, 1)
+layer_0/tile_data = PackedInt32Array(3, 720896, 0, 4, 655360, 0, 5, 524288, 0, 6, 720896, 0, 7, 655360, 0, 8, 720896, 0, 9, 720896, 0, 10, 589824, 0, 11, 589824, 0, 12, 524288, 0, 13, 589824, 0, 14, 589824, 0, 15, 524288, 0, 16, 655360, 0, 17, 655360, 0, 18, 589824, 0, 19, 720896, 0, 65539, 786432, 1, 65540, 720896, 1, 65541, 524288, 1, 65542, 655360, 1, 65543, 655360, 1, 65544, 786432, 1, 65545, 524288, 1, 65546, 786432, 1, 65547, 655360, 1, 65548, 655360, 1, 65549, 720896, 1, 65550, 524288, 1, 65551, 589824, 1, 65552, 589824, 1, 65553, 589824, 1, 65554, 524288, 1, 65555, 589824, 1, 20, 524288, 0, 0, 655360, 0, 1, 524288, 0, 2, 720896, 0, 65536, 720896, 1, 65537, 589824, 1, 65538, 589824, 1, 65535, 720896, 0, 65534, 786432, 0, 65533, 655360, 0, 65531, 458752, 0, 65532, 524288, 0, 131071, 786432, 1, 131070, 720896, 1, 131069, 655360, 1, 131068, 786432, 1, 131067, 458752, 1, 65556, 589824, 1, 21, 589824, 0, 22, 655360, 0, 23, 524288, 0, 24, 589824, 0, 25, 720896, 0, 26, 786432, 0, 27, 589824, 0, 28, 720896, 0, 65557, 786432, 1, 65558, 786432, 1, 65559, 524288, 1, 65560, 720896, 1, 65561, 589824, 1, 65562, 524288, 1, 65563, 786432, 1, 65564, 655360, 1, 65565, 655360, 1, 65566, 589824, 1, 65567, 589824, 1, 65568, 589824, 1, 65569, 655360, 1, 65570, 655360, 1, 65571, 655360, 1, 65572, 655360, 1, 65573, 524288, 1, 65574, 720896, 1, 65575, 524288, 1, 65576, 589824, 1, 65577, 655360, 1, 65578, 589824, 1, 65579, 589824, 1, 29, 655360, 0, 30, 786432, 0, 31, 655360, 0, 32, 655360, 0, 33, 786432, 0, 34, 655360, 0, 35, 786432, 0, 36, 589824, 0, 37, 524288, 0, 38, 524288, 0, 39, 786432, 0, 40, 524288, 0, 41, 524288, 0, 42, 524288, 0, 43, 655360, 0, 44, 786432, 0, 65580, 786432, 1, 65581, 655360, 1, 65582, 589824, 1, 65583, 589824, 1, 65584, 786432, 1, 48, 786432, 0, 49, 786432, 0, 50, 524288, 0, 51, 720896, 0, 52, 720896, 0, 53, 589824, 0, 54, 655360, 0, 55, 851968, 0, 65589, 655360, 1, 65588, 524288, 1, 65587, 786432, 1, 65586, 524288, 1, 65585, 655360, 1, 45, 786432, 0, 46, 524288, 0, 47, 786432, 0, 65591, 851968, 1, 65590, 655360, 1)
 
 [node name="BackgroundChurch" parent="." instance=ExtResource("3_s1ku1")]
 offset = Vector2(300, 150)
