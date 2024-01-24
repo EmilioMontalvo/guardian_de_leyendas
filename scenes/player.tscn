@@ -146,3 +146,4 @@ autoplay = "idle"
 frame_progress = 0.937075
 
 [node name="Camera2D" type="Camera2D" parent="."]
+limit_bottom = 256

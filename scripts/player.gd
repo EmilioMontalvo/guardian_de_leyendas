@@ -13,21 +13,13 @@ func _physics_process(delta):
 		velocity.y += gravity * delta
 		if velocity.y > 700:
 			velocity.y = 700
-		#print(velocity.y)
 		
 	if Input.is_action_just_pressed("jump") && is_on_floor():
-		#velocity.y -= jumpforce
 		jump(jumpforce)
 		
-	# 0 cuando está quieto
-	#retorna -1 cuando la acción se ejecuta para el primer argument
-	#retorna 1 cuando la acción se ejecuta para el segundo argument
+
 	var direction = Input.get_axis("move_left", "move_right") 
-	#print(direction)
-	#if direction == -1:
-	#	player.flip_h = true
-	#elif direction == 1:
-	#	player.flip_h = false
+
 	if direction != 0:
 		player.flip_h = (direction == -1)
 		

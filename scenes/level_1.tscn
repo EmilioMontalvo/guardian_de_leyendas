@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://o1rwg5twohkm" path="res://scenes/background_church.tscn" id="3_s1ku1"]
 [ext_resource type="PackedScene" uid="uid://c35t54lh48252" path="res://scenes/hud.tscn" id="4_dvg1w"]
 [ext_resource type="PackedScene" uid="uid://nxye476wpqax" path="res://scenes/rock.tscn" id="5_rfayy"]
-[ext_resource type="PackedScene" uid="uid://cv44tt0pd3axe" path="res://scenes/enemy.tscn" id="6_nn0oj"]
+[ext_resource type="PackedScene" uid="uid://bwnigxbx1wrxh" path="res://scenes/enemy.tscn" id="6_nn0oj"]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_jtnc5")
@@ -29,13 +29,11 @@ transform = Transform2D(0.5, 0, 0, 0.5, 0, 0)
 
 [node name="HUD" parent="Hud" instance=ExtResource("4_dvg1w")]
 
+[node name="Node2D" parent="." instance=ExtResource("5_rfayy")]
+position = Vector2(327, 200)
+
 [node name="Enemy" parent="." instance=ExtResource("6_nn0oj")]
 position = Vector2(264, 200)
 
 [node name="StartPosition" type="Marker2D" parent="."]
 position = Vector2(24, 210)
-
-[node name="Item" parent="." instance=ExtResource("5_rfayy")]
-position = Vector2(338, 190)
-
-[connection signal="collected" from="Item" to="." method="_on_item_collected"]
