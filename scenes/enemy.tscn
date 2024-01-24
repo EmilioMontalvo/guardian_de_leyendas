@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://bwnigxbx1wrxh"]
+[gd_scene load_steps=31 format=3 uid="uid://cv44tt0pd3axe"]
 
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_4i5cl"]
 [ext_resource type="Texture2D" uid="uid://drqk7opdt8pv5" path="res://assets/enemy/Imp Sprite Sheet.png" id="1_6qqfm"]
@@ -181,6 +181,21 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="Animation" id="Animation_dg2od"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_ydyxy"]
 resource_name = "move"
 length = 2.0
@@ -196,21 +211,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(0, 0), Vector2(50, 0), Vector2(0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_dg2od"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Area2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_sie37"]

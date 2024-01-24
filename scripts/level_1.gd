@@ -6,6 +6,8 @@ extends Node2D
 @onready var hud=$Hud/HUD
 @onready var start_position=$StartPosition
 
+var win_screen=preload("res://scenes/win_screen.tscn")
+
 func _ready():
 	var enemies = get_tree().get_nodes_in_group("enemies")
 	for enemy in enemies:
