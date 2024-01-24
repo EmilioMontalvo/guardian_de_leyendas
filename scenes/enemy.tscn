@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cv44tt0pd3axe"]
+[gd_scene load_steps=31 format=3 uid="uid://bwnigxbx1wrxh"]
 
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_4i5cl"]
 [ext_resource type="Texture2D" uid="uid://drqk7opdt8pv5" path="res://assets/enemy/Imp Sprite Sheet.png" id="1_6qqfm"]
@@ -67,6 +67,38 @@ region = Rect2(192, 32, 32, 32)
 atlas = ExtResource("1_6qqfm")
 region = Rect2(224, 32, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_pvcby"]
+atlas = ExtResource("1_6qqfm")
+region = Rect2(0, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8mrau"]
+atlas = ExtResource("1_6qqfm")
+region = Rect2(32, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lc1km"]
+atlas = ExtResource("1_6qqfm")
+region = Rect2(64, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g1e23"]
+atlas = ExtResource("1_6qqfm")
+region = Rect2(96, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0cj7h"]
+atlas = ExtResource("1_6qqfm")
+region = Rect2(128, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g6l07"]
+atlas = ExtResource("1_6qqfm")
+region = Rect2(160, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pc70j"]
+atlas = ExtResource("1_6qqfm")
+region = Rect2(192, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wnwl4"]
+atlas = ExtResource("1_6qqfm")
+region = Rect2(224, 224, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_0oj3e"]
 animations = [{
 "frames": [{
@@ -119,11 +151,73 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kj2dq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pvcby")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8mrau")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lc1km")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g1e23")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0cj7h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g6l07")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pc70j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wnwl4")
 }],
 "loop": true,
 "name": &"run",
-"speed": 10.0
+"speed": 8.0
 }]
+
+[sub_resource type="Animation" id="Animation_ydyxy"]
+resource_name = "move"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(50, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_dg2od"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sie37"]
+_data = {
+"RESET": SubResource("Animation_dg2od"),
+"move": SubResource("Animation_ydyxy")
+}
 
 [node name="Enemy" type="Node2D" groups=["enemies"]]
 scale = Vector2(2.5, 2.5)
@@ -140,7 +234,14 @@ shape = SubResource("CapsuleShape2D_uh6tp")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
 position = Vector2(0, -4)
 sprite_frames = SubResource("SpriteFrames_0oj3e")
-autoplay = "default"
-frame_progress = 0.176447
+animation = &"run"
+autoplay = "run"
+frame_progress = 0.707723
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "move"
+libraries = {
+"": SubResource("AnimationLibrary_sie37")
+}
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -28,3 +28,7 @@ func reset_player():
 
 func _on_item_collected():
 	print("Nivel completado")
+
+
+func _on_deathzone_body_entered(body):
+	reset_player()
