@@ -29,7 +29,8 @@ func reset_player():
 
 
 func _on_item_collected():
-	var ws=win_screen.instantiate()		
+	var ws=win_screen.instantiate()
+	player.set_active(false)
 	hud.add_child(ws)
 
 
