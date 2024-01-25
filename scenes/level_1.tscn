@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cc2tnqso80rdb" path="res://scenes/player.tscn" id="1_4nyul"]
 [ext_resource type="Script" path="res://scripts/level_1.gd" id="1_jtnc5"]
 [ext_resource type="PackedScene" uid="uid://cf0vg17dh1xxx" path="res://scenes/tile_map.tscn" id="2_l4ah0"]
-[ext_resource type="PackedScene" uid="uid://dawaw6ovel2vb" path="res://scenes/deathzone.tscn" id="3_8p4ti"]
+[ext_resource type="PackedScene" path="res://scenes/deathzone.tscn" id="3_8p4ti"]
 [ext_resource type="PackedScene" uid="uid://dwfd3wudwun0y" path="res://scenes/decorations/rock_3.tscn" id="3_45nr6"]
 [ext_resource type="PackedScene" uid="uid://o1rwg5twohkm" path="res://scenes/background_church.tscn" id="3_s1ku1"]
 [ext_resource type="PackedScene" uid="uid://c3dqv5dy6rgrq" path="res://scenes/decorations/rock_1.tscn" id="4_dl8qc"]
@@ -59,4 +59,3 @@ position = Vector2(24, 210)
 position = Vector2(628, 195)
 
 [connection signal="body_entered" from="Deathzone" to="." method="_on_deathzone_body_entered"]
-[connection signal="collected" from="Item" to="." method="_on_item_collected"]
