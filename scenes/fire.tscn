@@ -64,13 +64,13 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 18.0
+"speed": 12.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n4ec8"]
 size = Vector2(11, 9)
 
-[node name="Fire" type="Node2D"]
+[node name="Fire" type="Node2D" groups=["traps"]]
 script = ExtResource("1_5g3xr")
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -80,7 +80,7 @@ collision_layer = 4
 sprite_frames = SubResource("SpriteFrames_sr300")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.249454
+frame_progress = 0.281066
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0.5, 11.5)
