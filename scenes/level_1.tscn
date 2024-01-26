@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://cmfysole23ohh" path="res://assets/decorations/rock_3.png" id="8_414hj"]
 [ext_resource type="Texture2D" uid="uid://evum62c4yxy" path="res://assets/decorations/lamp.png" id="9_jgsf2"]
 [ext_resource type="Texture2D" uid="uid://fvqufv7nnc3" path="res://assets/decorations/sign.png" id="10_41bin"]
-[ext_resource type="PackedScene" uid="uid://cdvlub3cdxmst" path="res://scenes/npc.tscn" id="11_wgkn1"]
+[ext_resource type="PackedScene" uid="uid://xhpdlfg4fipa" path="res://scenes/npc.tscn" id="11_wgkn1"]
 [ext_resource type="PackedScene" uid="uid://11vpf0sg5742" path="res://scenes/fire.tscn" id="13_oq8d8"]
 [ext_resource type="PackedScene" uid="uid://mlhp8jkfkpot" path="res://scenes/decorations/rock_2.tscn" id="14_appv7"]
 [ext_resource type="Texture2D" uid="uid://3d7f8pijyb4v" path="res://assets/decorations/rock_1.png" id="19_acacm"]
