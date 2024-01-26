@@ -5,6 +5,7 @@ extends Node2D
 @onready var player=$Player
 @onready var hud=$Hud/HUD
 @onready var start_position=$StartPosition
+@onready var npc = $NPC
 
 var win_screen=preload("res://scenes/win_screen.tscn")
 
@@ -16,7 +17,13 @@ func _ready():
 	var traps = get_tree().get_nodes_in_group("traps")
 	for trap in traps:
 		trap.touch_player.connect(_get_damage)
+	npc.touch_npc.connect(_show_history)
 
+func _show_history():
+	#player.set_active(false)
+	DialogManager.start_dialog(player.global_position,["Hola como estas...","Bienvenido a esta historia..."])
+	#player.set_active(true)
+	
 func _get_damage():
 	# print("Damage")
 	health-=20	
