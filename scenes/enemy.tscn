@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://bwnigxbx1wrxh"]
+[gd_scene load_steps=31 format=3 uid="uid://bwnigxbx1wrxh"]
 
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_4i5cl"]
 [ext_resource type="Texture2D" uid="uid://drqk7opdt8pv5" path="res://assets/enemy/Imp Sprite Sheet.png" id="1_6qqfm"]
@@ -99,14 +99,6 @@ region = Rect2(192, 224, 32, 32)
 atlas = ExtResource("1_6qqfm")
 region = Rect2(224, 224, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_k7kln"]
-atlas = ExtResource("1_6qqfm")
-region = Rect2(128, 128, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_15f35"]
-atlas = ExtResource("1_6qqfm")
-region = Rect2(160, 128, 32, 32)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_0oj3e"]
 animations = [{
 "frames": [{
@@ -132,7 +124,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_1y106")
 }],
 "loop": true,
-"name": &"alert",
+"name": &"default",
 "speed": 10.0
 }, {
 "frames": [{
@@ -187,17 +179,6 @@ animations = [{
 "loop": true,
 "name": &"run",
 "speed": 8.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k7kln")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_15f35")
-}],
-"loop": true,
-"name": &"sleep",
-"speed": 4.0
 }]
 
 [sub_resource type="Animation" id="Animation_dg2od"]
@@ -253,10 +234,11 @@ shape = SubResource("CapsuleShape2D_uh6tp")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
 position = Vector2(0, -4)
 sprite_frames = SubResource("SpriteFrames_0oj3e")
-animation = &"alert"
+animation = &"run"
 autoplay = "run"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "move"
 libraries = {
 "": SubResource("AnimationLibrary_sie37")
 }
