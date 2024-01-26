@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://bwnigxbx1wrxh"]
+[gd_scene load_steps=31 format=3 uid="uid://cv44tt0pd3axe"]
 
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_4i5cl"]
 [ext_resource type="Texture2D" uid="uid://drqk7opdt8pv5" path="res://assets/enemy/Imp Sprite Sheet.png" id="1_6qqfm"]
