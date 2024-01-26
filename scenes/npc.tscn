@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://xhpdlfg4fipa"]
+[gd_scene load_steps=13 format=3 uid="uid://cdvlub3cdxmst"]
 
 [ext_resource type="Script" path="res://scripts/npc.gd" id="1_1sq7i"]
 [ext_resource type="Texture2D" uid="uid://0gy3wfag8ua6" path="res://assets/npc/Hooded.png" id="1_5vig8"]
