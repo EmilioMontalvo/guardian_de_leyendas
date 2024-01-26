@@ -12,6 +12,10 @@ func _ready():
 	var enemies = get_tree().get_nodes_in_group("enemies")
 	for enemy in enemies:
 		enemy.touch_player.connect(_get_damage)
+		
+	var traps = get_tree().get_nodes_in_group("traps")
+	for trap in traps:
+		trap.touch_player.connect(_get_damage)
 
 func _get_damage():
 	# print("Damage")
