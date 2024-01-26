@@ -1,0 +1,78 @@
+[gd_scene load_steps=15 format=3 uid="uid://cgymof88ue7w2"]
+
+[ext_resource type="PackedScene" uid="uid://cf0vg17dh1xxx" path="res://scenes/tile_map.tscn" id="1_kh74t"]
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_qnjli"]
+[ext_resource type="PackedScene" uid="uid://cjnvhd8ap7dqf" path="res://scenes/city.tscn" id="1_vp2vc"]
+[ext_resource type="PackedScene" uid="uid://cc2tnqso80rdb" path="res://scenes/player.tscn" id="2_cjiu5"]
+[ext_resource type="PackedScene" uid="uid://cijhiokgjihyi" path="res://scenes/main_menu_music.tscn" id="2_rhfx1"]
+[ext_resource type="PackedScene" uid="uid://73kvq24xbsud" path="res://scenes/portal.tscn" id="3_0cetk"]
+[ext_resource type="PackedScene" uid="uid://c2cu3j8r64utb" path="res://scenes/decorations/candelabrum.tscn" id="5_3tdb5"]
+[ext_resource type="FontFile" uid="uid://dm8i0plt3ulbs" path="res://assets/fonts/VIDEOPHREAK.ttf" id="5_ainw1"]
+[ext_resource type="AudioStream" uid="uid://34bhyu8q6y7" path="res://assets/sounds/portal_sound.mp3" id="6_skmv2"]
+[ext_resource type="PackedScene" uid="uid://c3dqv5dy6rgrq" path="res://scenes/decorations/rock_1.tscn" id="8_wugja"]
+[ext_resource type="PackedScene" uid="uid://bwnigxbx1wrxh" path="res://scenes/enemy.tscn" id="8_xyxte"]
+[ext_resource type="PackedScene" uid="uid://mlhp8jkfkpot" path="res://scenes/decorations/rock_2.tscn" id="9_h725f"]
+[ext_resource type="PackedScene" uid="uid://dwfd3wudwun0y" path="res://scenes/decorations/rock_3.tscn" id="10_xijw0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_x1mpl"]
+font = ExtResource("5_ainw1")
+font_size = 20
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_qnjli")
+
+[node name="MainMenu" parent="." instance=ExtResource("2_rhfx1")]
+
+[node name="City" parent="." instance=ExtResource("1_vp2vc")]
+
+[node name="TileMap" parent="." instance=ExtResource("1_kh74t")]
+position = Vector2(-30, 233)
+layer_0/tile_data = PackedInt32Array(131070, 655360, 1, 131071, 786432, 1, 65536, 720896, 1, 65537, 655360, 1, 65538, 524288, 1, 65539, 720896, 1, 65540, 589824, 1, 3, 786432, 0, 2, 720896, 0, 1, 655360, 0, 0, 786432, 0, 65535, 589824, 0, 65541, 720896, 1, 4, 524288, 0, 65534, 655360, 0, 65542, 720896, 1, 6, 720896, 0, 5, 655360, 0, 65533, 720896, 0, 65532, 720896, 0, 131068, 720896, 1, 131069, 720896, 1, 65531, 589824, 0, 131066, 786432, 1, 131067, 589824, 1, 131065, 589824, 1, 131064, 720896, 1, 65543, 589824, 1, 65544, 655360, 1, 8, 589824, 0, 7, 524288, 0, 131063, 524288, 1, 65545, 720896, 1, 65546, 524288, 1, 10, 655360, 0, 9, 655360, 0, 11, 589824, 0, 12, 524288, 0, 65548, 720896, 1, 65547, 655360, 1, -196616, 131073, 4, -131080, 65537, 4, -65544, 131073, 4, -8, 65537, 5, -7, 131073, 5, -6, 131073, 5, -65542, 65537, 4, -131078, 196609, 3, -131079, 196609, 4, -196615, 196609, 3, -65543, 65537, 4, -65541, 196609, 3, -5, 65537, 5, -4, 196609, 5, -9, 1, 5, -65545, 1, 4, -131081, 1, 4, -196617, 1, 4, -262153, 1, 4, -262152, 196609, 4, -327689, 1, 3, -327688, 196609, 3, 131061, 720896, 1, 131062, 655360, 1, 13, 655360, 0, 14, 720896, 0, 15, 720896, 0, 65549, 524288, 1, 65550, 786432, 1, 65551, 589824, 1, 65552, 655360, 1, 16, 524288, 0, 17, 655360, 0, 18, 720896, 0, 19, 720896, 0, 65553, 589824, 1, 65554, 524288, 1, 65555, 786432, 1, 65556, 786432, 1, 20, 524288, 0, 65522, 458752, 0, 131060, 786432, 1, 131059, 589824, 1, 131058, 458752, 1, 65557, 786432, 1, 21, 589824, 0, 22, 786432, 0, 65558, 589824, 1, 65559, 720896, 1, 23, 655360, 0, 24, 524288, 0, 65560, 786432, 1, -524268, 1179648, 9, -524267, 1179648, 9, -524266, 1179648, 9, -524265, 1179648, 9, -524264, 1179648, 9, -524263, 1179648, 9, -524262, 1179648, 9, -524261, 1179648, 9, -524260, 1310720, 9, -524259, 1179648, 9, -524269, 1179648, 9, -524258, 1245184, 9, -393207, 1179648, 9, -393206, 1179648, 9, -393205, 1179648, 9, -393204, 1310720, 9, -393203, 1179648, 9, -393202, 1245184, 9, -196606, 1179648, 9, -196605, 1179648, 9, -196604, 1179648, 9, -196603, 1179648, 9, -196602, 1310720, 9, -196601, 1179648, 9, 25, 655360, 0, 26, 786432, 0, 27, 524288, 0, 28, 524288, 0, 29, 720896, 0, 30, 786432, 0, 31, 655360, 0, 65561, 589824, 1, 65562, 589824, 1, 65563, 589824, 1, 65564, 655360, 1, 65565, 720896, 1, 65566, 786432, 1, 65567, 524288, 1, 65568, 786432, 1, 32, 655360, 0, 65569, 524288, 1, 65570, 851968, 1, 34, 851968, 0, 33, 589824, 0, 65530, 524288, 0, 65529, 720896, 0, 65528, 589824, 0, 65527, 720896, 0, 65526, 786432, 0, 65525, 786432, 0, 65524, 524288, 0, 65523, 720896, 0)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 336.0
+offset_top = -24.0
+offset_right = 401.0
+offset_bottom = 6.0
+text = "Nivel 1"
+label_settings = SubResource("LabelSettings_x1mpl")
+
+[node name="PortalSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_skmv2")
+
+[node name="Portal" parent="." instance=ExtResource("3_0cetk")]
+position = Vector2(370, 58)
+
+[node name="Enemy" parent="." instance=ExtResource("8_xyxte")]
+position = Vector2(379, 205)
+
+[node name="Decorations" type="Node2D" parent="."]
+position = Vector2(159, -63)
+
+[node name="Rock1" parent="Decorations" instance=ExtResource("8_wugja")]
+position = Vector2(58, 287)
+
+[node name="Rock2" parent="Decorations" instance=ExtResource("9_h725f")]
+position = Vector2(321, 290)
+
+[node name="Rock3" parent="Decorations" instance=ExtResource("10_xijw0")]
+position = Vector2(29, 195)
+
+[node name="Rock4" parent="Decorations" instance=ExtResource("10_xijw0")]
+position = Vector2(-191, 291)
+
+[node name="Candelabrum" parent="Decorations" instance=ExtResource("5_3tdb5")]
+position = Vector2(146, 133)
+
+[node name="Candelabrum2" parent="Decorations" instance=ExtResource("5_3tdb5")]
+position = Vector2(272, 133)
+
+[node name="Player" parent="." instance=ExtResource("2_cjiu5")]
+position = Vector2(-159, -31)

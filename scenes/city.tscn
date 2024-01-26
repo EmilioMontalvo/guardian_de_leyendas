@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://cjnvhd8ap7dqf"]
+
+[ext_resource type="Texture2D" uid="uid://ct2m2g3smshmx" path="res://assets/backgrounds/original-86a7a396460489e18aebdb9390518429.png" id="1_b5bjo"]
+[ext_resource type="FontFile" uid="uid://dm8i0plt3ulbs" path="res://assets/fonts/VIDEOPHREAK.ttf" id="2_hbffm"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pnecy"]
+font = ExtResource("2_hbffm")
+font_size = 33
+font_color = Color(0.00784314, 0.0823529, 0.109804, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ouq3i"]
+font = ExtResource("2_hbffm")
+
+[node name="City" type="ParallaxBackground"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+position = Vector2(319, 122)
+scale = Vector2(0.6, 0.6)
+motion_scale = Vector2(0.08, 0.08)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(-205, -4.99995)
+texture = ExtResource("1_b5bjo")
+
+[node name="GameTitle" type="Label" parent="ParallaxLayer"]
+offset_left = -505.0
+offset_top = -196.667
+offset_right = -97.0
+offset_bottom = -157.667
+text = "El Guardián de las Leyendas"
+label_settings = SubResource("LabelSettings_pnecy")
+
+[node name="Team" type="Label" parent="ParallaxLayer"]
+offset_left = -125.0
+offset_top = -58.3333
+offset_right = -10.0
+offset_bottom = -34.3333
+text = "By: MetaLabs"
+label_settings = SubResource("LabelSettings_ouq3i")

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cijhiokgjihyi"]
+
+[ext_resource type="AudioStream" uid="uid://bctsv0gi1f8mp" path="res://assets/sounds/solo_tu.mp3" id="1_kql5n"]
+
+[node name="MainMenu" type="AudioStreamPlayer"]
+stream = ExtResource("1_kql5n")
+autoplay = true

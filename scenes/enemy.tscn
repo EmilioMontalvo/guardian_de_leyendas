@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://drqk7opdt8pv5" path="res://assets/enemy/Imp Sprite Sheet.png" id="1_6qqfm"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uh6tp"]
-radius = 7.0
-height = 16.0
+radius = 5.8
+height = 11.6
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q1tl8"]
 atlas = ExtResource("1_6qqfm")
