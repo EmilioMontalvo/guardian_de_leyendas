@@ -3,8 +3,8 @@ extends CharacterBody2D
 class_name Player
 
 @export var gravity = 400
-@export var speed = 150
-@export var jumpforce = 200
+@export var speed = 170
+@export var jumpforce = 250
 @onready var player = $AnimatedSprite2D
 
 var active=true
