@@ -9,6 +9,27 @@ extends Node2D
 
 var win_screen=preload("res://scenes/win_screen.tscn")
 
+const history_dialog: Array[String] = [
+	"¡Ah, saludos, joven!",
+	"¿Eres tú el descendiente de la antigua orden que ha de salvar nuestra querida Quito?",
+	"Bien, bien.",
+	"Veo que has llegado en el momento justo.",
+	"Mi nombre es Carlos, pero me dicen Chulla Carlos.",
+	"Soy un conocedor de las leyendas quiteñas y sé de tu misión.",
+	"Tu abuelo fue un valiente, ¿verdad?",
+	"Antes de enfrentarte al mal que se avecina,", 
+	"necesitarás forjar tu camino y obtener los artefactos legendarios que solo un verdadero quiteño puede poseer.",
+	"Y para empezar, debes adentrarte en la leyenda de Cantuña.",
+	"En el nivel 1, te enfrentarás a los diablitos que el mal ha desatado sobre nuestra ciudad.",
+	"Pero no te preocupes, sé que eres capaz de superarlos.",
+	"Aquí en la Plaza Grande encontrarás el portal que te llevará al primer desafío.",
+	"Pero antes, permíteme darte un consejo: la leyenda cuenta que Cantuña resguardó un bloque especial.",
+	"Ese bloque es tu llave para avanzar.",
+	"Recógelo y sigue tu camino.",
+	"¡Buena suerte, héroe quiteño!",
+	"Que la leyenda de Cantuña guíe tus pasos y que los dioses antiguos te protejan."
+]
+
 func _ready():
 	var enemies = get_tree().get_nodes_in_group("enemies")
 	for enemy in enemies:
@@ -21,7 +42,7 @@ func _ready():
 
 func _show_history():
 	#player.set_active(false)
-	DialogManager.start_dialog(player.global_position,["Hola como estas...","Bienvenido a esta historia..."])
+	DialogManager.start_dialog(player.global_position,history_dialog)
 	#player.set_active(true)
 	
 func _get_damage():
