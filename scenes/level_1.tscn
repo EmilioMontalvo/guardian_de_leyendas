@@ -335,9 +335,5 @@ scale = Vector2(8, 8)
 position = Vector2(2430, 38)
 texture = ExtResource("9_jgsf2")
 
-[node name="Enemy" parent="." instance=ExtResource("6_nn0oj")]
-position = Vector2(135, 151)
-animation_selected = 2
-
 [connection signal="body_entered" from="Deathzone" to="." method="_on_deathzone_body_entered"]
 [connection signal="collected" from="Item" to="." method="_on_item_collected"]
