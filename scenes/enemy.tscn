@@ -236,7 +236,6 @@ position = Vector2(0, -4)
 sprite_frames = SubResource("SpriteFrames_0oj3e")
 animation = &"run"
 autoplay = "run"
-frame_progress = 0.707723
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "move"
