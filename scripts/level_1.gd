@@ -14,7 +14,7 @@ const history_dialog: Array[String] = [
 	"¿Eres tú el descendiente de la antigua orden que ha de salvar nuestra querida Quito?",
 	"Bien, bien.",
 	"Veo que has llegado en el momento justo.",
-	"Mi nombre es Carlos, pero me dicen Chulla Carlos.",
+	"Yo soy un guía de la orden",
 	"Soy un conocedor de las leyendas quiteñas y sé de tu misión.",
 	"Tu abuelo fue un valiente, ¿verdad?",
 	"Antes de enfrentarte al mal que se avecina,", 
