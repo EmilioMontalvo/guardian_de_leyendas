@@ -10,6 +10,8 @@ scale = Vector2(2, 2)
 motion_scale = Vector2(0.1, 0.1)
 
 [node name="Sprite2D" type="Sprite2D" parent="Church"]
+position = Vector2(57.75, 0)
+scale = Vector2(1.15039, 1)
 texture = ExtResource("1_jn6aj")
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]
