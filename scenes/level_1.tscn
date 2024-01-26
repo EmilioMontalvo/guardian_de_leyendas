@@ -283,25 +283,30 @@ position = Vector2(444, 0)
 
 [node name="Enemy" parent="Enemies" instance=ExtResource("6_nn0oj")]
 position = Vector2(214, 71)
+animation_selected = 1
 
 [node name="Enemy2" parent="Enemies" instance=ExtResource("6_nn0oj")]
 position = Vector2(382, 202)
+animation_selected = 1
 
 [node name="Enemy3" parent="Enemies" instance=ExtResource("6_nn0oj")]
 position = Vector2(1153, 202)
+animation_selected = 1
 
 [node name="Enemy4" parent="Enemies" instance=ExtResource("6_nn0oj")]
 position = Vector2(1915, 203)
+animation_selected = 1
 
 [node name="Enemy5" parent="Enemies" instance=ExtResource("6_nn0oj")]
 position = Vector2(1414, 38)
+animation_selected = 1
 
 [node name="Enemy6" parent="Enemies" instance=ExtResource("6_nn0oj")]
-position = Vector2(3614, 41)
+position = Vector2(3394, 53)
+animation_selected = 0
 
 [node name="Enemy7" parent="Enemies" instance=ExtResource("6_nn0oj")]
 position = Vector2(4098, -187)
-animation_selected = 2
 
 [node name="StartPosition" type="Marker2D" parent="."]
 position = Vector2(28, 162)
@@ -334,6 +339,17 @@ scale = Vector2(8, 8)
 [node name="Lamp" type="Sprite2D" parent="."]
 position = Vector2(2430, 38)
 texture = ExtResource("9_jgsf2")
+
+[node name="Enemy" parent="." instance=ExtResource("6_nn0oj")]
+position = Vector2(4348, 35)
+animation_selected = 0
+
+[node name="Enemy2" parent="." instance=ExtResource("6_nn0oj")]
+position = Vector2(2545, 36)
+animation_selected = 0
+
+[node name="Enemy3" parent="." instance=ExtResource("6_nn0oj")]
+position = Vector2(528, 202)
 
 [connection signal="body_entered" from="Deathzone" to="." method="_on_deathzone_body_entered"]
 [connection signal="collected" from="Item" to="." method="_on_item_collected"]
