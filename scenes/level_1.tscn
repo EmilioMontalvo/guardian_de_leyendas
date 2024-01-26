@@ -306,6 +306,7 @@ animation_selected = 1
 
 [node name="Enemy6" parent="Enemies" instance=ExtResource("6_nn0oj")]
 position = Vector2(3394, 53)
+animation_selected = 0
 
 [node name="Enemy7" parent="Enemies" instance=ExtResource("6_nn0oj")]
 position = Vector2(4098, -187)
@@ -344,9 +345,11 @@ texture = ExtResource("9_jgsf2")
 
 [node name="Enemy" parent="." instance=ExtResource("6_nn0oj")]
 position = Vector2(4348, 35)
+animation_selected = 0
 
 [node name="Enemy2" parent="." instance=ExtResource("6_nn0oj")]
 position = Vector2(2545, 36)
+animation_selected = 0
 
 [node name="Enemy3" parent="." instance=ExtResource("6_nn0oj")]
 position = Vector2(528, 202)
