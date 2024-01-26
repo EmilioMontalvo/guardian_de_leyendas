@@ -246,4 +246,11 @@ position = Vector2(165, 160)
 [node name="Player" parent="." instance=ExtResource("1_4nyul")]
 position = Vector2(69, 166)
 
+[node name="Rock2" parent="." instance=ExtResource("14_appv7")]
+position = Vector2(3346, 61)
+
+[node name="Rock1" parent="." instance=ExtResource("4_dl8qc")]
+position = Vector2(3323, 59)
+flip_h = true
+
 [connection signal="body_entered" from="Deathzone" to="." method="_on_deathzone_body_entered"]
