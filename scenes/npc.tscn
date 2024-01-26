@@ -91,6 +91,6 @@ shape = SubResource("CapsuleShape2D_thffc")
 sprite_frames = SubResource("SpriteFrames_g5do0")
 animation = &"fly"
 autoplay = "fly"
-frame_progress = 0.680941
+frame_progress = 0.723278
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
