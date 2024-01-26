@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://o1rwg5twohkm"]
+[gd_scene load_steps=3 format=3 uid="uid://o1rwg5twohkm"]
 
 [ext_resource type="Texture2D" uid="uid://bq2fua7frtrir" path="res://assets/backgrounds/Background_0.png" id="1_jn6aj"]
+[ext_resource type="Texture2D" uid="uid://cnksoacgr3dph" path="res://assets/backgrounds/Background_1.png" id="2_uxxyy"]
 
 [node name="BackgroundChurch" type="ParallaxBackground"]
 
@@ -10,3 +11,11 @@ motion_scale = Vector2(0.1, 0.1)
 
 [node name="Sprite2D" type="Sprite2D" parent="Church"]
 texture = ExtResource("1_jn6aj")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.3, 0.3)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(112, 48)
+scale = Vector2(1.98437, 1.46514)
+texture = ExtResource("2_uxxyy")

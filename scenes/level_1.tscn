@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c35t54lh48252" path="res://scenes/hud.tscn" id="4_dvg1w"]
 [ext_resource type="PackedScene" uid="uid://c2cu3j8r64utb" path="res://scenes/decorations/candelabrum.tscn" id="5_kbd37"]
 [ext_resource type="PackedScene" uid="uid://nxye476wpqax" path="res://scenes/rock.tscn" id="5_rfayy"]
-[ext_resource type="PackedScene" uid="uid://cv44tt0pd3axe" path="res://scenes/enemy.tscn" id="6_nn0oj"]
+[ext_resource type="PackedScene" uid="uid://bwnigxbx1wrxh" path="res://scenes/enemy.tscn" id="6_nn0oj"]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_jtnc5")
