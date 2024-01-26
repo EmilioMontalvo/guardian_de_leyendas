@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_qnjli"]
 [ext_resource type="PackedScene" uid="uid://cjnvhd8ap7dqf" path="res://scenes/city.tscn" id="1_vp2vc"]
 [ext_resource type="PackedScene" uid="uid://cc2tnqso80rdb" path="res://scenes/player.tscn" id="2_cjiu5"]
-[ext_resource type="PackedScene" uid="uid://cijhiokgjihyi" path="res://scenes/main_menu_music.tscn" id="2_rhfx1"]
+[ext_resource type="PackedScene" uid="uid://cijhiokgjihyi" path="res://scenes/music/main_menu_music.tscn" id="2_rhfx1"]
 [ext_resource type="PackedScene" uid="uid://73kvq24xbsud" path="res://scenes/portal.tscn" id="3_0cetk"]
 [ext_resource type="PackedScene" uid="uid://c2cu3j8r64utb" path="res://scenes/decorations/candelabrum.tscn" id="5_3tdb5"]
 [ext_resource type="FontFile" uid="uid://dm8i0plt3ulbs" path="res://assets/fonts/VIDEOPHREAK.ttf" id="5_ainw1"]

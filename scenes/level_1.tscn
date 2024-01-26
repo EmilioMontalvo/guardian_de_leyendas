@@ -1,8 +1,9 @@
-[gd_scene load_steps=20 format=3 uid="uid://piulkhxfpb7e"]
+[gd_scene load_steps=21 format=3 uid="uid://piulkhxfpb7e"]
 
 [ext_resource type="PackedScene" uid="uid://cc2tnqso80rdb" path="res://scenes/player.tscn" id="1_4nyul"]
 [ext_resource type="Script" path="res://scripts/level_1.gd" id="1_jtnc5"]
 [ext_resource type="PackedScene" uid="uid://cf0vg17dh1xxx" path="res://scenes/tile_map.tscn" id="2_l4ah0"]
+[ext_resource type="PackedScene" uid="uid://kduuyif10l0j" path="res://scenes/music/level_1_music.tscn" id="2_lif7q"]
 [ext_resource type="PackedScene" uid="uid://dawaw6ovel2vb" path="res://scenes/deathzone.tscn" id="3_8p4ti"]
 [ext_resource type="PackedScene" uid="uid://dwfd3wudwun0y" path="res://scenes/decorations/rock_3.tscn" id="3_45nr6"]
 [ext_resource type="PackedScene" uid="uid://o1rwg5twohkm" path="res://scenes/background_church.tscn" id="3_s1ku1"]
@@ -22,6 +23,8 @@
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_jtnc5")
+
+[node name="Level1Music" parent="." instance=ExtResource("2_lif7q")]
 
 [node name="Deathzone" parent="." instance=ExtResource("3_8p4ti")]
 position = Vector2(-238, 336)

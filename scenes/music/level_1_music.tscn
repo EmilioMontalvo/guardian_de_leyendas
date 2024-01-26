@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://kduuyif10l0j"]
+
+[ext_resource type="AudioStream" uid="uid://bvsgpg1sf2kxe" path="res://assets/sounds/level1.mp3" id="1_hulgw"]
+
+[node name="Level1Music" type="AudioStreamPlayer"]
+stream = ExtResource("1_hulgw")
+volume_db = -17.802
+autoplay = true
