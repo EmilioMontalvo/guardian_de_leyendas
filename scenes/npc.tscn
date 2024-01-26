@@ -1,0 +1,90 @@
+[gd_scene load_steps=12 format=3 uid="uid://cdvlub3cdxmst"]
+
+[ext_resource type="Texture2D" uid="uid://0gy3wfag8ua6" path="res://assets/npc/Hooded.png" id="1_5vig8"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_thffc"]
+radius = 7.0
+height = 26.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tbmfy"]
+atlas = ExtResource("1_5vig8")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_41et8"]
+atlas = ExtResource("1_5vig8")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dmoor"]
+atlas = ExtResource("1_5vig8")
+region = Rect2(0, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6b66w"]
+atlas = ExtResource("1_5vig8")
+region = Rect2(32, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aem41"]
+atlas = ExtResource("1_5vig8")
+region = Rect2(64, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bc3ua"]
+atlas = ExtResource("1_5vig8")
+region = Rect2(96, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u6tlj"]
+atlas = ExtResource("1_5vig8")
+region = Rect2(128, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m3xrh"]
+atlas = ExtResource("1_5vig8")
+region = Rect2(160, 128, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g5do0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tbmfy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_41et8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dmoor")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6b66w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aem41")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bc3ua")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u6tlj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m3xrh")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 8.0
+}]
+
+[node name="NPC" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1, 2)
+shape = SubResource("CapsuleShape2D_thffc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
+sprite_frames = SubResource("SpriteFrames_g5do0")
+animation = &"fly"
+autoplay = "default"
+frame_progress = 0.118865
