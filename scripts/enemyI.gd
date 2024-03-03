@@ -24,7 +24,8 @@ func _ready():
 	patrolArrayPositions=navPos.get_children()
 	if(patrolArrayPositions.size()!=0):
 		target=patrolArrayPositions[actualPosition]
-	
+
+
 
 func _physics_process(delta):
 	if not is_on_floor():
@@ -40,10 +41,8 @@ func _physics_process(delta):
 		direction=nav.get_next_path_position()-global_position
 		direction=direction.normalized()
 		velocity=velocity.lerp(direction*speed,delta)		
-		setDirection(not direction.x>0)
-		
-	if state == 4:
-		print("a")
+		setDirection(not direction.x>0)	
+	
 	move_and_slide()
 
 func kill():
@@ -69,6 +68,10 @@ func setState(newState):
 		sprite.animation = "running"
 	if state == 3:
 		sprite.animation = "running"
+	if state == 4:
+		sprite.animation = "attacking"
+	if state == 5:
+		sprite.animation = "sleep"
 
 func setDirection(newDirection):
 	flipH=newDirection
@@ -86,4 +89,7 @@ func _on_navigation_agent_2d_target_reached():
 	else:
 		actualPosition=actualPosition+1
 	target=patrolArrayPositions[actualPosition]
+
+func attack():
+	pass
 	
