@@ -5,8 +5,10 @@ class_name Player
 @export var gravity = 400
 @export var speed = 170
 @export var jumpforce = 250
+@export var life = 100
 @onready var player = $AnimatedSprite2D
 
+signal hurt_signal
 var active=true
 
 func _physics_process(delta):
@@ -48,3 +50,6 @@ func update_animations(direction):
 			player.play("fall")
 		else :
 			player.play("jump")
+
+func hurt():
+	emit_signal("hurt_signal")

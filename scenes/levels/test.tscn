@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://gkrsh06calgh"]
+
+[ext_resource type="PackedScene" uid="uid://cf0vg17dh1xxx" path="res://scenes/tile_map.tscn" id="1_bktjw"]
+[ext_resource type="PackedScene" uid="uid://cc2tnqso80rdb" path="res://scenes/player.tscn" id="2_mny5g"]
+[ext_resource type="PackedScene" uid="uid://c5s11217j6fsq" path="res://scenes/enemies/enemyI.tscn" id="3_1y20a"]
+[ext_resource type="PackedScene" uid="uid://dawaw6ovel2vb" path="res://scenes/deathzone.tscn" id="4_qiliq"]
+
+[node name="test" type="Node2D"]
+
+[node name="TileMap" parent="." instance=ExtResource("1_bktjw")]
+position = Vector2(2, -34)
+layer_0/tile_data = PackedInt32Array(1114114, 786432, 0, 1114115, 786432, 0, 1114116, 524288, 0, 1114117, 589824, 0, 1114118, 655360, 0, 1114119, 786432, 0, 1114120, 655360, 0, 1114121, 655360, 0, 1114122, 589824, 0, 1114123, 786432, 0, 1114124, 655360, 0, 1114126, 524288, 0, 1114125, 589824, 0, 1114127, 720896, 0, 1114129, 786432, 0, 1114128, 720896, 0, 1114131, 589824, 0, 1114130, 524288, 0, 1114133, 589824, 0, 1114132, 589824, 0, 1114135, 589824, 0, 1114134, 524288, 0, 1114136, 655360, 0, 1114137, 655360, 0, 1114138, 524288, 0, 1114139, 589824, 0, 1114140, 786432, 0, 1114141, 786432, 0, 1114142, 524288, 0, 1114113, 589824, 0, 1114146, 720896, 0, 1114145, 589824, 0, 1114144, 524288, 0, 1114143, 524288, 0, 786452, 1245184, 9, 786453, 1245184, 9, 786454, 1245184, 9, 786455, 1245184, 9, 786456, 1245184, 9, 786457, 1245184, 9, 786458, 1245184, 9, 786451, 1245184, 9, 786450, 1245184, 9, 786449, 1245184, 9, 786448, 1245184, 9)
+
+[node name="Player" parent="." instance=ExtResource("2_mny5g")]
+position = Vector2(71, 205)
+gravity = 400
+speed = 170
+jumpforce = 250
+
+[node name="enemyI" parent="." instance=ExtResource("3_1y20a")]
+position = Vector2(204, 164)
+gravity = 400
+
+[node name="enemyI2" parent="." instance=ExtResource("3_1y20a")]
+position = Vector2(281, 116)
+gravity = 400
+
+[node name="Deathzone" parent="." instance=ExtResource("4_qiliq")]
+position = Vector2(-592, 333)
