@@ -32,7 +32,6 @@ const history_dialog: Array[String] = [
 ]
 
 func _ready():
-	player
 	var enemies = get_tree().get_nodes_in_group("enemies")
 	for enemy in enemies:
 		enemy.touch_player.connect(_get_damage)

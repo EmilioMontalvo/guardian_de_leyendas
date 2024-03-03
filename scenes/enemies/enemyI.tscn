@@ -1,7 +1,31 @@
-[gd_scene load_steps=18 format=3 uid="uid://c5s11217j6fsq"]
+[gd_scene load_steps=33 format=3 uid="uid://c5s11217j6fsq"]
 
 [ext_resource type="Script" path="res://scripts/enemyI.gd" id="1_3jlvb"]
 [ext_resource type="Texture2D" uid="uid://drqk7opdt8pv5" path="res://assets/enemy/Imp Sprite Sheet.png" id="1_gp4qm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xe4s5"]
+atlas = ExtResource("1_gp4qm")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3bstr"]
+atlas = ExtResource("1_gp4qm")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fl8gg"]
+atlas = ExtResource("1_gp4qm")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e1vuj"]
+atlas = ExtResource("1_gp4qm")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1m7eh"]
+atlas = ExtResource("1_gp4qm")
+region = Rect2(128, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4m6pt"]
+atlas = ExtResource("1_gp4qm")
+region = Rect2(160, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vn36q"]
 atlas = ExtResource("1_gp4qm")
@@ -55,8 +79,63 @@ region = Rect2(160, 0, 32, 32)
 atlas = ExtResource("1_gp4qm")
 region = Rect2(192, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_8s8rr"]
+atlas = ExtResource("1_gp4qm")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gcjyl"]
+atlas = ExtResource("1_gp4qm")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ewumf"]
+atlas = ExtResource("1_gp4qm")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ayrys"]
+atlas = ExtResource("1_gp4qm")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4hijc"]
+atlas = ExtResource("1_gp4qm")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q6dob"]
+atlas = ExtResource("1_gp4qm")
+region = Rect2(160, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cg6du"]
+atlas = ExtResource("1_gp4qm")
+region = Rect2(192, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_csnv2"]
+atlas = ExtResource("1_gp4qm")
+region = Rect2(224, 32, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_3wjwa"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xe4s5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3bstr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fl8gg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e1vuj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1m7eh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4m6pt")
+}],
+"loop": true,
+"name": &"attacking",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_vn36q")
@@ -76,9 +155,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_dgt1e")
 }],
-"loop": true,
+"loop": false,
 "name": &"dead",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -104,33 +183,83 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 5.0
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8s8rr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gcjyl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ewumf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ayrys")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4hijc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q6dob")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cg6du")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_csnv2")
+}],
+"loop": true,
+"name": &"running",
+"speed": 10.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_etchd"]
 radius = 5.0
 height = 12.0
 
-[node name="enemyI" type="CharacterBody2D"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_4dn1h"]
+vertices = PackedVector2Array(96, -21, 238, -23, 245, 27, -24, 25, -32, 11, -14, -15)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-14, -15, -32, 11, -24, 25, 245, 27, 238, -23, 96, -21)])
+
+[node name="Node2D" type="Node2D"]
+
+[node name="enemyI" type="CharacterBody2D" parent="."]
 scale = Vector2(2, 2)
 collision_mask = 2
 script = ExtResource("1_3jlvb")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemyI"]
 position = Vector2(0, -10)
 sprite_frames = SubResource("SpriteFrames_3wjwa")
-animation = &"dead"
+animation = &"attacking"
 autoplay = "idle"
-frame_progress = 0.6977
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemyI"]
 position = Vector2(-1, 0)
 shape = SubResource("CapsuleShape2D_etchd")
 
-[node name="damageArea" type="Area2D" parent="."]
+[node name="damageArea" type="Area2D" parent="enemyI"]
 
-[node name="PlayerCollision" type="CollisionShape2D" parent="damageArea"]
+[node name="PlayerCollision" type="CollisionShape2D" parent="enemyI/damageArea"]
 position = Vector2(-1, 0)
 shape = SubResource("CapsuleShape2D_etchd")
 
-[connection signal="body_entered" from="damageArea" to="." method="_on_damage_area_body_entered"]
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="enemyI"]
+path_max_distance = 101.0
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+position = Vector2(3, -7)
+navigation_polygon = SubResource("NavigationPolygon_4dn1h")
+
+[node name="patrolPositions" type="Node2D" parent="."]
+
+[node name="start" type="Marker2D" parent="patrolPositions"]
+position = Vector2(199, 0)
+
+[node name="end" type="Marker2D" parent="patrolPositions"]
+
+[connection signal="body_entered" from="enemyI/damageArea" to="enemyI" method="_on_damage_area_body_entered"]
+[connection signal="target_reached" from="enemyI/NavigationAgent2D" to="enemyI" method="_on_navigation_agent_2d_target_reached"]
