@@ -14,6 +14,9 @@ signal hurt_signal
 var active=true
 var isAttacking = false
 
+func _ready():
+	InventoryManager.set_player_reference(self)
+
 func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta

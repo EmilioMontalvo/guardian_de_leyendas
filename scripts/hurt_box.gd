@@ -18,8 +18,5 @@ func _process(delta):
 func _on_area_entered(hitbox: HitBox):
 	if hitbox == null:
 		return
-	
-	
 	if get_parent().has_method("hurt"):
-		print('dentro del hurt')
 		get_parent().hurt(hitbox.damage)
