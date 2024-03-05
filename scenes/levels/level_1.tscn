@@ -387,6 +387,7 @@ texture = ExtResource("10_akhax")
 
 [connection signal="body_entered" from="Deathzone" to="." method="_on_deathzone_body_entered"]
 [connection signal="collected" from="Item" to="." method="_on_item_collected"]
+[connection signal="hurt_signal" from="Player" to="." method="_get_damage"]
 
 [editable path="Enemies/enemyI"]
 [editable path="Enemies/enemyI2"]
