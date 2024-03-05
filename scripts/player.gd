@@ -11,6 +11,7 @@ class_name Player
 
 signal hurt_signal
 var active=true
+var isAttacking = false
 
 func _physics_process(delta):
 	if not is_on_floor():
@@ -44,6 +45,8 @@ func jump(force):
 
 	
 func update_animations(direction):
+	if isAttacking:
+		return
 	if is_on_floor():
 		if direction == 0:
 			player.play("idle")
@@ -59,7 +62,10 @@ func hurt():
 	emit_signal("hurt_signal")
 	
 func attack():
+	#isAttacking = true
 	hitbox_collision.disabled = false
 	player.play("attack")
+	await get_tree().create_timer(0.4).timeout
 	hitbox_collision.disabled = true
+	#isAttacking = false
 	

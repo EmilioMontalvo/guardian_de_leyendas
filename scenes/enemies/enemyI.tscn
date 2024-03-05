@@ -1,8 +1,7 @@
-[gd_scene load_steps=39 format=3 uid="uid://c5s11217j6fsq"]
+[gd_scene load_steps=38 format=3 uid="uid://c5s11217j6fsq"]
 
 [ext_resource type="Script" path="res://scripts/enemyI.gd" id="1_3jlvb"]
 [ext_resource type="Texture2D" uid="uid://drqk7opdt8pv5" path="res://assets/enemy/Imp Sprite Sheet.png" id="1_gp4qm"]
-[ext_resource type="Script" path="res://scripts/enemyI_root.gd" id="1_mnj6l"]
 [ext_resource type="Script" path="res://scripts/hurt_box.gd" id="3_qs6ak"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xe4s5"]
@@ -257,7 +256,6 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-14, -15, -32, 11, -24, 25, 245, 27, 238, -23, 96, -21)])
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_mnj6l")
 
 [node name="enemyI" type="CharacterBody2D" parent="."]
 scale = Vector2(2, 2)
@@ -301,6 +299,5 @@ position = Vector2(199, 0)
 
 [node name="end" type="Marker2D" parent="patrolPositions"]
 
-[connection signal="body_entered" from="enemyI/damageArea" to="." method="_on_damage_area_body_entered"]
 [connection signal="body_entered" from="enemyI/damageArea" to="enemyI" method="_on_damage_area_body_entered"]
 [connection signal="target_reached" from="enemyI/NavigationAgent2D" to="enemyI" method="_on_navigation_agent_2d_target_reached"]
