@@ -40,7 +40,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"default",
-"speed": 5.0
+"speed": 8.0
 }]
 
 [node name="fireball" type="Node2D" groups=["traps"]]
@@ -56,6 +56,7 @@ shape = SubResource("CapsuleShape2D_ledt2")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
 position = Vector2(1, -9)
 sprite_frames = SubResource("SpriteFrames_iunwa")
+autoplay = "default"
 frame = 3
 frame_progress = 1.0
 

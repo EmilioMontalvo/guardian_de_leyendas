@@ -6,16 +6,18 @@ class_name Enemy
 @export var patrolDistance = 900
 @export var flipH = false
 @export var health= 100
+@export var attakInterval=2
 
-
-@export_enum("alert","dead", "running", "patrolling" ,"attacking", "sleeping") var state : int
+@export_enum("alert","dead", "running", "patrolling" ,"attack", "sleeping") var state : int
 @onready var sprite = $AnimatedSprite2D
 @onready var nav = $NavigationAgent2D
 @onready var navPos=$"../patrolPositions"
+@onready var proyectile=preload("res://scenes/fireball.tscn")
 
 var patrolArrayPositions
 var actualPosition=0;
 var target
+var attack_timer := Timer.new()
 
 signal touch_player
 func _ready():	
@@ -24,8 +26,11 @@ func _ready():
 	patrolArrayPositions=navPos.get_children()
 	if(patrolArrayPositions.size()!=0):
 		target=patrolArrayPositions[actualPosition]
-
-
+	if(state==4):
+		add_child(attack_timer)
+		attack_timer.connect("timeout", _on_AttackTimer_timeout)
+		attack_timer.wait_time = attakInterval
+		attack_timer.start()
 
 func _physics_process(delta):
 	if not is_on_floor():
@@ -42,7 +47,6 @@ func _physics_process(delta):
 		direction=direction.normalized()
 		velocity=velocity.lerp(direction*speed,delta)		
 		setDirection(not direction.x>0)	
-	
 	move_and_slide()
 
 func kill():
@@ -69,7 +73,7 @@ func setState(newState):
 	if state == 3:
 		sprite.animation = "running"
 	if state == 4:
-		sprite.animation = "attacking"
+		pass
 	if state == 5:
 		sprite.animation = "sleep"
 
@@ -91,6 +95,15 @@ func _on_navigation_agent_2d_target_reached():
 		actualPosition=actualPosition+1
 	target=patrolArrayPositions[actualPosition]
 
-func attack():
-	pass
+func attack():	
+	var instance=proyectile.instantiate()	
+	instance.set("direction", (-1 if flipH else 1))
+	add_child(instance)
+	
+
+func _on_AttackTimer_timeout():
+	sprite.animation="attack"
+	sprite.play()
+	attack()
+	
 	
