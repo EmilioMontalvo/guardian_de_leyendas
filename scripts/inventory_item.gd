@@ -8,7 +8,9 @@ extends Node2D
 var scene_path: String = "res://scenes/inventory_item.tscn"
 
 @onready var icon_sprite = $Sprite2D
-@onready var interact_ui = $InteractItem
+#@onready var interact_ui = $InteractItem
+@onready var interact_ui = $PickUpText
+
 
 var player_in_range = false
 
@@ -17,6 +19,7 @@ var player_in_range = false
 func _ready():
 	if not Engine.is_editor_hint():
 		icon_sprite.texture = item_texture
+	interact_ui.set_global_position(icon_sprite.global_position + Vector2(-50,-25))
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -40,18 +43,19 @@ func pickup_item():
 		InventoryManager.add_item(item)
 		self.queue_free()
 
-
 func _on_area_2d_body_exited(body):
 	if body.is_in_group("Player"):
 		player_in_range = false
-		print('salio')
 		interact_ui.visible = false
-
-
 
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("Player"):
 		player_in_range = true
-		print('dentro')
 		interact_ui.visible = true
+		
+func set_item_data(data):
+	item_type = data["type"]
+	item_name = data["name"]
+	item_effect = data["effect"]
+	item_texture = data["texture"]
 

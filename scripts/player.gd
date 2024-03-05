@@ -9,6 +9,7 @@ class_name Player
 @onready var player = $AnimatedSprite2D
 @onready var hitbox_collision = $HitBox/CollisionShape2D
 @onready var hitbox = $HitBox
+@onready var inventory_ui = $Inventory_UI
 
 signal hurt_signal
 var active=true
@@ -77,4 +78,10 @@ func attack():
 	await get_tree().create_timer(0.4).timeout
 	hitbox_collision.disabled = true
 	isAttacking = false
+	
+func _input(event):
+	if event.is_action_pressed("inventory"):
+		active = !active
+		inventory_ui.visible = !inventory_ui.visible
+		get_tree().paused = !get_tree().paused
 	

@@ -1,10 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://75wesux5fw67"]
+[gd_scene load_steps=5 format=3 uid="uid://75wesux5fw67"]
 
 [ext_resource type="Script" path="res://scripts/inventory_item.gd" id="1_frxbk"]
+[ext_resource type="FontFile" uid="uid://bs2y8sblpvw12" path="res://assets/fonts/IrishGrover-Regular.ttf" id="2_6k2cm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h4mrp"]
 
-[node name="inventory_item" type="Node2D"]
+[sub_resource type="LabelSettings" id="LabelSettings_hx3vt"]
+font = ExtResource("2_6k2cm")
+font_size = 10
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[node name="inventory_item" type="Node2D" groups=["Items"]]
 script = ExtResource("1_frxbk")
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -14,35 +21,21 @@ shape = SubResource("RectangleShape2D_h4mrp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
-[node name="InteractItem" type="CanvasLayer" parent="."]
+[node name="PickUpText" type="Label" parent="."]
 visible = false
-
-[node name="ColorRect" type="ColorRect" parent="InteractItem"]
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -175.0
-offset_top = -35.0
-grow_horizontal = 0
-grow_vertical = 0
-color = Color(0.0196078, 0.352941, 0.454902, 1)
-
-[node name="Label" type="Label" parent="InteractItem/ColorRect"]
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -79.5
-offset_top = -13.0
-offset_right = 79.5
-offset_bottom = 13.0
+offset_left = 409.0
+offset_top = 293.5
+offset_right = 568.0
+offset_bottom = 319.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "PRESS 'E' TO PICK UP"
+label_settings = SubResource("LabelSettings_hx3vt")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

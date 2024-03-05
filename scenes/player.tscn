@@ -1,9 +1,11 @@
-[gd_scene load_steps=26 format=3 uid="uid://cc2tnqso80rdb"]
+[gd_scene load_steps=29 format=3 uid="uid://cc2tnqso80rdb"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_ec758"]
 [ext_resource type="Texture2D" uid="uid://l36g7hq1xf5v" path="res://assets/player/player.png" id="1_uaokt"]
 [ext_resource type="Texture2D" uid="uid://b01gj8e8yd5kn" path="res://assets/player/player_shadow.png" id="2_h2t1b"]
 [ext_resource type="Script" path="res://scripts/hit_box.gd" id="4_svfxc"]
+[ext_resource type="FontFile" uid="uid://bs2y8sblpvw12" path="res://assets/fonts/IrishGrover-Regular.ttf" id="5_6koos"]
+[ext_resource type="PackedScene" uid="uid://2wft16hkyvgs" path="res://scenes/inventory_ui.tscn" id="6_qj7v4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rvgi1"]
 atlas = ExtResource("2_h2t1b")
@@ -166,7 +168,14 @@ height = 18.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6sofw"]
 size = Vector2(11.75, 12)
 
+[sub_resource type="LabelSettings" id="LabelSettings_s0xhj"]
+font = ExtResource("5_6koos")
+font_size = 20
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
+process_mode = 3
 position = Vector2(0, -7)
 scale = Vector2(2, 2)
 collision_mask = 34
@@ -192,3 +201,35 @@ script = ExtResource("4_svfxc")
 position = Vector2(12.5, 1.5)
 shape = SubResource("RectangleShape2D_6sofw")
 disabled = true
+
+[node name="Inventory_UI" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Inventory_UI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -225.0
+offset_top = -137.5
+offset_right = 225.0
+offset_bottom = 137.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.113725, 0.415686, 0.654902, 1)
+
+[node name="Label" type="Label" parent="Inventory_UI/ColorRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -50.5
+offset_right = 50.5
+offset_bottom = 27.0
+grow_horizontal = 2
+text = "INVENTORY"
+label_settings = SubResource("LabelSettings_s0xhj")
+
+[node name="Inventory_UI" parent="Inventory_UI/ColorRect" instance=ExtResource("6_qj7v4")]
+layout_mode = 1
