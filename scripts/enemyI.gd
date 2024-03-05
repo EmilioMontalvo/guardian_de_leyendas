@@ -51,7 +51,7 @@ func _physics_process(delta):
 
 func kill():
 	# Cambia la animación del AnimatedSprite2D a "muerte"
-	setState(0)
+	setState(1)
 	# Espera unos segundos antes de eliminar el nodo
 	await get_tree().create_timer(2.0) 
 	# Elimina el nodo

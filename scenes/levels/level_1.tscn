@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://piulkhxfpb7e"]
+[gd_scene load_steps=21 format=3 uid="uid://piulkhxfpb7e"]
 
 [ext_resource type="Script" path="res://scripts/level_1.gd" id="1_1inu2"]
 [ext_resource type="PackedScene" uid="uid://kduuyif10l0j" path="res://scenes/music/level_1_music.tscn" id="2_pl7cu"]
@@ -15,7 +15,6 @@
 [ext_resource type="PackedScene" uid="uid://cf0vg17dh1xxx" path="res://scenes/tile_map.tscn" id="13_gvlby"]
 [ext_resource type="PackedScene" uid="uid://o1rwg5twohkm" path="res://scenes/background_church.tscn" id="14_e4gjg"]
 [ext_resource type="PackedScene" uid="uid://c35t54lh48252" path="res://scenes/hud.tscn" id="15_a8ky1"]
-[ext_resource type="PackedScene" uid="uid://cv44tt0pd3axe" path="res://scenes/enemy.tscn" id="16_yd7oa"]
 [ext_resource type="PackedScene" uid="uid://nxye476wpqax" path="res://scenes/rock.tscn" id="17_owbv4"]
 [ext_resource type="PackedScene" uid="uid://c5s11217j6fsq" path="res://scenes/enemies/enemyI.tscn" id="17_xhg01"]
 [ext_resource type="PackedScene" uid="uid://xhpdlfg4fipa" path="res://scenes/npc.tscn" id="18_nvnnb"]
@@ -285,35 +284,74 @@ offset_bottom = 330.0
 [node name="Enemies" type="Node2D" parent="."]
 position = Vector2(444, 0)
 
-[node name="Enemy" parent="Enemies" instance=ExtResource("16_yd7oa")]
-position = Vector2(214, 71)
-animation_selected = 1
-
-[node name="Enemy2" parent="Enemies" instance=ExtResource("16_yd7oa")]
-position = Vector2(382, 202)
-animation_selected = 1
-
-[node name="Enemy3" parent="Enemies" instance=ExtResource("16_yd7oa")]
-position = Vector2(1153, 202)
-animation_selected = 1
-
-[node name="Enemy4" parent="Enemies" instance=ExtResource("16_yd7oa")]
-position = Vector2(1915, 203)
-animation_selected = 1
-
-[node name="Enemy5" parent="Enemies" instance=ExtResource("16_yd7oa")]
-position = Vector2(1414, 38)
-animation_selected = 1
-
-[node name="Enemy6" parent="Enemies" instance=ExtResource("16_yd7oa")]
-position = Vector2(3394, 53)
-animation_selected = 0
-
-[node name="Enemy7" parent="Enemies" instance=ExtResource("16_yd7oa")]
-position = Vector2(4098, -187)
-
 [node name="enemyI" parent="Enemies" groups=["enemies"] instance=ExtResource("17_xhg01")]
-position = Vector2(39, 87)
+position = Vector2(82, 86)
+
+[node name="enemyI" parent="Enemies/enemyI" index="0"]
+state = 3
+
+[node name="enemyI2" parent="Enemies" groups=["enemies"] instance=ExtResource("17_xhg01")]
+position = Vector2(1301, 45)
+
+[node name="enemyI" parent="Enemies/enemyI2" index="0"]
+state = 3
+
+[node name="enemyI3" parent="Enemies" groups=["enemies"] instance=ExtResource("17_xhg01")]
+position = Vector2(1962, 47)
+
+[node name="enemyI" parent="Enemies/enemyI3" index="0"]
+flipH = true
+state = 3
+
+[node name="enemyI4" parent="Enemies" groups=["enemies"] instance=ExtResource("17_xhg01")]
+position = Vector2(1970, 210)
+
+[node name="enemyI" parent="Enemies/enemyI4" index="0"]
+state = 3
+
+[node name="enemyI5" parent="Enemies" groups=["enemies"] instance=ExtResource("17_xhg01")]
+position = Vector2(-304, 166)
+
+[node name="enemyI" parent="Enemies/enemyI5" index="0"]
+position = Vector2(-1, 0)
+state = 2
+
+[node name="enemyI6" parent="Enemies" groups=["enemies"] instance=ExtResource("17_xhg01")]
+position = Vector2(81, 220)
+
+[node name="enemyI" parent="Enemies/enemyI6" index="0"]
+flipH = true
+state = 5
+
+[node name="enemyI7" parent="Enemies" groups=["enemies"] instance=ExtResource("17_xhg01")]
+position = Vector2(565, 80)
+
+[node name="enemyI" parent="Enemies/enemyI7" index="0"]
+position = Vector2(-1, 4)
+flipH = true
+state = 4
+
+[node name="enemyI8" parent="Enemies" groups=["enemies"] instance=ExtResource("17_xhg01")]
+position = Vector2(2845, 50)
+
+[node name="enemyI" parent="Enemies/enemyI8" index="0"]
+position = Vector2(-1, 4)
+flipH = true
+state = 4
+
+[node name="enemyI9" parent="Enemies" groups=["enemies"] instance=ExtResource("17_xhg01")]
+position = Vector2(3635, 47)
+
+[node name="enemyI" parent="Enemies/enemyI9" index="0"]
+flipH = true
+state = 3
+
+[node name="enemyI10" parent="Enemies" groups=["enemies"] instance=ExtResource("17_xhg01")]
+position = Vector2(4221, -178)
+
+[node name="enemyI" parent="Enemies/enemyI10" index="0"]
+flipH = true
+state = 4
 
 [node name="StartPosition" type="Marker2D" parent="."]
 position = Vector2(28, 162)
@@ -347,16 +385,16 @@ scale = Vector2(8, 8)
 position = Vector2(2430, 38)
 texture = ExtResource("10_akhax")
 
-[node name="Enemy" parent="." instance=ExtResource("16_yd7oa")]
-position = Vector2(4348, 35)
-animation_selected = 0
-
-[node name="Enemy2" parent="." instance=ExtResource("16_yd7oa")]
-position = Vector2(2545, 36)
-animation_selected = 0
-
-[node name="Enemy3" parent="." instance=ExtResource("16_yd7oa")]
-position = Vector2(528, 202)
-
 [connection signal="body_entered" from="Deathzone" to="." method="_on_deathzone_body_entered"]
 [connection signal="collected" from="Item" to="." method="_on_item_collected"]
+
+[editable path="Enemies/enemyI"]
+[editable path="Enemies/enemyI2"]
+[editable path="Enemies/enemyI3"]
+[editable path="Enemies/enemyI4"]
+[editable path="Enemies/enemyI5"]
+[editable path="Enemies/enemyI6"]
+[editable path="Enemies/enemyI7"]
+[editable path="Enemies/enemyI8"]
+[editable path="Enemies/enemyI9"]
+[editable path="Enemies/enemyI10"]

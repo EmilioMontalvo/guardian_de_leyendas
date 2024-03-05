@@ -256,7 +256,7 @@ vertices = PackedVector2Array(96, -21, 238, -23, 245, 27, -24, 25, -32, 11, -14,
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-14, -15, -32, 11, -24, 25, 245, 27, 238, -23, 96, -21)])
 
-[node name="Node2D" type="Node2D"]
+[node name="Enemy" type="Node2D"]
 script = ExtResource("1_mnj6l")
 
 [node name="enemyI" type="CharacterBody2D" parent="."]

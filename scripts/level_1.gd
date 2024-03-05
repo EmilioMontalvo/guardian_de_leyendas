@@ -68,4 +68,5 @@ func _on_item_collected():
 
 
 func _on_deathzone_body_entered(body):
-	reset_player()
+	if body is Player:
+		reset_player()
