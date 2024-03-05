@@ -54,7 +54,7 @@ item_effect = "10 Health"
 [node name="inventory_item4" parent="." instance=ExtResource("5_75sed")]
 position = Vector2(207, 224)
 item_type = "Posion"
-item_name = "Posion Damage"
+item_name = "Damage Posion"
 item_texture = ExtResource("8_k04ou")
 item_effect = "25 Damage"
 

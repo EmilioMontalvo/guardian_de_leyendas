@@ -84,10 +84,10 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_s2lix")
 
 [node name="DetailsPanel" type="ColorRect" parent="."]
 visible = false
-layout_mode = 0
-offset_top = -45.0
-offset_right = 70.0
-offset_bottom = -5.0
+layout_mode = 2
+offset_top = -42.0
+offset_right = 85.0
+offset_bottom = -2.0
 color = Color(0.19948, 0.474803, 0.534629, 1)
 
 [node name="ItemName" type="Label" parent="DetailsPanel"]
