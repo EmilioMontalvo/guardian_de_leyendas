@@ -85,6 +85,9 @@ func heal(health_quantity):
 	else:
 		life += health_quantity
 
+func increase_damage(damage_quantity):
+	hitbox.damage += damage_quantity
+
 func _input(event):
 	if event.is_action_pressed("inventory"):
 		active = !active
@@ -93,8 +96,12 @@ func _input(event):
 
 func apply_item_effect(item):
 	match item["effect"]:
-		"Health":
+		"25 Health":
 			heal(25)
 			print(life)
+		"10 Health":
+			heal(10)
+		"25 Damage":
+			increase_damage(25)
 		_:
 			print("No effect")

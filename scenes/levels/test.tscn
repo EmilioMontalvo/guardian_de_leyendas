@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://gkrsh06calgh"]
+[gd_scene load_steps=9 format=3 uid="uid://gkrsh06calgh"]
 
 [ext_resource type="PackedScene" uid="uid://cf0vg17dh1xxx" path="res://scenes/tile_map.tscn" id="1_bktjw"]
 [ext_resource type="PackedScene" uid="uid://cc2tnqso80rdb" path="res://scenes/player.tscn" id="2_mny5g"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://75wesux5fw67" path="res://scenes/inventory_item.tscn" id="5_75sed"]
 [ext_resource type="Texture2D" uid="uid://16t0x3jcyk6n" path="res://assets/items/posion_healt.png" id="6_akhv7"]
 [ext_resource type="Texture2D" uid="uid://c8b3uppw6rxiy" path="res://assets/items/apple.png" id="7_3184t"]
+[ext_resource type="Texture2D" uid="uid://cewg8jlnr02dk" path="res://assets/items/posion_damage.png" id="8_k04ou"]
 
 [node name="test" type="Node2D"]
 
@@ -34,19 +35,27 @@ position = Vector2(318, 146)
 item_type = "Posion"
 item_name = "Health Posion"
 item_texture = ExtResource("6_akhv7")
-item_effect = "Health"
+item_effect = "25 Health"
 
 [node name="inventory_item3" parent="." instance=ExtResource("5_75sed")]
 position = Vector2(483, 173)
 item_type = "Posion"
 item_name = "Health Posion"
 item_texture = ExtResource("6_akhv7")
-item_effect = "Health"
+item_effect = "25 Health"
 
 [node name="inventory_item2" parent="." instance=ExtResource("5_75sed")]
 position = Vector2(536, 127)
 item_type = "Food"
 item_name = "Apple"
 item_texture = ExtResource("7_3184t")
+item_effect = "10 Health"
+
+[node name="inventory_item4" parent="." instance=ExtResource("5_75sed")]
+position = Vector2(207, 224)
+item_type = "Posion"
+item_name = "Posion Damage"
+item_texture = ExtResource("8_k04ou")
+item_effect = "25 Damage"
 
 [editable path="enemyI"]
