@@ -166,4 +166,5 @@ text = "Drop"
 [connection signal="mouse_entered" from="ItemButton" to="." method="_on_item_button_mouse_entered"]
 [connection signal="mouse_exited" from="ItemButton" to="." method="_on_item_button_mouse_exited"]
 [connection signal="pressed" from="ItemButton" to="." method="_on_item_button_pressed"]
+[connection signal="pressed" from="UsagePanel/BtnUse" to="." method="_on_btn_use_pressed"]
 [connection signal="pressed" from="UsagePanel/BtnDrop" to="." method="_on_btn_drop_pressed"]

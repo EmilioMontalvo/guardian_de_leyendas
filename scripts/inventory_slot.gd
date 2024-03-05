@@ -49,3 +49,10 @@ func _on_btn_drop_pressed():
 		InventoryManager.remove_item(item["type"], item["effect"])
 		usage_panel.visible = false
 		
+
+func _on_btn_use_pressed():
+	usage_panel.visible = false
+	if item != null:
+		if InventoryManager.player_node:
+			InventoryManager.player_node.apply_item_effect(item)
+			InventoryManager.remove_item(item["type"],item["effect"])

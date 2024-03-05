@@ -34,20 +34,19 @@ position = Vector2(318, 146)
 item_type = "Posion"
 item_name = "Health Posion"
 item_texture = ExtResource("6_akhv7")
-item_effect = "Healt"
+item_effect = "Health"
 
 [node name="inventory_item3" parent="." instance=ExtResource("5_75sed")]
 position = Vector2(483, 173)
 item_type = "Posion"
 item_name = "Health Posion"
 item_texture = ExtResource("6_akhv7")
-item_effect = "Healt"
+item_effect = "Health"
 
 [node name="inventory_item2" parent="." instance=ExtResource("5_75sed")]
 position = Vector2(536, 127)
 item_type = "Food"
 item_name = "Apple"
 item_texture = ExtResource("7_3184t")
-item_effect = "Health"
 
 [editable path="enemyI"]

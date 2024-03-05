@@ -79,9 +79,22 @@ func attack():
 	hitbox_collision.disabled = true
 	isAttacking = false
 	
+func heal(health_quantity):
+	if life >= 100:
+		life = 100
+	else:
+		life += health_quantity
+
 func _input(event):
 	if event.is_action_pressed("inventory"):
 		active = !active
 		inventory_ui.visible = !inventory_ui.visible
 		get_tree().paused = !get_tree().paused
-	
+
+func apply_item_effect(item):
+	match item["effect"]:
+		"Health":
+			heal(25)
+			print(life)
+		_:
+			print("No effect")
