@@ -8,6 +8,7 @@ class_name Player
 @export var life = 100
 @onready var player = $AnimatedSprite2D
 @onready var hitbox_collision = $HitBox/CollisionShape2D
+@onready var hitbox = $HitBox
 
 signal hurt_signal
 var active=true
@@ -29,6 +30,11 @@ func _physics_process(delta):
 		direction = Input.get_axis("move_left", "move_right")
 		if direction != 0:
 			player.flip_h = (direction == -1)
+			if direction == -1:
+				hitbox.rotation = PI
+			else:
+				hitbox.rotation = 0
+			
 			
 		velocity.x = direction * speed
 	
@@ -62,10 +68,10 @@ func hurt():
 	emit_signal("hurt_signal")
 	
 func attack():
-	#isAttacking = true
+	isAttacking = true
 	hitbox_collision.disabled = false
 	player.play("attack")
 	await get_tree().create_timer(0.4).timeout
 	hitbox_collision.disabled = true
-	#isAttacking = false
+	isAttacking = false
 	
