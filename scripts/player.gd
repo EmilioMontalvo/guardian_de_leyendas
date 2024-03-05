@@ -90,7 +90,7 @@ func increase_damage(damage_quantity):
 
 func _input(event):
 	if event.is_action_pressed("inventory"):
-		active = !active
+		set_active(!active)
 		inventory_ui.visible = !inventory_ui.visible
 		get_tree().paused = !get_tree().paused
 

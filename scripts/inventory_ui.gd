@@ -1,10 +1,15 @@
 extends Control
 
-@onready var grid_container = $GridContainer
+@onready var grid_container: GridContainer = $GridContainer
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	var viewport_size = get_viewport_rect().size
+	grid_container.global_position = Vector2(
+		viewport_size.x / 2 - grid_container.get_rect().size.x / 4 + 25,
+		viewport_size.y / 2 - grid_container.get_rect().size.y / 4 - 25
+	)
 	InventoryManager.inventory_updated.connect(_on_inventory_updated)
 	_on_inventory_updated()
 
