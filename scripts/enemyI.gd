@@ -79,7 +79,8 @@ func setDirection(newDirection):
 	
 func hurt(damage):
 	health-=damage
-	if(health>=0):
+	print(health)
+	if(health<=0):
 		kill()
 
 

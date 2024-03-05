@@ -19,5 +19,7 @@ func _on_area_entered(hitbox: HitBox):
 	if hitbox == null:
 		return
 	
-	if owner.has_method("hurt"):
-		owner.hurt(hitbox.damage)
+	
+	if get_parent().has_method("hurt"):
+		print('dentro del hurt')
+		get_parent().hurt(hitbox.damage)
