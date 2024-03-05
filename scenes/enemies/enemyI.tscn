@@ -1,7 +1,8 @@
-[gd_scene load_steps=36 format=3 uid="uid://c5s11217j6fsq"]
+[gd_scene load_steps=38 format=3 uid="uid://c5s11217j6fsq"]
 
 [ext_resource type="Script" path="res://scripts/enemyI.gd" id="1_3jlvb"]
 [ext_resource type="Texture2D" uid="uid://drqk7opdt8pv5" path="res://assets/enemy/Imp Sprite Sheet.png" id="1_gp4qm"]
+[ext_resource type="Script" path="res://scripts/hurt_box.gd" id="3_qs6ak"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xe4s5"]
 atlas = ExtResource("1_gp4qm")
@@ -245,6 +246,10 @@ animations = [{
 radius = 5.0
 height = 12.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1leqt"]
+radius = 8.0
+height = 18.0
+
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_4dn1h"]
 vertices = PackedVector2Array(96, -21, 238, -23, 245, 27, -24, 25, -32, 11, -14, -15)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5)])
@@ -260,9 +265,8 @@ script = ExtResource("1_3jlvb")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemyI"]
 position = Vector2(0, -10)
 sprite_frames = SubResource("SpriteFrames_3wjwa")
-animation = &"sleep"
+animation = &"attacking"
 autoplay = "idle"
-frame_progress = 0.1916
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemyI"]
 position = Vector2(-1, 0)
@@ -276,6 +280,13 @@ shape = SubResource("CapsuleShape2D_etchd")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="enemyI"]
 path_max_distance = 101.0
+
+[node name="HurtBox" type="Area2D" parent="enemyI"]
+script = ExtResource("3_qs6ak")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemyI/HurtBox"]
+position = Vector2(-1.5, 0)
+shape = SubResource("CapsuleShape2D_1leqt")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 position = Vector2(3, -7)

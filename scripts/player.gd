@@ -7,6 +7,7 @@ class_name Player
 @export var jumpforce = 250
 @export var life = 100
 @onready var player = $AnimatedSprite2D
+@onready var hitbox_collision = $HitBox/CollisionShape2D
 
 signal hurt_signal
 var active=true
@@ -18,6 +19,9 @@ func _physics_process(delta):
 			velocity.y = 700
 	var direction=0
 	if active:
+		if Input.is_action_just_pressed("attack"):
+			attack()
+			
 		if Input.is_action_just_pressed("jump") && is_on_floor():
 			jump(jumpforce)
 			
@@ -53,3 +57,9 @@ func update_animations(direction):
 
 func hurt():
 	emit_signal("hurt_signal")
+	
+func attack():
+	hitbox_collision.disabled = false
+	player.play("attack")
+	hitbox_collision.disabled = true
+	
