@@ -1,12 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://w1tah6enxmdw"]
+[gd_scene load_steps=6 format=3 uid="uid://w1tah6enxmdw"]
 
 [ext_resource type="Script" path="res://scripts/win_screen.gd" id="1_q3qx4"]
+[ext_resource type="Texture2D" uid="uid://2u7ot0l58dfe" path="res://assets/items/Transparent Icons & Drop Shadow.png" id="2_f7gpt"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hjmbp"]
 bg_color = Color(0.92549, 0.890196, 0.807843, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_jmgdo"]
 font_color = Color(0, 0.0392157, 0.0392157, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ohcx"]
+atlas = ExtResource("2_f7gpt")
+region = Rect2(36, 548, 25, 26)
 
 [node name="WinScreen" type="Control"]
 layout_mode = 3
@@ -24,10 +29,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -134.0
-offset_top = -85.0
-offset_right = 132.0
-offset_bottom = 85.0
+offset_left = -135.0
+offset_top = -124.0
+offset_right = 151.0
+offset_bottom = 117.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_hjmbp")
@@ -40,21 +45,41 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -44.0
-offset_top = 35.0
+offset_top = 75.0
 offset_right = 45.0
-offset_bottom = 66.0
+offset_bottom = 106.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_default_cursor_shape = 2
-text = "Continue"
+text = "Continuar"
 
 [node name="Label" type="Label" parent="Panel"]
 layout_mode = 0
-offset_left = 65.0
-offset_top = 59.0
-offset_right = 105.0
-offset_bottom = 82.0
-text = "LEVEL COMPLETED"
+offset_left = 72.0
+offset_top = 11.0
+offset_right = 217.0
+offset_bottom = 37.0
+text = "Nivel Completado
+"
 label_settings = SubResource("LabelSettings_jmgdo")
+
+[node name="LabelFind" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 60.0
+offset_right = 272.0
+offset_bottom = 86.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "Has encontrado la roca de cantuña!
+"
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+layout_mode = 0
+offset_left = 123.0
+offset_top = 113.0
+offset_right = 163.0
+offset_bottom = 153.0
+texture = SubResource("AtlasTexture_0ohcx")
 
 [connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]

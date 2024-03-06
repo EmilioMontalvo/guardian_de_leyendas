@@ -40,6 +40,8 @@ func _ready():
 	for trap in traps:
 		trap.touch_player.connect(_get_damage)
 	npc.touch_npc.connect(_show_history)
+	
+	
 
 func _show_history():
 	#player.set_active(false)

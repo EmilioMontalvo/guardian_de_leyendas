@@ -1,9 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://nxye476wpqax"]
+[gd_scene load_steps=13 format=3 uid="uid://nxye476wpqax"]
 
 [ext_resource type="Script" path="res://scripts/item.gd" id="1_vdcwk"]
-[ext_resource type="Texture2D" uid="uid://dxl6ioc4qx6ug" path="res://assets/items/Transparent Icons.png" id="1_x2jte"]
 [ext_resource type="Script" path="res://scripts/item_rock.gd" id="2_07we3"]
 [ext_resource type="Texture2D" uid="uid://c0luotqqbrqll" path="res://assets/items/circulo.png" id="2_kwc05"]
+[ext_resource type="Texture2D" uid="uid://2u7ot0l58dfe" path="res://assets/items/Transparent Icons & Drop Shadow.png" id="4_jn21k"]
 
 [sub_resource type="Gradient" id="Gradient_o4js5"]
 colors = PackedColorArray(0.698039, 0.737255, 0.760784, 1, 0.392157, 0.431373, 0.631373, 1)
@@ -22,6 +22,10 @@ scale_min = 0.5
 scale_max = 0.8
 color_ramp = SubResource("GradientTexture1D_utd6p")
 collision_mode = 2
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ojyb2"]
+atlas = ExtResource("4_jn21k")
+region = Rect2(34, 547, 28, 28)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fc8b4"]
 size = Vector2(26, 25)
@@ -81,10 +85,7 @@ texture = ExtResource("2_kwc05")
 process_material = SubResource("ParticleProcessMaterial_j5jhs")
 
 [node name="item" type="Sprite2D" parent="rock"]
-texture = ExtResource("1_x2jte")
-hframes = 16
-vframes = 27
-frame = 273
+texture = SubResource("AtlasTexture_ojyb2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="rock"]
 position = Vector2(0, -1.5)

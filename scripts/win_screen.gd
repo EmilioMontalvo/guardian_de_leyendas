@@ -1,9 +1,16 @@
 extends Control
 
+@export var textureAtlas:AtlasTexture
+@export var nextLevel:PackedScene
+@export var newText=""
+
+@onready var labelFind=$Panel/LabelFind
+@onready var texture=$Panel/TextureRect
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+func _ready():	
+	texture.texture=textureAtlas
+	labelFind.text=newText
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -12,4 +19,7 @@ func _process(delta):
 
 
 func _on_button_pressed():
-	get_tree().reload_current_scene()
+	if nextLevel is PackedScene:
+		get_tree().change_scene_to_packed(nextLevel)
+	else:
+		get_tree().reload_current_scene()
