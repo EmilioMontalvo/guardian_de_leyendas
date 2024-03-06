@@ -1,8 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://c555n38ov4sv3"]
+[gd_scene load_steps=11 format=3 uid="uid://c555n38ov4sv3"]
 
 [ext_resource type="Script" path="res://scripts/inventory_slot.gd" id="1_6oujf"]
 [ext_resource type="Texture2D" uid="uid://16t0x3jcyk6n" path="res://assets/items/posion_healt.png" id="2_7qtmh"]
+[ext_resource type="Texture2D" uid="uid://cg37b4gfgsxcb" path="res://assets/items/inventory_slot.png" id="2_85sbq"]
 [ext_resource type="FontFile" uid="uid://bs2y8sblpvw12" path="res://assets/fonts/IrishGrover-Regular.ttf" id="3_0fw0h"]
+[ext_resource type="Texture2D" uid="uid://dq6lbbb2bvsx8" path="res://assets/items/inventory_slot_details.png" id="5_7dq4n"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_83ldr"]
 font = ExtResource("3_0fw0h")
@@ -40,36 +42,22 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_6oujf")
 
-[node name="OuterBorder" type="ColorRect" parent="."]
+[node name="SlotTexture" type="TextureRect" parent="."]
 layout_mode = 0
 offset_right = 50.0
 offset_bottom = 50.0
-color = Color(0.345098, 0.701961, 0.780392, 1)
+texture = ExtResource("2_85sbq")
 
-[node name="InnerBorder" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.745098, 0.745098, 0.745098, 1)
-
-[node name="ItemIcon" type="Sprite2D" parent="InnerBorder"]
-position = Vector2(20, 20)
+[node name="ItemIcon" type="Sprite2D" parent="SlotTexture"]
+position = Vector2(25, 25)
 texture = ExtResource("2_7qtmh")
 
-[node name="ItemQuantity" type="Label" parent="InnerBorder"]
+[node name="ItemQuantity" type="Label" parent="SlotTexture"]
 layout_mode = 0
-offset_left = 3.0
-offset_right = 43.0
-offset_bottom = 23.0
+offset_left = 8.0
+offset_top = 5.0
+offset_right = 48.0
+offset_bottom = 28.0
 text = "1"
 label_settings = SubResource("LabelSettings_83ldr")
 
@@ -82,19 +70,20 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_s2lix")
 
-[node name="DetailsPanel" type="ColorRect" parent="."]
+[node name="DetailsPanel" type="TextureRect" parent="."]
 visible = false
-layout_mode = 2
+layout_mode = 0
 offset_top = -42.0
 offset_right = 85.0
 offset_bottom = -2.0
-color = Color(0.19948, 0.474803, 0.534629, 1)
+texture = ExtResource("5_7dq4n")
 
 [node name="ItemName" type="Label" parent="DetailsPanel"]
 layout_mode = 0
-offset_left = 2.0
-offset_right = 42.0
-offset_bottom = 23.0
+offset_left = 5.0
+offset_top = 2.0
+offset_right = 45.0
+offset_bottom = 25.0
 text = "NAME"
 label_settings = SubResource("LabelSettings_f2ruw")
 
@@ -103,10 +92,10 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 2.0
-offset_top = -5.0
-offset_right = 42.0
-offset_bottom = 18.0
+offset_left = 5.0
+offset_top = -3.0
+offset_right = 45.0
+offset_bottom = 20.0
 grow_vertical = 2
 text = "Type"
 label_settings = SubResource("LabelSettings_3pwxb")
@@ -116,21 +105,21 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 2.0
+offset_left = 5.0
 offset_top = -10.0
-offset_right = 42.0
+offset_right = 45.0
 offset_bottom = 13.0
 grow_vertical = 0
 text = "Effect"
 label_settings = SubResource("LabelSettings_ysfr0")
 
-[node name="UsagePanel" type="ColorRect" parent="."]
+[node name="UsagePanel" type="TextureRect" parent="."]
 visible = false
 layout_mode = 0
-offset_top = -47.0
-offset_right = 75.0
-offset_bottom = -2.0
-color = Color(0.19948, 0.474803, 0.534629, 1)
+offset_top = -55.0
+offset_right = 85.0
+offset_bottom = -3.0
+texture = ExtResource("5_7dq4n")
 
 [node name="BtnUse" type="Button" parent="UsagePanel"]
 layout_mode = 1
@@ -138,9 +127,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -35.0
-offset_top = 1.0
+offset_top = 5.0
 offset_right = 35.0
-offset_bottom = 22.0
+offset_bottom = 26.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("3_0fw0h")
 theme_override_font_sizes/font_size = 10
@@ -154,9 +143,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -35.0
-offset_top = -22.0
+offset_top = -24.0
 offset_right = 35.0
-offset_bottom = -1.0
+offset_bottom = -3.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("3_0fw0h")
