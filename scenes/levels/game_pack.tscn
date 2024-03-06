@@ -74,6 +74,7 @@ position = Vector2(391, 206)
 [node name="Deathzone" parent="." instance=ExtResource("9_k8t5s")]
 
 [connection signal="hurt_signal" from="Player" to="." method="_on_player_hurt_signal"]
+[connection signal="life_updated" from="Player" to="." method="_on_player_life_updated"]
 [connection signal="collected" from="Item" to="." method="_on_item_collected"]
 [connection signal="body_entered" from="Deathzone" to="." method="_on_deathzone_body_entered"]
 

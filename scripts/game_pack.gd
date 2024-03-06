@@ -1,9 +1,8 @@
 extends Node2D
 
-@export var health = 100
-@export var actual_health = 100
 @export var history_dialog: Array[String]=["hola","como estas"]
 @export var textureAtlasItem:AtlasTexture
+@export var damage = 20
 
 @onready var player=$Player
 @onready var hud=$Hud/HUD
@@ -29,9 +28,9 @@ func _ready():
 		win_screen._ready()
 
 func _get_damage():
-	health-=20
-	hud.set_life_bar_value(health)
-	if health<=0:
+	var actual_life = player.get_damage(damage)
+	hud.set_life_bar_value(actual_life)
+	if actual_life<=0:
 		reset_player()
 
 func _show_history():
@@ -42,8 +41,8 @@ func _show_history():
 func reset_player():
 	player.velocity = Vector2.ZERO
 	player.global_position=start_position.global_position
-	health=100
-	hud.set_life_bar_value(health)
+	player.set_life(100)
+	hud.set_life_bar_value(player.life)
 
 func _on_item_collected():
 	
@@ -57,3 +56,6 @@ func _on_deathzone_body_entered(body):
 
 func _on_player_hurt_signal():
 	_get_damage()
+
+func _on_player_life_updated():
+	hud.set_life_bar_value(player.life)

@@ -12,6 +12,8 @@ class_name Player
 @onready var inventory_ui = $Inventory_UI
 
 signal hurt_signal
+signal life_updated
+
 var active=true
 var isAttacking = false
 
@@ -85,6 +87,16 @@ func heal(health_quantity):
 	else:
 		life += health_quantity
 
+func get_damage(damage_quantity):
+	if life <= 0:
+		life = 0
+	else:
+		life -= damage_quantity
+	return life
+	
+func set_life(life_quantity):
+	life = life_quantity
+
 func increase_damage(damage_quantity):
 	hitbox.damage += damage_quantity
 
@@ -98,9 +110,11 @@ func apply_item_effect(item):
 	match item["effect"]:
 		"25 Health":
 			heal(25)
+			life_updated.emit()
 			print(life)
 		"10 Health":
 			heal(10)
+			life_updated.emit()
 		"25 Damage":
 			increase_damage(25)
 		_:
