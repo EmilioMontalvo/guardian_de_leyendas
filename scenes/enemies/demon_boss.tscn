@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://dr1ux3lp0cd56"]
+[gd_scene load_steps=73 format=3 uid="uid://dr1ux3lp0cd56"]
 
 [ext_resource type="Script" path="res://scripts/demon_boss.gd" id="1_8kync"]
 [ext_resource type="Texture2D" uid="uid://bdxqviu75h6f4" path="res://assets/enemy/03_demon_cleave/demon_cleave_1.png" id="2_nimnb"]
@@ -326,6 +326,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [Color(1, 0.792157, 0, 1)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AttackDamageArea/CollisionShape2D:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_pwhnp"]
 resource_name = "label"
@@ -366,8 +378,25 @@ tracks/2/keys = {
 "values": [Color(1, 0.792157, 0, 1), Color(1, 0.792157, 0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_rpnqv"]
+resource_name = "AttackDamage"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AttackDamageArea/CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.1, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_b234i"]
 _data = {
+"AttackDamage": SubResource("Animation_rpnqv"),
 "RESET": SubResource("Animation_3sbkd"),
 "label": SubResource("Animation_pwhnp")
 }
@@ -407,6 +436,7 @@ position = Vector2(11, 31)
 shape = SubResource("CapsuleShape2D_hsbsa")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="Enemy"]
+visible = false
 navigation_polygon = SubResource("NavigationPolygon_1ukdn")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="Enemy"]
@@ -429,6 +459,13 @@ libraries = {
 position = Vector2(-71.5, 43.5)
 shape = SubResource("RectangleShape2D_84ax2")
 
+[node name="AttackDamageArea" type="Area2D" parent="Enemy"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy/AttackDamageArea"]
+position = Vector2(-71.5, 43.5)
+shape = SubResource("RectangleShape2D_84ax2")
+disabled = true
+
 [node name="patrolPositions" type="Node2D" parent="."]
 
 [node name="start" type="Marker2D" parent="patrolPositions"]
@@ -439,3 +476,5 @@ position = Vector2(-605, -62)
 [connection signal="body_entered" from="Enemy/damageArea" to="Enemy" method="_on_damage_area_body_entered"]
 [connection signal="target_reached" from="Enemy/NavigationAgent2D" to="Enemy" method="_on_navigation_agent_2d_target_reached"]
 [connection signal="body_entered" from="Enemy/AttackArea" to="Enemy" method="_on_attack_area_body_entered"]
+[connection signal="body_exited" from="Enemy/AttackArea" to="Enemy" method="_on_attack_area_body_exited"]
+[connection signal="body_entered" from="Enemy/AttackDamageArea" to="Enemy" method="_on_attack_damage_area_body_entered"]

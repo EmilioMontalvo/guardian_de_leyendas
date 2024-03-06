@@ -23,6 +23,7 @@ var actualPosition=0;
 var target
 var attack_timer := Timer.new()
 var dead_timer := Timer.new()
+var player_on_damage_range = false
 
 
 signal touch_player
@@ -126,7 +127,18 @@ func _on_AttackTimer_timeout():
 	attack()
 
 func _on_attack_area_body_entered(body):
-	if body is Player:
+	player_on_damage_range = true
+	while body is Player and player_on_damage_range:
 		setState(4)
-		await get_tree().create_timer(2).timeout
+		animationPlayer.play("AttackDamage")
+		await get_tree().create_timer(1.5).timeout
 		setState(0)
+
+
+func _on_attack_damage_area_body_entered(body):
+	if body is Player:
+		touch_player.emit()
+
+
+func _on_attack_area_body_exited(body):
+	player_on_damage_range = false
