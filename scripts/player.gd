@@ -21,7 +21,8 @@ func _ready():
 func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
-		
+		if velocity.y > 700:
+			velocity.y = 700
 	var direction=0
 	if active:
 		if Input.is_action_just_pressed("attack"):
