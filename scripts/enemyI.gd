@@ -13,11 +13,18 @@ class_name Enemy
 @onready var nav = $NavigationAgent2D
 @onready var navPos=$"../patrolPositions"
 @onready var proyectile=preload("res://scenes/fireball.tscn")
+@onready var damageLabel=$DamageLabel
+@onready var animationPlayer=$AnimationPlayer
+@onready var damageArea=$damageArea
+@onready var hurtBox=$HurtBox
+
 
 var patrolArrayPositions
 var actualPosition=0;
 var target
 var attack_timer := Timer.new()
+var dead_timer := Timer.new()
+
 
 signal touch_player
 func _ready():	
@@ -38,6 +45,9 @@ func _physics_process(delta):
 		if velocity.y > 700:
 			velocity.y = 700
 	
+	if state == 1:
+		velocity.x=0
+		velocity.y=0
 	if state == 2:
 		velocity.x = speed * (-1 if flipH else 1)
 	if state == 3:
@@ -52,14 +62,20 @@ func _physics_process(delta):
 func kill():
 	# Cambia la animación del AnimatedSprite2D a "muerte"
 	setState(1)
-	# Espera unos segundos antes de eliminar el nodo
-	await get_tree().create_timer(2.0) 
-	# Elimina el nodo
+	damageArea.queue_free()
+	hurtBox.queue_free()
+	attack_timer.connect("timeout", _on_DeadTimer_timeout)
+	attack_timer.wait_time = 4
+	attack_timer.start()	
+	
+	
+
+func _on_DeadTimer_timeout():
 	queue_free()
 
-
-func _on_damage_area_body_entered(body):
-	if body is Player:
+func _on_damage_area_body_entered(body):	
+	if body is Player and state!=1:
+		print(state)
 		touch_player.emit()
 
 func setState(newState):
@@ -82,8 +98,9 @@ func setDirection(newDirection):
 	sprite.flip_h=newDirection
 	
 func hurt(damage):
+	damageLabel.text=str(-damage)
 	health-=damage
-	print(health)
+	animationPlayer.play("label")
 	if(health<=0):
 		kill()
 

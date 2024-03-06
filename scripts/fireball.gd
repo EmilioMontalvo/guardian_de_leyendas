@@ -9,8 +9,7 @@ signal touch_player
 func _ready():
 	if(direction!=1):
 		sprite.flip_h=true
-	print(direction)
-	
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

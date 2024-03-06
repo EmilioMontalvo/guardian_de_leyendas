@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://c5s11217j6fsq"]
+[gd_scene load_steps=43 format=3 uid="uid://c5s11217j6fsq"]
 
 [ext_resource type="Script" path="res://scripts/enemyI.gd" id="1_3jlvb"]
 [ext_resource type="Texture2D" uid="uid://drqk7opdt8pv5" path="res://assets/enemy/Imp Sprite Sheet.png" id="1_gp4qm"]
@@ -251,6 +251,92 @@ height = 12.0
 radius = 8.0
 height = 18.0
 
+[sub_resource type="SystemFont" id="SystemFont_7cngt"]
+
+[sub_resource type="Animation" id="Animation_pwhnp"]
+resource_name = "label"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DamageLabel:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DamageLabel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2, -26.5), Vector2(2, -18.64)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DamageLabel:theme_override_colors/font_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 0.792157, 0, 1), Color(1, 0.792157, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_3sbkd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DamageLabel:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DamageLabel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2, -26.5)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DamageLabel:theme_override_colors/font_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0.792157, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_b234i"]
+_data = {
+"RESET": SubResource("Animation_3sbkd"),
+"label": SubResource("Animation_pwhnp")
+}
+
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_4dn1h"]
 vertices = PackedVector2Array(96, -21, 238, -23, 245, 27, -24, 25, -32, 11, -14, -15)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5)])
@@ -289,6 +375,21 @@ script = ExtResource("3_qs6ak")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemyI/HurtBox"]
 position = Vector2(-1.5, 0)
 shape = SubResource("CapsuleShape2D_1leqt")
+
+[node name="DamageLabel" type="Label" parent="enemyI"]
+texture_filter = 5
+offset_left = 2.0
+offset_top = -26.5
+offset_right = 42.0
+offset_bottom = -0.5
+theme_override_colors/font_color = Color(1, 0.792157, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_7cngt")
+theme_override_font_sizes/font_size = 15
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="enemyI"]
+libraries = {
+"": SubResource("AnimationLibrary_b234i")
+}
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 position = Vector2(3, -7)
