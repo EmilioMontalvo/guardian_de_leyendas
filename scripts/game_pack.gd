@@ -45,10 +45,13 @@ func reset_player():
 	health=100
 	hud.set_life_bar_value(health)
 
-func _on_item_collected():
-	
+func _on_item_collected():	
 	player.set_active(false)
 	win_screen.visible=true
+	var enemies = get_tree().get_nodes_in_group("enemies")
+	for enemy in enemies:
+		enemy.queue_free()
+	
 
 func _on_deathzone_body_entered(body):
 	if body is Player:
