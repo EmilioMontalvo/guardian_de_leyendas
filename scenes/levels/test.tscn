@@ -62,5 +62,8 @@ item_effect = "25 Damage"
 [node name="DemonBoss" parent="." instance=ExtResource("9_y1aph")]
 position = Vector2(382, 160)
 
+[node name="Enemy" parent="DemonBoss" index="0"]
+health = 100
+
 [editable path="enemyI"]
 [editable path="DemonBoss"]

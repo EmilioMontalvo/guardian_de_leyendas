@@ -13,7 +13,7 @@ extends CharacterBody2D
 @onready var navPos=$"../patrolPositions"
 @onready var proyectile=preload("res://scenes/fireball.tscn")
 @onready var damageLabel=$DamageLabel
-#@onready var animationPlayer=$AnimationPlayer
+@onready var animationPlayer=$AnimationPlayer
 @onready var damageArea=$damageArea
 @onready var hurtBox=$HurtBox
 
@@ -65,7 +65,7 @@ func kill():
 	hurtBox.queue_free()
 	attack_timer.connect("timeout", _on_DeadTimer_timeout)
 	attack_timer.wait_time = 4
-	attack_timer.start()	
+	attack_timer.start()
 	
 	
 
@@ -88,7 +88,7 @@ func setState(newState):
 	if state == 3:
 		sprite.animation = "walk"
 	if state == 4:
-		pass
+		sprite.animation = "attack"
 	if state == 5:
 		sprite.animation = "death"
 
@@ -100,7 +100,9 @@ func hurt(damage):
 	damageLabel.text=str(-damage)
 	health-=damage
 	sprite.animation = "take_hit"
-	#animationPlayer.play("label")
+	animationPlayer.play("label")
+	await get_tree().create_timer(0.4).timeout
+	setState(0)
 	if(health<=0):
 		kill()
 
@@ -122,5 +124,9 @@ func _on_AttackTimer_timeout():
 	sprite.animation="attack"
 	sprite.play()
 	attack()
-	
-	
+
+func _on_attack_area_body_entered(body):
+	if body is Player:
+		setState(4)
+		await get_tree().create_timer(2).timeout
+		setState(0)

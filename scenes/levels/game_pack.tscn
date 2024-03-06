@@ -7,9 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://o1rwg5twohkm" path="res://scenes/background_church.tscn" id="3_elvkm"]
 [ext_resource type="PackedScene" uid="uid://cf0vg17dh1xxx" path="res://scenes/tile_map.tscn" id="3_w4eye"]
 [ext_resource type="PackedScene" uid="uid://w1tah6enxmdw" path="res://scenes/win_screen.tscn" id="4_j8w6a"]
-[ext_resource type="PackedScene" uid="uid://xhpdlfg4fipa" path="res://scenes/npc.tscn" id="4_mka5c"]
+[ext_resource type="PackedScene" uid="uid://cdvlub3cdxmst" path="res://scenes/npc.tscn" id="4_mka5c"]
 [ext_resource type="Texture2D" uid="uid://2u7ot0l58dfe" path="res://assets/items/Transparent Icons & Drop Shadow.png" id="5_414kj"]
-[ext_resource type="PackedScene" uid="uid://nxye476wpqax" path="res://scenes/item.tscn" id="6_6uooc"]
+[ext_resource type="PackedScene" path="res://scenes/item.tscn" id="6_6uooc"]
 [ext_resource type="PackedScene" uid="uid://gkrsh06calgh" path="res://scenes/levels/test.tscn" id="6_mqrvp"]
 [ext_resource type="PackedScene" uid="uid://dawaw6ovel2vb" path="res://scenes/deathzone.tscn" id="9_k8t5s"]
 
