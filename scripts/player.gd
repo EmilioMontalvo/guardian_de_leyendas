@@ -2,9 +2,9 @@ extends CharacterBody2D
 
 class_name Player
 
-@export var gravity = 400
+@export var gravity = 600
 @export var speed = 170
-@export var jumpforce = 250
+@export var jumpforce = 325
 @export var life = 100
 @onready var player = $AnimatedSprite2D
 @onready var hitbox_collision = $HitBox/CollisionShape2D
@@ -21,8 +21,7 @@ func _ready():
 func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
-		if velocity.y > 700:
-			velocity.y = 700
+		
 	var direction=0
 	if active:
 		if Input.is_action_just_pressed("attack"):
