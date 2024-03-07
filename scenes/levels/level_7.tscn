@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://dv2ty0eyxd5h5"]
+[gd_scene load_steps=32 format=3 uid="uid://dv2ty0eyxd5h5"]
 
 [ext_resource type="Script" path="res://scripts/game_pack.gd" id="1_c13ij"]
 [ext_resource type="Script" path="res://scripts/level_7.gd" id="1_hy2cp"]
@@ -21,6 +21,10 @@
 [ext_resource type="Texture2D" uid="uid://16t0x3jcyk6n" path="res://assets/items/posion_healt.png" id="17_2fmjs"]
 [ext_resource type="Texture2D" uid="uid://c8b3uppw6rxiy" path="res://assets/items/apple.png" id="20_r6t06"]
 [ext_resource type="Texture2D" uid="uid://cewg8jlnr02dk" path="res://assets/items/posion_damage.png" id="21_oq37s"]
+[ext_resource type="PackedScene" uid="uid://c2cu3j8r64utb" path="res://scenes/decorations/candelabrum.tscn" id="22_7aksh"]
+[ext_resource type="PackedScene" uid="uid://dwfd3wudwun0y" path="res://scenes/decorations/rock_3.tscn" id="23_3vsv6"]
+[ext_resource type="PackedScene" uid="uid://mlhp8jkfkpot" path="res://scenes/decorations/rock_2.tscn" id="24_wqu0y"]
+[ext_resource type="PackedScene" uid="uid://c3dqv5dy6rgrq" path="res://scenes/decorations/rock_1.tscn" id="25_vhbmc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_63sa2"]
 atlas = ExtResource("3_6mags")
@@ -880,7 +884,7 @@ item_texture = ExtResource("17_2fmjs")
 item_effect = "25 Health"
 
 [node name="inventory_item7" parent="." instance=ExtResource("16_mft57")]
-position = Vector2(5326, -32)
+position = Vector2(5287, -30)
 item_type = "Posion"
 item_name = "Health Posion"
 item_texture = ExtResource("17_2fmjs")
@@ -899,6 +903,104 @@ item_type = "Posion"
 item_name = "Damage Posion"
 item_texture = ExtResource("21_oq37s")
 item_effect = "25 Damage"
+
+[node name="decorations" type="Node" parent="."]
+
+[node name="Candelabrum" parent="decorations" instance=ExtResource("22_7aksh")]
+position = Vector2(408, 132)
+
+[node name="Candelabrum2" parent="decorations" instance=ExtResource("22_7aksh")]
+position = Vector2(329, 133)
+
+[node name="Rock3" parent="decorations" instance=ExtResource("23_3vsv6")]
+position = Vector2(871, 234)
+
+[node name="Rock2" parent="decorations" instance=ExtResource("24_wqu0y")]
+position = Vector2(895, 234)
+
+[node name="Rock1" parent="decorations" instance=ExtResource("25_vhbmc")]
+position = Vector2(932, 231)
+
+[node name="Rock4" parent="decorations" instance=ExtResource("23_3vsv6")]
+position = Vector2(1287, 181)
+
+[node name="Rock5" parent="decorations" instance=ExtResource("24_wqu0y")]
+position = Vector2(1057, 197)
+
+[node name="Rock6" parent="decorations" instance=ExtResource("23_3vsv6")]
+position = Vector2(1336, 236)
+
+[node name="Rock7" parent="decorations" instance=ExtResource("24_wqu0y")]
+position = Vector2(1361, 236)
+
+[node name="Rock8" parent="decorations" instance=ExtResource("25_vhbmc")]
+position = Vector2(1401, 232)
+
+[node name="Candelabrum3" parent="decorations" instance=ExtResource("22_7aksh")]
+position = Vector2(1963, 203)
+
+[node name="Rock9" parent="decorations" instance=ExtResource("23_3vsv6")]
+position = Vector2(2084, 172)
+
+[node name="Rock10" parent="decorations" instance=ExtResource("23_3vsv6")]
+position = Vector2(2249, 124)
+
+[node name="Rock11" parent="decorations" instance=ExtResource("25_vhbmc")]
+position = Vector2(2697, 88)
+
+[node name="Candelabrum4" parent="decorations" instance=ExtResource("22_7aksh")]
+position = Vector2(3306, -26)
+
+[node name="Candelabrum5" parent="decorations" instance=ExtResource("22_7aksh")]
+position = Vector2(3268, 133)
+
+[node name="Rock12" parent="decorations" instance=ExtResource("23_3vsv6")]
+position = Vector2(3648, 233)
+
+[node name="Rock13" parent="decorations" instance=ExtResource("24_wqu0y")]
+position = Vector2(3826, 234)
+
+[node name="Rock14" parent="decorations" instance=ExtResource("24_wqu0y")]
+position = Vector2(4136, 165)
+
+[node name="Candelabrum6" parent="decorations" instance=ExtResource("22_7aksh")]
+position = Vector2(4458, 140)
+
+[node name="Candelabrum7" parent="decorations" instance=ExtResource("22_7aksh")]
+position = Vector2(4661, 140)
+
+[node name="Candelabrum8" parent="decorations" instance=ExtResource("22_7aksh")]
+position = Vector2(4760, 91)
+
+[node name="Candelabrum9" parent="decorations" instance=ExtResource("22_7aksh")]
+position = Vector2(4856, 91)
+
+[node name="Candelabrum10" parent="decorations" instance=ExtResource("22_7aksh")]
+position = Vector2(4934, 44)
+
+[node name="Candelabrum11" parent="decorations" instance=ExtResource("22_7aksh")]
+position = Vector2(5000, 44)
+
+[node name="Candelabrum12" parent="decorations" instance=ExtResource("22_7aksh")]
+position = Vector2(5079, -2)
+
+[node name="Candelabrum13" parent="decorations" instance=ExtResource("22_7aksh")]
+position = Vector2(5179, -3)
+
+[node name="Candelabrum14" parent="decorations" instance=ExtResource("22_7aksh")]
+position = Vector2(5239, -52)
+
+[node name="Candelabrum15" parent="decorations" instance=ExtResource("22_7aksh")]
+position = Vector2(5339, -53)
+
+[node name="Rock15" parent="decorations" instance=ExtResource("24_wqu0y")]
+position = Vector2(5835, -77)
+
+[node name="Rock16" parent="decorations" instance=ExtResource("24_wqu0y")]
+position = Vector2(6073, -77)
+
+[node name="Rock17" parent="decorations" instance=ExtResource("25_vhbmc")]
+position = Vector2(5905, -78)
 
 [connection signal="hurt_signal" from="GamePack/Player" to="GamePack" method="_on_player_hurt_signal" flags=18]
 [connection signal="life_updated" from="GamePack/Player" to="GamePack" method="_on_player_life_updated" flags=18]

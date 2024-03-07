@@ -1,16 +1,16 @@
-[gd_scene load_steps=15 format=3 uid="uid://ca6aahjmtolxd"]
+[gd_scene load_steps=15 format=3 uid="uid://dy2bxq1fqhdpm"]
 
 [ext_resource type="Script" path="res://scripts/game_pack.gd" id="1_ejhas"]
 [ext_resource type="Texture2D" uid="uid://dvut5d0u6eqso" path="res://assets/items/portrait50.png" id="2_24gck"]
 [ext_resource type="PackedScene" uid="uid://kduuyif10l0j" path="res://scenes/music/level_1_music.tscn" id="3_loigs"]
 [ext_resource type="PackedScene" uid="uid://c35t54lh48252" path="res://scenes/hud.tscn" id="4_cgmjw"]
 [ext_resource type="PackedScene" uid="uid://w1tah6enxmdw" path="res://scenes/win_screen.tscn" id="5_v168e"]
-[ext_resource type="PackedScene" uid="uid://gkrsh06calgh" path="res://scenes/levels/test.tscn" id="6_e8ko3"]
+[ext_resource type="PackedScene" uid="uid://bjp0yscgyt6bd" path="res://scenes/levels/level_4.tscn" id="6_k6n5n"]
 [ext_resource type="Texture2D" uid="uid://dlqg707fhmgc6" path="res://assets/backgrounds/carondelet_interior.jpg" id="7_yun65"]
 [ext_resource type="PackedScene" uid="uid://cf0vg17dh1xxx" path="res://scenes/tile_map.tscn" id="9_lyb0p"]
-[ext_resource type="PackedScene" uid="uid://xhpdlfg4fipa" path="res://scenes/npc.tscn" id="10_n83hv"]
+[ext_resource type="PackedScene" uid="uid://cdvlub3cdxmst" path="res://scenes/npc.tscn" id="10_n83hv"]
 [ext_resource type="PackedScene" uid="uid://cc2tnqso80rdb" path="res://scenes/player.tscn" id="11_rcpcj"]
-[ext_resource type="PackedScene" uid="uid://nxye476wpqax" path="res://scenes/item.tscn" id="12_184jg"]
+[ext_resource type="PackedScene" path="res://scenes/item.tscn" id="12_184jg"]
 [ext_resource type="PackedScene" uid="uid://c5s11217j6fsq" path="res://scenes/enemies/enemyI.tscn" id="13_1u0bw"]
 [ext_resource type="PackedScene" uid="uid://dawaw6ovel2vb" path="res://scenes/deathzone.tscn" id="13_crwnc"]
 
@@ -48,7 +48,7 @@ offset_left = 302.0
 offset_top = 174.0
 offset_right = 302.0
 offset_bottom = 174.0
-nextLevel = ExtResource("6_e8ko3")
+nextLevel = ExtResource("6_k6n5n")
 newText = "Has encontrado el retrato de Mariangula"
 
 [node name="Background" type="ParallaxBackground" parent="GamePack"]

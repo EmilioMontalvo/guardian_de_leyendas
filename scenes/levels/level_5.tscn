@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://kduuyif10l0j" path="res://scenes/music/level_1_music.tscn" id="3_ren8a"]
 [ext_resource type="PackedScene" uid="uid://c35t54lh48252" path="res://scenes/hud.tscn" id="4_eeond"]
 [ext_resource type="PackedScene" uid="uid://w1tah6enxmdw" path="res://scenes/win_screen.tscn" id="5_ovo4a"]
-[ext_resource type="PackedScene" uid="uid://gkrsh06calgh" path="res://scenes/levels/test.tscn" id="6_y8bps"]
+[ext_resource type="PackedScene" uid="uid://dfvnur2my1cvs" path="res://scenes/levels/level_6.tscn" id="6_1vcra"]
 [ext_resource type="PackedScene" uid="uid://o1rwg5twohkm" path="res://scenes/background_church.tscn" id="7_ioj0b"]
 [ext_resource type="Texture2D" uid="uid://cytj6cg0sg35j" path="res://assets/backgrounds/panecillo_background.jpg" id="8_74x54"]
 [ext_resource type="PackedScene" uid="uid://cf0vg17dh1xxx" path="res://scenes/tile_map.tscn" id="9_04qfj"]
@@ -57,7 +57,7 @@ offset_left = 302.0
 offset_top = 174.0
 offset_right = 302.0
 offset_bottom = 174.0
-nextLevel = ExtResource("6_y8bps")
+nextLevel = ExtResource("6_1vcra")
 newText = "Has encontrado a la virgen del panecillo"
 
 [node name="Background" parent="GamePack" instance=ExtResource("7_ioj0b")]
