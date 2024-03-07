@@ -17,5 +17,5 @@ func _on_portal_body_entered(body):
 		body.set_active(false)
 		portal_sound.play()
 		await get_tree().create_timer(5.5).timeout
-		get_tree().change_scene_to_file("res://scenes/level_1.tscn")
+		get_tree().change_scene_to_file("res://scenes/levels/level1_1.tscn")
 		
