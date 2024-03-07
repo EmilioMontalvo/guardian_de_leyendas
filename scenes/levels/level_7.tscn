@@ -608,12 +608,6 @@ position = Vector2(1480, 170)
 flipH = true
 state = 4
 
-[node name="Enemy3" parent="GamePack/enemies" groups=["enemies"] instance=ExtResource("13_6n1ek")]
-position = Vector2(1619, 215)
-
-[node name="enemyI" parent="GamePack/enemies/Enemy3" index="0"]
-state = 3
-
 [node name="Enemy4" parent="GamePack/enemies" groups=["enemies"] instance=ExtResource("13_6n1ek")]
 position = Vector2(2301, 107)
 
@@ -638,12 +632,6 @@ position = Vector2(3492, 148)
 flipH = true
 state = 4
 
-[node name="Enemy8" parent="GamePack/enemies" groups=["enemies"] instance=ExtResource("13_6n1ek")]
-position = Vector2(3702, 215)
-
-[node name="enemyI" parent="GamePack/enemies/Enemy8" index="0"]
-state = 3
-
 [node name="Enemy9" parent="GamePack/enemies" groups=["enemies"] instance=ExtResource("13_6n1ek")]
 position = Vector2(3567, -107)
 
@@ -662,6 +650,12 @@ position = Vector2(6121, -75)
 
 [node name="Enemy" parent="GamePack/enemies/DemonBoss" index="0"]
 health = 500
+
+[node name="Enemy3" parent="GamePack/enemies" instance=ExtResource("13_6n1ek")]
+position = Vector2(1631, 220)
+
+[node name="enemyI" parent="GamePack/enemies/Enemy3" index="0"]
+state = 2
 
 [node name="traps" type="Node2D" parent="GamePack"]
 
@@ -1002,6 +996,12 @@ position = Vector2(6073, -77)
 [node name="Rock17" parent="decorations" instance=ExtResource("25_vhbmc")]
 position = Vector2(5905, -78)
 
+[node name="Enemy" parent="." instance=ExtResource("13_6n1ek")]
+position = Vector2(3710, 220)
+
+[node name="enemyI" parent="Enemy" index="0"]
+state = 3
+
 [connection signal="hurt_signal" from="GamePack/Player" to="GamePack" method="_on_player_hurt_signal" flags=18]
 [connection signal="life_updated" from="GamePack/Player" to="GamePack" method="_on_player_life_updated" flags=18]
 [connection signal="collected" from="GamePack/Item" to="GamePack" method="_on_item_collected" flags=18]
@@ -1012,13 +1012,13 @@ position = Vector2(5905, -78)
 [editable path="GamePack/Background"]
 [editable path="GamePack/enemies/Enemy"]
 [editable path="GamePack/enemies/Enemy2"]
-[editable path="GamePack/enemies/Enemy3"]
 [editable path="GamePack/enemies/Enemy4"]
 [editable path="GamePack/enemies/Enemy5"]
 [editable path="GamePack/enemies/Enemy6"]
 [editable path="GamePack/enemies/Enemy7"]
-[editable path="GamePack/enemies/Enemy8"]
 [editable path="GamePack/enemies/Enemy9"]
 [editable path="GamePack/enemies/Enemy10"]
 [editable path="GamePack/enemies/DemonBoss"]
+[editable path="GamePack/enemies/Enemy3"]
 [editable path="GamePack/Deathzone"]
+[editable path="Enemy"]
