@@ -1,0 +1,370 @@
+[gd_scene load_steps=42 format=3 uid="uid://cf5xnw8us3yei"]
+
+[ext_resource type="PackedScene" uid="uid://iawjt8e2jqao" path="res://scenes/levels/level1_1.tscn" id="2_0u3m5"]
+[ext_resource type="Texture2D" uid="uid://ct2m2g3smshmx" path="res://assets/backgrounds/original-86a7a396460489e18aebdb9390518429.png" id="3_rbgap"]
+[ext_resource type="PackedScene" uid="uid://cijhiokgjihyi" path="res://scenes/music/main_menu_music.tscn" id="3_w1vfa"]
+[ext_resource type="PackedScene" uid="uid://cjnvhd8ap7dqf" path="res://scenes/city.tscn" id="4_hsihl"]
+[ext_resource type="PackedScene" uid="uid://cf0vg17dh1xxx" path="res://scenes/tile_map.tscn" id="5_rpic4"]
+[ext_resource type="AudioStream" uid="uid://34bhyu8q6y7" path="res://assets/sounds/portal_sound.mp3" id="6_bhysx"]
+[ext_resource type="Texture2D" uid="uid://dvut5d0u6eqso" path="res://assets/items/portrait50.png" id="6_yygfm"]
+[ext_resource type="Texture2D" uid="uid://2u7ot0l58dfe" path="res://assets/items/Transparent Icons & Drop Shadow.png" id="7_868fb"]
+[ext_resource type="PackedScene" uid="uid://73kvq24xbsud" path="res://scenes/portal.tscn" id="7_o3cfr"]
+[ext_resource type="FontFile" uid="uid://dm8i0plt3ulbs" path="res://assets/fonts/VIDEOPHREAK.ttf" id="8_ile27"]
+[ext_resource type="Texture2D" uid="uid://d3nkaa8ihvlj8" path="res://assets/items/virgen_panecillo.png" id="8_sw3wu"]
+[ext_resource type="Texture2D" uid="uid://duit0aee77j02" path="res://assets/items/piano.png" id="9_5mmns"]
+[ext_resource type="PackedScene" uid="uid://cv44tt0pd3axe" path="res://scenes/enemy.tscn" id="9_t3eel"]
+[ext_resource type="Texture2D" uid="uid://d6om4i0r8tc7" path="res://assets/items/stone_heart.png" id="10_6fl50"]
+[ext_resource type="PackedScene" uid="uid://c3dqv5dy6rgrq" path="res://scenes/decorations/rock_1.tscn" id="10_v57ld"]
+[ext_resource type="PackedScene" uid="uid://mlhp8jkfkpot" path="res://scenes/decorations/rock_2.tscn" id="11_dncoe"]
+[ext_resource type="PackedScene" uid="uid://dwfd3wudwun0y" path="res://scenes/decorations/rock_3.tscn" id="12_hq146"]
+[ext_resource type="PackedScene" uid="uid://c2cu3j8r64utb" path="res://scenes/decorations/candelabrum.tscn" id="13_x5r1f"]
+[ext_resource type="PackedScene" uid="uid://du7ayn8ev0y8s" path="res://scenes/levels/level_2.tscn" id="14_cyq1c"]
+[ext_resource type="PackedScene" uid="uid://cc2tnqso80rdb" path="res://scenes/player.tscn" id="14_yijkd"]
+[ext_resource type="Texture2D" uid="uid://j0c1608p7vt6" path="res://assets/enemy/Chicken_Sprite_Sheet_Gray.png" id="15_0fmck"]
+[ext_resource type="PackedScene" uid="uid://dy2bxq1fqhdpm" path="res://scenes/levels/level_3.tscn" id="15_out1g"]
+[ext_resource type="PackedScene" uid="uid://bjp0yscgyt6bd" path="res://scenes/levels/level_4.tscn" id="16_u5t3u"]
+[ext_resource type="PackedScene" uid="uid://dd4mg2hmymxky" path="res://scenes/levels/level_5.tscn" id="17_gmqnw"]
+[ext_resource type="PackedScene" uid="uid://dfvnur2my1cvs" path="res://scenes/levels/level_6.tscn" id="18_ybvew"]
+[ext_resource type="PackedScene" uid="uid://dv2ty0eyxd5h5" path="res://scenes/levels/level_7.tscn" id="19_x4k1g"]
+[ext_resource type="Texture2D" uid="uid://evum62c4yxy" path="res://assets/decorations/lamp.png" id="26_ldo8c"]
+[ext_resource type="Texture2D" uid="uid://b1r86ibcp7rev" path="res://assets/decorations/bag_2.png" id="27_l0t1l"]
+[ext_resource type="Texture2D" uid="uid://fvqufv7nnc3" path="res://assets/decorations/sign.png" id="28_0chcd"]
+[ext_resource type="Texture2D" uid="uid://cmfysole23ohh" path="res://assets/decorations/rock_3.png" id="29_72ge3"]
+[ext_resource type="Texture2D" uid="uid://csxmbstnb3ogc" path="res://assets/decorations/rock_2.png" id="30_md7o0"]
+[ext_resource type="Texture2D" uid="uid://dgqb2vgt5g0s3" path="res://assets/decorations/candelabrum_tall_6.png" id="31_6214e"]
+[ext_resource type="Texture2D" uid="uid://bd0rh11x8uagi" path="res://assets/items/gallo_de_la_catedral50.png" id="33_enomb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w6vjd"]
+atlas = ExtResource("15_0fmck")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rbhit"]
+atlas = ExtResource("15_0fmck")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_irjvw"]
+atlas = ExtResource("15_0fmck")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wn0fx"]
+atlas = ExtResource("15_0fmck")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_32wrn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w6vjd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rbhit")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_irjvw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wn0fx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vcyme"]
+atlas = ExtResource("7_868fb")
+region = Rect2(39, 355, 19, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qie3n"]
+atlas = ExtResource("7_868fb")
+region = Rect2(35, 548, 27, 27)
+
+[sub_resource type="LabelSettings" id="LabelSettings_x1mpl"]
+font = ExtResource("8_ile27")
+font_size = 20
+
+[node name="menu_final" type="Node2D"]
+
+[node name="MainMenu" type="Node2D" parent="."]
+
+[node name="MainMenu" parent="MainMenu" instance=ExtResource("3_w1vfa")]
+
+[node name="City" parent="MainMenu" instance=ExtResource("4_hsihl")]
+
+[node name="Sprite2D2" parent="MainMenu/City/ParallaxLayer" index="3"]
+position = Vector2(1330, -5)
+texture = ExtResource("3_rbgap")
+
+[node name="TileMap" parent="MainMenu" instance=ExtResource("5_rpic4")]
+position = Vector2(-30, 233)
+layer_0/tile_data = PackedInt32Array(131070, 655360, 1, 131071, 786432, 1, 65536, 720896, 1, 65537, 655360, 1, 65538, 524288, 1, 65539, 720896, 1, 65540, 589824, 1, 3, 786432, 0, 2, 720896, 0, 1, 655360, 0, 0, 786432, 0, 65535, 589824, 0, 65541, 720896, 1, 4, 524288, 0, 65534, 655360, 0, 65542, 720896, 1, 6, 720896, 0, 5, 655360, 0, 65533, 720896, 0, 65532, 720896, 0, 131068, 720896, 1, 131069, 720896, 1, 65531, 589824, 0, 131066, 786432, 1, 131067, 589824, 1, 131065, 589824, 1, 131064, 720896, 1, 65543, 589824, 1, 65544, 655360, 1, 8, 589824, 0, 7, 524288, 0, 131063, 524288, 1, 65545, 720896, 1, 65546, 524288, 1, 10, 655360, 0, 9, 655360, 0, 11, 589824, 0, 12, 524288, 0, 65548, 720896, 1, 65547, 655360, 1, -196616, 131073, 4, -131080, 65537, 4, -65544, 131073, 4, -8, 65537, 5, -7, 131073, 5, -6, 131073, 5, -65542, 65537, 4, -131078, 196609, 3, -131079, 196609, 4, -196615, 196609, 3, -65543, 65537, 4, -65541, 196609, 3, -5, 65537, 5, -4, 196609, 5, -9, 1, 5, -65545, 1, 4, -131081, 1, 4, -196617, 1, 4, -262153, 1, 4, -262152, 196609, 4, -327689, 1, 3, -327688, 196609, 3, 131061, 720896, 1, 131062, 655360, 1, 13, 655360, 0, 14, 720896, 0, 15, 720896, 0, 65549, 524288, 1, 65550, 786432, 1, 65551, 589824, 1, 65552, 655360, 1, 16, 524288, 0, 17, 655360, 0, 18, 720896, 0, 19, 720896, 0, 65553, 589824, 1, 65554, 524288, 1, 65555, 786432, 1, 65556, 786432, 1, 20, 524288, 0, 65522, 458752, 0, 131060, 786432, 1, 131059, 589824, 1, 131058, 458752, 1, 65557, 786432, 1, 21, 589824, 0, 22, 786432, 0, 65558, 589824, 1, 65559, 720896, 1, 23, 655360, 0, 24, 524288, 0, 65560, 786432, 1, 25, 655360, 0, 26, 786432, 0, 27, 524288, 0, 28, 524288, 0, 29, 720896, 0, 30, 786432, 0, 31, 655360, 0, 65561, 589824, 1, 65562, 589824, 1, 65563, 589824, 1, 65564, 655360, 1, 65565, 720896, 1, 65566, 786432, 1, 65567, 524288, 1, 65568, 786432, 1, 32, 655360, 0, 65569, 524288, 1, 65570, 786432, 1, 34, 786432, 0, 33, 589824, 0, 65530, 524288, 0, 65529, 720896, 0, 65528, 589824, 0, 65527, 720896, 0, 65526, 786432, 0, 65525, 786432, 0, 65524, 524288, 0, 65523, 720896, 0, 35, 786432, 0, 36, 524288, 0, 37, 720896, 0, 38, 524288, 0, 39, 720896, 0, 40, 589824, 0, 41, 589824, 0, 42, 655360, 0, 43, 720896, 0, 44, 720896, 0, 45, 720896, 0, 46, 589824, 0, 47, 655360, 0, 48, 720896, 0, 49, 720896, 0, 65609, 720896, 1, 73, 655360, 0, 65608, 589824, 1, 72, 589824, 0, 65607, 524288, 1, 71, 524288, 0, 65606, 524288, 1, 70, 589824, 0, 65605, 655360, 1, 69, 720896, 0, 65604, 786432, 1, 68, 720896, 0, 65603, 524288, 1, 67, 589824, 0, 65602, 524288, 1, 66, 786432, 0, 65601, 655360, 1, 65, 589824, 0, 65600, 589824, 1, 64, 720896, 0, 65599, 655360, 1, 63, 524288, 0, 65598, 720896, 1, 62, 655360, 0, 65597, 524288, 1, 61, 589824, 0, 65596, 589824, 1, 60, 524288, 0, 65595, 589824, 1, 59, 655360, 0, 65594, 524288, 1, 58, 720896, 0, 65593, 524288, 1, 57, 524288, 0, 65592, 655360, 1, 56, 524288, 0, 65591, 589824, 1, 55, 720896, 0, 65590, 524288, 1, 54, 589824, 0, 65589, 524288, 1, 53, 655360, 0, 65588, 720896, 1, 52, 655360, 0, 65587, 786432, 1, 51, 524288, 0, 65586, 786432, 1, 50, 524288, 0, 65585, 786432, 1, 65584, 524288, 1, 65583, 589824, 1, 65582, 524288, 1, 65581, 786432, 1, 65580, 524288, 1, 65579, 589824, 1, 65578, 524288, 1, 65577, 655360, 1, 65576, 589824, 1, 65575, 655360, 1, 65574, 786432, 1, 65573, 655360, 1, 65572, 655360, 1, 65571, 720896, 1, 65634, 655360, 1, 65633, 786432, 1, 97, 655360, 0, 65632, 786432, 1, 96, 524288, 0, 65631, 655360, 1, 95, 524288, 0, 65630, 524288, 1, 94, 524288, 0, 65629, 524288, 1, 93, 786432, 0, 65628, 720896, 1, 92, 524288, 0, 65627, 655360, 1, 91, 786432, 0, 65626, 589824, 1, 90, 524288, 0, 65625, 524288, 1, 89, 720896, 0, 65624, 655360, 1, 88, 786432, 0, 65623, 589824, 1, 87, 524288, 0, 65622, 589824, 1, 86, 589824, 0, 65621, 655360, 1, 85, 589824, 0, 65620, 720896, 1, 84, 786432, 0, 65619, 524288, 1, 83, 655360, 0, 65618, 524288, 1, 82, 524288, 0, 65617, 589824, 1, 81, 720896, 0, 65616, 524288, 1, 80, 655360, 0, 65615, 786432, 1, 79, 655360, 0, 65614, 720896, 1, 78, 786432, 0, 65613, 786432, 1, 77, 524288, 0, 65612, 786432, 1, 76, 786432, 0, 65611, 786432, 1, 75, 589824, 0, 65610, 589824, 1, 74, 786432, 0, 122, 524288, 0, 121, 524288, 0, 120, 655360, 0, 119, 720896, 0, 118, 524288, 0, 117, 655360, 0, 116, 786432, 0, 115, 655360, 0, 114, 655360, 0, 113, 720896, 0, 112, 720896, 0, 111, 524288, 0, 110, 720896, 0, 109, 524288, 0, 108, 655360, 0, 107, 786432, 0, 106, 786432, 0, 105, 786432, 0, 104, 655360, 0, 103, 786432, 0, 102, 655360, 0, 101, 524288, 0, 100, 786432, 0, 99, 720896, 0, 98, 524288, 0, 65658, 720896, 1, 65657, 589824, 1, 65656, 786432, 1, 65655, 720896, 1, 65654, 524288, 1, 65653, 589824, 1, 65652, 655360, 1, 65651, 589824, 1, 65650, 655360, 1, 65649, 786432, 1, 65648, 524288, 1, 65647, 786432, 1, 65646, 655360, 1, 65645, 655360, 1, 65644, 589824, 1, 65643, 720896, 1, 65642, 655360, 1, 65641, 786432, 1, 65640, 786432, 1, 65639, 720896, 1, 65638, 786432, 1, 65637, 589824, 1, 65636, 786432, 1, 65635, 655360, 1, 128, 655360, 0, 127, 589824, 0, 126, 524288, 0, 125, 655360, 0, 124, 720896, 0, 123, 786432, 0, 65664, 720896, 1, 65663, 589824, 1, 65662, 786432, 1, 65661, 524288, 1, 65660, 524288, 1, 65659, 524288, 1, -65416, 131073, 4, -130952, 65537, 4, -65417, 65537, 4, -130953, 65537, 4, -65418, 65537, 4, -130954, 65537, 4, -65419, 65537, 4, -130955, 131073, 4, -65420, 131073, 4, -130956, 65537, 4, -65421, 65537, 4, -130957, 131073, 4, -65422, 65537, 4, -130958, 131073, 4, -65423, 65537, 4, -130959, 131073, 4, -65424, 65537, 4, -130960, 65537, 4, -65425, 65537, 4, -130961, 131073, 4, -65426, 131073, 4, -130962, 65537, 4, -65427, 131073, 4, -130963, 131073, 4, -65428, 65537, 4, -130964, 131073, 4, -65429, 65537, 4, -130965, 131073, 4, -65430, 65537, 4, -130966, 65537, 4, -65431, 65537, 4, -130967, 65537, 4, -65432, 131073, 4, -130968, 65537, 4, -65433, 131073, 4, -130969, 65537, 4, -327562, 65537, 4, -327563, 65537, 4, -327564, 131073, 4, -327565, 131073, 4, -327566, 65537, 4, -327567, 65537, 4, -327568, 131073, 4, -327569, 65537, 4, -327570, 65537, 4, -327571, 65537, 4, -327572, 131073, 4, -327573, 131073, 4, -327574, 65537, 4, -327575, 1, 4, -196489, 65537, 4, -262025, 131073, 4, -196490, 131073, 4, -262026, 131073, 4, -196491, 65537, 4, -262027, 65537, 4, -196492, 131073, 4, -262028, 131073, 4, -196493, 65537, 4, -262029, 65537, 4, -196494, 65537, 4, -262030, 65537, 4, -196495, 131073, 4, -262031, 131073, 4, -196496, 65537, 4, -262032, 131073, 4, -196497, 131073, 4, -262033, 65537, 4, -196498, 65537, 4, -262034, 65537, 4, -196499, 65537, 4, -262035, 131073, 4, -196500, 131073, 4, -262036, 131073, 4, -196501, 131073, 4, -262037, 131073, 4, -196502, 131073, 4, -262038, 131073, 4, -196503, 65537, 4, -262039, 131073, 4, -196504, 131073, 4, -262040, 1, 4, -196488, 131073, 4, -196505, 1, 4, -65415, 65537, 4, -130951, 131073, 4, -65434, 131073, 4, -130970, 1, 4, -65414, 65537, 4, -65435, 131073, 4)
+
+[node name="PortalSound" type="AudioStreamPlayer2D" parent="MainMenu"]
+stream = ExtResource("6_bhysx")
+
+[node name="indicators" type="Node2D" parent="MainMenu"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainMenu/indicators"]
+position = Vector2(610, 220)
+sprite_frames = SubResource("SpriteFrames_32wrn")
+autoplay = "default"
+
+[node name="Portrait50" type="Sprite2D" parent="MainMenu/indicators"]
+position = Vector2(895, 106)
+texture = ExtResource("6_yygfm")
+
+[node name="espejo" type="Sprite2D" parent="MainMenu/indicators"]
+position = Vector2(1103, 101)
+texture = SubResource("AtlasTexture_vcyme")
+
+[node name="Sprite2D" type="Sprite2D" parent="MainMenu/indicators"]
+position = Vector2(373, 100)
+texture = SubResource("AtlasTexture_qie3n")
+
+[node name="VirgenPanecillo" type="Sprite2D" parent="MainMenu/indicators"]
+position = Vector2(1304, 78)
+texture = ExtResource("8_sw3wu")
+
+[node name="piano" type="Sprite2D" parent="MainMenu/indicators"]
+
+[node name="Piano" type="Sprite2D" parent="MainMenu/indicators"]
+position = Vector2(1503, 88)
+texture = ExtResource("9_5mmns")
+
+[node name="StoneHeart" type="Sprite2D" parent="MainMenu/indicators"]
+position = Vector2(1765, 12)
+texture = ExtResource("10_6fl50")
+
+[node name="portals" type="Node2D" parent="MainMenu"]
+
+[node name="Portal2" parent="MainMenu/portals" instance=ExtResource("7_o3cfr")]
+position = Vector2(661, 185)
+next_level = ExtResource("14_cyq1c")
+
+[node name="Control" type="Control" parent="MainMenu/portals/Portal2"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -498.667
+offset_top = -246.667
+offset_right = -458.667
+offset_bottom = -206.667
+
+[node name="Label" type="Label" parent="MainMenu/portals/Portal2/Control"]
+layout_mode = 0
+offset_left = 469.333
+offset_top = 153.333
+offset_right = 534.333
+offset_bottom = 183.333
+text = "Nivel 2"
+label_settings = SubResource("LabelSettings_x1mpl")
+
+[node name="Portal" parent="MainMenu/portals" instance=ExtResource("7_o3cfr")]
+position = Vector2(374, 185)
+next_level = ExtResource("2_0u3m5")
+
+[node name="Control" type="Control" parent="MainMenu/portals/Portal"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -498.667
+offset_top = -246.667
+offset_right = -458.667
+offset_bottom = -206.667
+
+[node name="Label" type="Label" parent="MainMenu/portals/Portal/Control"]
+layout_mode = 0
+offset_left = 469.333
+offset_top = 153.333
+offset_right = 534.333
+offset_bottom = 183.333
+text = "Nivel 1"
+label_settings = SubResource("LabelSettings_x1mpl")
+
+[node name="Portal3" parent="MainMenu/portals" instance=ExtResource("7_o3cfr")]
+position = Vector2(895, 184)
+next_level = ExtResource("15_out1g")
+
+[node name="Control" type="Control" parent="MainMenu/portals/Portal3"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -498.667
+offset_top = -246.667
+offset_right = -458.667
+offset_bottom = -206.667
+
+[node name="Label" type="Label" parent="MainMenu/portals/Portal3/Control"]
+layout_mode = 0
+offset_left = 469.333
+offset_top = 153.333
+offset_right = 534.333
+offset_bottom = 183.333
+text = "Nivel 3"
+label_settings = SubResource("LabelSettings_x1mpl")
+
+[node name="Portal4" parent="MainMenu/portals" instance=ExtResource("7_o3cfr")]
+position = Vector2(1102, 184)
+next_level = ExtResource("16_u5t3u")
+
+[node name="Control" type="Control" parent="MainMenu/portals/Portal4"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -498.667
+offset_top = -246.667
+offset_right = -458.667
+offset_bottom = -206.667
+
+[node name="Label" type="Label" parent="MainMenu/portals/Portal4/Control"]
+layout_mode = 0
+offset_left = 469.333
+offset_top = 153.333
+offset_right = 534.333
+offset_bottom = 183.333
+text = "Nivel 4"
+label_settings = SubResource("LabelSettings_x1mpl")
+
+[node name="Portal5" parent="MainMenu/portals" instance=ExtResource("7_o3cfr")]
+position = Vector2(1305, 183)
+next_level = ExtResource("17_gmqnw")
+
+[node name="Control" type="Control" parent="MainMenu/portals/Portal5"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -498.667
+offset_top = -246.667
+offset_right = -458.667
+offset_bottom = -206.667
+
+[node name="Label" type="Label" parent="MainMenu/portals/Portal5/Control"]
+layout_mode = 0
+offset_left = 469.333
+offset_top = 153.333
+offset_right = 534.333
+offset_bottom = 183.333
+text = "Nivel 5"
+label_settings = SubResource("LabelSettings_x1mpl")
+
+[node name="Portal6" parent="MainMenu/portals" instance=ExtResource("7_o3cfr")]
+position = Vector2(1501, 183)
+next_level = ExtResource("18_ybvew")
+
+[node name="Control" type="Control" parent="MainMenu/portals/Portal6"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -498.667
+offset_top = -246.667
+offset_right = -458.667
+offset_bottom = -206.667
+
+[node name="Label" type="Label" parent="MainMenu/portals/Portal6/Control"]
+layout_mode = 0
+offset_left = 469.333
+offset_top = 153.333
+offset_right = 534.333
+offset_bottom = 183.333
+text = "Nivel 6"
+label_settings = SubResource("LabelSettings_x1mpl")
+
+[node name="Portal7" parent="MainMenu/portals" instance=ExtResource("7_o3cfr")]
+position = Vector2(1763, 103)
+next_level = ExtResource("19_x4k1g")
+
+[node name="Control" type="Control" parent="MainMenu/portals/Portal7"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -498.667
+offset_top = -246.667
+offset_right = -458.667
+offset_bottom = -206.667
+
+[node name="Label" type="Label" parent="MainMenu/portals/Portal7/Control"]
+layout_mode = 0
+offset_left = 469.333
+offset_top = 153.333
+offset_right = 534.333
+offset_bottom = 183.333
+text = "Nivel 7"
+label_settings = SubResource("LabelSettings_x1mpl")
+
+[node name="Enemy" parent="MainMenu" instance=ExtResource("9_t3eel")]
+position = Vector2(283, 202)
+
+[node name="Decorations" type="Node2D" parent="MainMenu"]
+position = Vector2(160, -56)
+
+[node name="Rock1" parent="MainMenu/Decorations" instance=ExtResource("10_v57ld")]
+position = Vector2(58, 287)
+
+[node name="Rock2" parent="MainMenu/Decorations" instance=ExtResource("11_dncoe")]
+position = Vector2(321, 290)
+
+[node name="Rock4" parent="MainMenu/Decorations" instance=ExtResource("12_hq146")]
+position = Vector2(-191, 291)
+
+[node name="Candelabrum" parent="MainMenu/Decorations" instance=ExtResource("13_x5r1f")]
+position = Vector2(150, 260)
+
+[node name="Candelabrum2" parent="MainMenu/Decorations" instance=ExtResource("13_x5r1f")]
+position = Vector2(276, 260)
+
+[node name="Lamp" type="Sprite2D" parent="MainMenu/Decorations"]
+position = Vector2(551, 261)
+texture = ExtResource("26_ldo8c")
+
+[node name="Bag2" type="Sprite2D" parent="MainMenu/Decorations"]
+position = Vector2(687, 279)
+texture = ExtResource("27_l0t1l")
+
+[node name="Bag3" type="Sprite2D" parent="MainMenu/Decorations"]
+position = Vector2(780, 278)
+texture = ExtResource("27_l0t1l")
+
+[node name="Sign" type="Sprite2D" parent="MainMenu/Decorations"]
+position = Vector2(985, 274)
+texture = ExtResource("28_0chcd")
+
+[node name="Sign2" type="Sprite2D" parent="MainMenu/Decorations"]
+position = Vector2(897, 276)
+texture = ExtResource("28_0chcd")
+
+[node name="Rock3" type="Sprite2D" parent="MainMenu/Decorations"]
+position = Vector2(1089, 277)
+texture = ExtResource("29_72ge3")
+
+[node name="Rock5" type="Sprite2D" parent="MainMenu/Decorations"]
+position = Vector2(1192, 280)
+texture = ExtResource("30_md7o0")
+
+[node name="CandelabrumTall6" type="Sprite2D" parent="MainMenu/Decorations"]
+position = Vector2(1546, 171)
+texture = ExtResource("31_6214e")
+
+[node name="CandelabrumTall7" type="Sprite2D" parent="MainMenu/Decorations"]
+position = Vector2(1655, 172)
+texture = ExtResource("31_6214e")
+
+[node name="CandelabrumTall8" type="Sprite2D" parent="MainMenu/Decorations"]
+position = Vector2(1437, 236)
+texture = ExtResource("31_6214e")
+
+[node name="CandelabrumTall9" type="Sprite2D" parent="MainMenu/Decorations"]
+position = Vector2(1771, 235)
+texture = ExtResource("31_6214e")
+
+[node name="Lamp2" type="Sprite2D" parent="MainMenu/Decorations"]
+position = Vector2(1293, 259)
+texture = ExtResource("26_ldo8c")
+
+[node name="Player" parent="MainMenu" instance=ExtResource("14_yijkd")]
+position = Vector2(-159, -31)
+
+[node name="GalloDeLaCatedral50" type="Sprite2D" parent="."]
+position = Vector2(671, 92)
+texture = ExtResource("33_enomb")
+
+[connection signal="body_entered" from="MainMenu/portals/Portal2" to="MainMenu/portals/Portal2" method="_on_body_entered"]
+[connection signal="body_entered" from="MainMenu/portals/Portal" to="MainMenu/portals/Portal" method="_on_body_entered"]
+[connection signal="body_entered" from="MainMenu/portals/Portal3" to="MainMenu/portals/Portal3" method="_on_body_entered"]
+[connection signal="body_entered" from="MainMenu/portals/Portal4" to="MainMenu/portals/Portal4" method="_on_body_entered"]
+[connection signal="body_entered" from="MainMenu/portals/Portal5" to="MainMenu/portals/Portal5" method="_on_body_entered"]
+[connection signal="body_entered" from="MainMenu/portals/Portal6" to="MainMenu/portals/Portal6" method="_on_body_entered"]
+[connection signal="body_entered" from="MainMenu/portals/Portal7" to="MainMenu/portals/Portal7" method="_on_body_entered"]
+
+[editable path="MainMenu/City"]
