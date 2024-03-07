@@ -2,6 +2,7 @@ extends Node2D
 
 @export var encounter=1
 @export var speed=200
+@export var gravity = 400200
 
 @onready var animator=$AnimationPlayer
 @onready var sprite=$CharacterBody2D/AnimatedSprite2D
@@ -20,9 +21,13 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if not body2d.is_on_floor():
+		body2d.velocity.y += gravity * delta
+		if body2d.velocity.y > 700:
+			body2d.velocity.y = 700
 	if running == true:
 		body2d.velocity.x=speed
-		body2d.move_and_slide()
+	body2d.move_and_slide()
 
 
 func _on_area_2d_body_entered(body):
