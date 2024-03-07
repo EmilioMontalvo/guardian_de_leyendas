@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://doek4qahi48ub"]
+[gd_scene load_steps=19 format=3 uid="uid://dd4mg2hmymxky"]
 
 [ext_resource type="Script" path="res://scripts/game_pack.gd" id="1_0miac"]
 [ext_resource type="PackedScene" uid="uid://kduuyif10l0j" path="res://scenes/music/level_1_music.tscn" id="3_ren8a"]
@@ -8,13 +8,13 @@
 [ext_resource type="PackedScene" uid="uid://o1rwg5twohkm" path="res://scenes/background_church.tscn" id="7_ioj0b"]
 [ext_resource type="Texture2D" uid="uid://cytj6cg0sg35j" path="res://assets/backgrounds/panecillo_background.jpg" id="8_74x54"]
 [ext_resource type="PackedScene" uid="uid://cf0vg17dh1xxx" path="res://scenes/tile_map.tscn" id="9_04qfj"]
-[ext_resource type="PackedScene" uid="uid://cdvlub3cdxmst" path="res://scenes/npc.tscn" id="10_3mnu6"]
+[ext_resource type="PackedScene" uid="uid://xhpdlfg4fipa" path="res://scenes/npc.tscn" id="10_3mnu6"]
 [ext_resource type="PackedScene" uid="uid://cc2tnqso80rdb" path="res://scenes/player.tscn" id="11_578n7"]
-[ext_resource type="PackedScene" path="res://scenes/item.tscn" id="12_22qpx"]
+[ext_resource type="PackedScene" uid="uid://nxye476wpqax" path="res://scenes/item.tscn" id="12_22qpx"]
 [ext_resource type="PackedScene" uid="uid://dawaw6ovel2vb" path="res://scenes/deathzone.tscn" id="13_48gv7"]
 [ext_resource type="Texture2D" uid="uid://d3nkaa8ihvlj8" path="res://assets/items/virgen_panecillo.png" id="13_88r73"]
 [ext_resource type="PackedScene" uid="uid://c5s11217j6fsq" path="res://scenes/enemies/enemyI.tscn" id="13_d5n1f"]
-[ext_resource type="PackedScene" path="res://scenes/fire.tscn" id="14_w7ea7"]
+[ext_resource type="PackedScene" uid="uid://11vpf0sg5742" path="res://scenes/fire.tscn" id="14_w7ea7"]
 [ext_resource type="PackedScene" uid="uid://75wesux5fw67" path="res://scenes/inventory_item.tscn" id="16_ud18t"]
 [ext_resource type="Texture2D" uid="uid://16t0x3jcyk6n" path="res://assets/items/posion_healt.png" id="17_bgnxp"]
 
@@ -89,12 +89,6 @@ position = Vector2(728, 219)
 [node name="enemyI" parent="GamePack/enemies/Enemy" index="0"]
 state = 3
 
-[node name="Enemy5" parent="GamePack/enemies" groups=["enemies"] instance=ExtResource("13_d5n1f")]
-position = Vector2(1828, 217)
-
-[node name="enemyI" parent="GamePack/enemies/Enemy5" index="0"]
-state = 3
-
 [node name="Enemy2" parent="GamePack/enemies" groups=["enemies"] instance=ExtResource("13_d5n1f")]
 position = Vector2(1173, 159)
 
@@ -127,6 +121,12 @@ state = 2
 
 [node name="Enemy8" parent="GamePack/enemies" groups=["enemies"] instance=ExtResource("13_d5n1f")]
 position = Vector2(3052, 144)
+
+[node name="Enemy5" parent="GamePack/enemies" instance=ExtResource("13_d5n1f")]
+position = Vector2(1830, 220)
+
+[node name="enemyI" parent="GamePack/enemies/Enemy5" index="0"]
+state = 3
 
 [node name="traps" type="Node2D" parent="GamePack"]
 
@@ -206,10 +206,10 @@ item_effect = "25 Health"
 [editable path="GamePack/Background"]
 [editable path="GamePack/Item"]
 [editable path="GamePack/enemies/Enemy"]
-[editable path="GamePack/enemies/Enemy5"]
 [editable path="GamePack/enemies/Enemy2"]
 [editable path="GamePack/enemies/Enemy3"]
 [editable path="GamePack/enemies/Enemy4"]
 [editable path="GamePack/enemies/Enemy6"]
 [editable path="GamePack/enemies/Enemy7"]
 [editable path="GamePack/enemies/Enemy8"]
+[editable path="GamePack/enemies/Enemy5"]
