@@ -402,7 +402,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_84ax2"]
-size = Vector2(91, 71)
+size = Vector2(123.5, 71)
 
 [node name="DemonBoss" type="Node2D"]
 
@@ -456,13 +456,13 @@ libraries = {
 [node name="AttackArea" type="Area2D" parent="Enemy"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy/AttackArea"]
-position = Vector2(-71.5, 43.5)
+position = Vector2(-51, 44)
 shape = SubResource("RectangleShape2D_84ax2")
 
 [node name="AttackDamageArea" type="Area2D" parent="Enemy"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy/AttackDamageArea"]
-position = Vector2(-71.5, 43.5)
+position = Vector2(-51, 44)
 shape = SubResource("RectangleShape2D_84ax2")
 disabled = true
 

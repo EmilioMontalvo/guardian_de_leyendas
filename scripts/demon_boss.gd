@@ -131,7 +131,7 @@ func _on_AttackTimer_timeout():
 
 func _on_attack_area_body_entered(body):
 	player_on_damage_range = true
-	while body is Player and player_on_damage_range and boss_is_alive:
+	while body is Player and player_on_damage_range:
 		setState(4)
 		animationPlayer.play("AttackDamage")
 		await get_tree().create_timer(1.5).timeout
