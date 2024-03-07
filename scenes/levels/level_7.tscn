@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://dv2ty0eyxd5h5"]
+[gd_scene load_steps=32 format=3 uid="uid://dv2ty0eyxd5h5"]
 
 [ext_resource type="Script" path="res://scripts/game_pack.gd" id="1_c13ij"]
 [ext_resource type="Script" path="res://scripts/level_7.gd" id="1_hy2cp"]
@@ -6,17 +6,16 @@
 [ext_resource type="PackedScene" uid="uid://kduuyif10l0j" path="res://scenes/music/level_1_music.tscn" id="3_ghah3"]
 [ext_resource type="PackedScene" uid="uid://c35t54lh48252" path="res://scenes/hud.tscn" id="4_72qcs"]
 [ext_resource type="PackedScene" uid="uid://w1tah6enxmdw" path="res://scenes/win_screen.tscn" id="5_occo6"]
-[ext_resource type="AudioStream" uid="uid://ht455p7xeoci" path="res://assets/sounds/level7.mp3" id="5_yxvhh"]
-[ext_resource type="PackedScene" uid="uid://gkrsh06calgh" path="res://scenes/levels/test.tscn" id="6_6brmq"]
+[ext_resource type="PackedScene" uid="uid://cf5xnw8us3yei" path="res://scenes/levels/menu_final.tscn" id="7_vwp7o"]
 [ext_resource type="PackedScene" uid="uid://o1rwg5twohkm" path="res://scenes/background_church.tscn" id="7_yf2ly"]
 [ext_resource type="Texture2D" uid="uid://c43v4gmgjqycv" path="res://assets/backgrounds/basilica_background.png" id="8_yhbkj"]
 [ext_resource type="PackedScene" uid="uid://cf0vg17dh1xxx" path="res://scenes/tile_map.tscn" id="9_uutxo"]
-[ext_resource type="PackedScene" uid="uid://cdvlub3cdxmst" path="res://scenes/npc.tscn" id="10_xqxfd"]
+[ext_resource type="PackedScene" uid="uid://xhpdlfg4fipa" path="res://scenes/npc.tscn" id="10_xqxfd"]
 [ext_resource type="PackedScene" uid="uid://cc2tnqso80rdb" path="res://scenes/player.tscn" id="11_klrdg"]
-[ext_resource type="PackedScene" path="res://scenes/item.tscn" id="12_nu74m"]
+[ext_resource type="PackedScene" uid="uid://nxye476wpqax" path="res://scenes/item.tscn" id="12_nu74m"]
 [ext_resource type="PackedScene" uid="uid://c5s11217j6fsq" path="res://scenes/enemies/enemyI.tscn" id="13_6n1ek"]
 [ext_resource type="PackedScene" uid="uid://dawaw6ovel2vb" path="res://scenes/deathzone.tscn" id="13_iyvcb"]
-[ext_resource type="PackedScene" path="res://scenes/fire.tscn" id="14_6b7dq"]
+[ext_resource type="PackedScene" uid="uid://11vpf0sg5742" path="res://scenes/fire.tscn" id="14_6b7dq"]
 [ext_resource type="PackedScene" uid="uid://dr1ux3lp0cd56" path="res://scenes/enemies/demon_boss.tscn" id="14_20gk8"]
 [ext_resource type="PackedScene" uid="uid://75wesux5fw67" path="res://scenes/inventory_item.tscn" id="16_mft57"]
 [ext_resource type="Texture2D" uid="uid://16t0x3jcyk6n" path="res://assets/items/posion_healt.png" id="17_2fmjs"]
@@ -542,7 +541,6 @@ textureAtlasItem = SubResource("AtlasTexture_63sa2")
 
 [node name="LevelMusic" parent="GamePack" instance=ExtResource("3_ghah3")]
 process_mode = 3
-stream = ExtResource("5_yxvhh")
 
 [node name="Hud" type="CanvasLayer" parent="GamePack"]
 scale = Vector2(0.5, 0.5)
@@ -564,7 +562,7 @@ offset_left = 302.0
 offset_top = 174.0
 offset_right = 302.0
 offset_bottom = 174.0
-nextLevel = ExtResource("6_6brmq")
+nextLevel = ExtResource("7_vwp7o")
 newText = "Has encontrado el corazón de piedra"
 
 [node name="Background" parent="GamePack" instance=ExtResource("7_yf2ly")]
@@ -589,7 +587,7 @@ position = Vector2(22, 221)
 position = Vector2(370, 147)
 
 [node name="Player" parent="GamePack" instance=ExtResource("11_klrdg")]
-position = Vector2(5834, -96)
+position = Vector2(34, 216)
 
 [node name="Item" parent="GamePack" instance=ExtResource("12_nu74m")]
 position = Vector2(5961, 174)
@@ -609,12 +607,6 @@ position = Vector2(1480, 170)
 [node name="enemyI" parent="GamePack/enemies/Enemy2" index="0"]
 flipH = true
 state = 4
-
-[node name="Enemy3" parent="GamePack/enemies" groups=["enemies"] instance=ExtResource("13_6n1ek")]
-position = Vector2(1619, 215)
-
-[node name="enemyI" parent="GamePack/enemies/Enemy3" index="0"]
-state = 3
 
 [node name="Enemy4" parent="GamePack/enemies" groups=["enemies"] instance=ExtResource("13_6n1ek")]
 position = Vector2(2301, 107)
@@ -640,12 +632,6 @@ position = Vector2(3492, 148)
 flipH = true
 state = 4
 
-[node name="Enemy8" parent="GamePack/enemies" groups=["enemies"] instance=ExtResource("13_6n1ek")]
-position = Vector2(3702, 215)
-
-[node name="enemyI" parent="GamePack/enemies/Enemy8" index="0"]
-state = 3
-
 [node name="Enemy9" parent="GamePack/enemies" groups=["enemies"] instance=ExtResource("13_6n1ek")]
 position = Vector2(3567, -107)
 
@@ -660,11 +646,16 @@ flipH = true
 state = 4
 
 [node name="DemonBoss" parent="GamePack/enemies" instance=ExtResource("14_20gk8")]
-position = Vector2(6121, -70)
+position = Vector2(6121, -75)
 
 [node name="Enemy" parent="GamePack/enemies/DemonBoss" index="0" groups=["enemies"]]
-position = Vector2(-13, -78)
 health = 500
+
+[node name="Enemy3" parent="GamePack/enemies" instance=ExtResource("13_6n1ek")]
+position = Vector2(1631, 220)
+
+[node name="enemyI" parent="GamePack/enemies/Enemy3" index="0"]
+state = 2
 
 [node name="traps" type="Node2D" parent="GamePack"]
 
@@ -1005,6 +996,12 @@ position = Vector2(6073, -77)
 [node name="Rock17" parent="decorations" instance=ExtResource("25_vhbmc")]
 position = Vector2(5905, -78)
 
+[node name="Enemy" parent="." instance=ExtResource("13_6n1ek")]
+position = Vector2(3710, 220)
+
+[node name="enemyI" parent="Enemy" index="0"]
+state = 3
+
 [connection signal="hurt_signal" from="GamePack/Player" to="GamePack" method="_on_player_hurt_signal" flags=18]
 [connection signal="life_updated" from="GamePack/Player" to="GamePack" method="_on_player_life_updated" flags=18]
 [connection signal="collected" from="GamePack/Item" to="GamePack" method="_on_item_collected" flags=18]
@@ -1015,13 +1012,13 @@ position = Vector2(5905, -78)
 [editable path="GamePack/Background"]
 [editable path="GamePack/enemies/Enemy"]
 [editable path="GamePack/enemies/Enemy2"]
-[editable path="GamePack/enemies/Enemy3"]
 [editable path="GamePack/enemies/Enemy4"]
 [editable path="GamePack/enemies/Enemy5"]
 [editable path="GamePack/enemies/Enemy6"]
 [editable path="GamePack/enemies/Enemy7"]
-[editable path="GamePack/enemies/Enemy8"]
 [editable path="GamePack/enemies/Enemy9"]
 [editable path="GamePack/enemies/Enemy10"]
 [editable path="GamePack/enemies/DemonBoss"]
+[editable path="GamePack/enemies/Enemy3"]
 [editable path="GamePack/Deathzone"]
+[editable path="Enemy"]
