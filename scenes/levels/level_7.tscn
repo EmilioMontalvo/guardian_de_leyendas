@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://dv2ty0eyxd5h5"]
+[gd_scene load_steps=33 format=3 uid="uid://dv2ty0eyxd5h5"]
 
 [ext_resource type="Script" path="res://scripts/game_pack.gd" id="1_c13ij"]
 [ext_resource type="Script" path="res://scripts/level_7.gd" id="1_hy2cp"]
@@ -29,6 +29,9 @@
 [sub_resource type="AtlasTexture" id="AtlasTexture_63sa2"]
 atlas = ExtResource("3_6mags")
 region = Rect2(0, 0, 32.2066, 32.55)
+
+[sub_resource type="LabelSettings" id="LabelSettings_jmgdo"]
+font_color = Color(0, 0.0392157, 0.0392157, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_knw1d"]
 size = Vector2(20, 114)
@@ -565,6 +568,19 @@ offset_bottom = 174.0
 nextLevel = ExtResource("7_vwp7o")
 newText = "Has encontrado el corazón de piedra"
 
+[node name="Label" parent="GamePack/Hud/WinScreen/Panel" index="1"]
+text = "Has Salvado a Quito
+"
+
+[node name="Label2" parent="GamePack/Hud/WinScreen/Panel" index="4"]
+offset_left = 87.5
+offset_top = 158.5
+offset_right = 245.5
+offset_bottom = 184.5
+text = "Has salvado a Quito!
+"
+label_settings = SubResource("LabelSettings_jmgdo")
+
 [node name="Background" parent="GamePack" instance=ExtResource("7_yf2ly")]
 offset = Vector2(300, 150)
 scale = Vector2(0.6, 0.6)
@@ -1009,6 +1025,7 @@ state = 3
 [connection signal="body_entered" from="GamePack/Deathzone" to="GamePack" method="_on_deathzone_body_entered" flags=18]
 [connection signal="body_entered" from="EnterFight" to="." method="_on_enter_fight_body_entered"]
 
+[editable path="GamePack/Hud/WinScreen"]
 [editable path="GamePack/Background"]
 [editable path="GamePack/enemies/Enemy"]
 [editable path="GamePack/enemies/Enemy2"]
