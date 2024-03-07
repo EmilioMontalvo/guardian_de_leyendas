@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://dakucu6qyaogq"]
+
+[ext_resource type="Script" path="res://scenes/demon_orde_spawner.gd" id="1_h4pit"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_glw8l"]
+size = Vector2(49, 745)
+
+[node name="demon_orde_spawner" type="Node2D"]
+script = ExtResource("1_h4pit")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(456, -285)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(14.5, 273.5)
+shape = SubResource("RectangleShape2D_glw8l")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(-531, 277)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
