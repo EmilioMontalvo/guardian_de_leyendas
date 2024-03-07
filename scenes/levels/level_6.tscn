@@ -9,12 +9,12 @@
 [ext_resource type="PackedScene" uid="uid://o1rwg5twohkm" path="res://scenes/background_church.tscn" id="7_7xbi2"]
 [ext_resource type="Texture2D" uid="uid://bw0rjmhltyyoj" path="res://assets/backgrounds/teatro_sucre.png" id="8_pwd0i"]
 [ext_resource type="PackedScene" uid="uid://cf0vg17dh1xxx" path="res://scenes/tile_map.tscn" id="9_bds27"]
-[ext_resource type="PackedScene" uid="uid://xhpdlfg4fipa" path="res://scenes/npc.tscn" id="10_jei5u"]
+[ext_resource type="PackedScene" uid="uid://cdvlub3cdxmst" path="res://scenes/npc.tscn" id="10_jei5u"]
 [ext_resource type="PackedScene" uid="uid://cc2tnqso80rdb" path="res://scenes/player.tscn" id="11_eetja"]
-[ext_resource type="PackedScene" uid="uid://nxye476wpqax" path="res://scenes/item.tscn" id="12_pg1qg"]
+[ext_resource type="PackedScene" path="res://scenes/item.tscn" id="12_pg1qg"]
 [ext_resource type="PackedScene" uid="uid://c5s11217j6fsq" path="res://scenes/enemies/enemyI.tscn" id="13_dlo5k"]
 [ext_resource type="PackedScene" uid="uid://dawaw6ovel2vb" path="res://scenes/deathzone.tscn" id="13_los2i"]
-[ext_resource type="PackedScene" uid="uid://11vpf0sg5742" path="res://scenes/fire.tscn" id="14_cljt7"]
+[ext_resource type="PackedScene" path="res://scenes/fire.tscn" id="14_cljt7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bsn3w"]
 atlas = ExtResource("2_o5qly")

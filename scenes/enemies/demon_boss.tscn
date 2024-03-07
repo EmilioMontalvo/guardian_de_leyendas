@@ -288,6 +288,22 @@ vertices = PackedVector2Array(80, 75, -650, 67, -580, -36, -44, -38, 78, -43)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 4, 0)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-44, -38, -580, -36, -650, 67, 80, 75, 78, -43)])
 
+[sub_resource type="Animation" id="Animation_rpnqv"]
+resource_name = "AttackDamage"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AttackDamageArea/CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.1, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+
 [sub_resource type="Animation" id="Animation_3sbkd"]
 length = 0.001
 tracks/0/type = "value"
@@ -376,22 +392,6 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 0.792157, 0, 1), Color(1, 0.792157, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_rpnqv"]
-resource_name = "AttackDamage"
-length = 1.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AttackDamageArea/CollisionShape2D:disabled")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.1, 1.4),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [true, false, true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_b234i"]

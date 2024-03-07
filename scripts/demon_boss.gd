@@ -16,6 +16,7 @@ extends CharacterBody2D
 @onready var animationPlayer=$AnimationPlayer
 @onready var damageArea=$damageArea
 @onready var hurtBox=$HurtBox
+@onready var attack_area = $AttackArea
 
 
 var patrolArrayPositions
@@ -24,9 +25,12 @@ var target
 var attack_timer := Timer.new()
 var dead_timer := Timer.new()
 var player_on_damage_range = false
+var boss_is_alive = true
 
 
 signal touch_player
+signal boss_killed
+
 func _ready():	
 	setState(state)
 	setDirection(flipH)
@@ -61,16 +65,13 @@ func _physics_process(delta):
 
 func kill():
 	# Cambia la animación del AnimatedSprite2D a "muerte"
-	setState(1)
+	boss_is_alive = false
+	setState(1)	
 	damageArea.queue_free()
 	hurtBox.queue_free()
-	attack_timer.connect("timeout", _on_DeadTimer_timeout)
-	attack_timer.wait_time = 4
-	attack_timer.start()
-	
-	
-
-func _on_DeadTimer_timeout():
+	attack_area.queue_free()
+	await get_tree().create_timer(4).timeout
+	boss_killed.emit()
 	queue_free()
 
 func _on_damage_area_body_entered(body):	
@@ -81,7 +82,8 @@ func _on_damage_area_body_entered(body):
 func setState(newState):
 	state=newState
 	if state == 0:
-		sprite.animation = "idle"
+		if boss_is_alive:
+			sprite.animation = "idle"
 	if state == 1:
 		sprite.animation = "death"
 	if state == 2:
@@ -98,14 +100,15 @@ func setDirection(newDirection):
 	sprite.flip_h=newDirection
 	
 func hurt(damage):
-	damageLabel.text=str(-damage)
-	health-=damage
-	sprite.animation = "take_hit"
-	animationPlayer.play("label")
-	await get_tree().create_timer(0.4).timeout
-	setState(0)
-	if(health<=0):
-		kill()
+	if boss_is_alive:
+		damageLabel.text=str(-damage)
+		health-=damage
+		sprite.animation = "take_hit"
+		animationPlayer.play("label")
+		await get_tree().create_timer(0.4).timeout
+		setState(0)
+		if(health<=0):
+			kill()
 
 
 func _on_navigation_agent_2d_target_reached():	
@@ -128,7 +131,7 @@ func _on_AttackTimer_timeout():
 
 func _on_attack_area_body_entered(body):
 	player_on_damage_range = true
-	while body is Player and player_on_damage_range:
+	while body is Player and player_on_damage_range and boss_is_alive:
 		setState(4)
 		animationPlayer.play("AttackDamage")
 		await get_tree().create_timer(1.5).timeout
