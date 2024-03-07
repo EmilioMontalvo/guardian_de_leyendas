@@ -1,0 +1,330 @@
+[gd_scene load_steps=28 format=3 uid="uid://f4ndsfrrdywl"]
+
+[ext_resource type="Texture2D" uid="uid://j0c1608p7vt6" path="res://assets/enemy/Chicken_Sprite_Sheet_Gray.png" id="1_n2qlm"]
+[ext_resource type="Script" path="res://scripts/gallo.gd" id="1_vdsuf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3ybae"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iavqj"]
+atlas = ExtResource("1_n2qlm")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r412i"]
+atlas = ExtResource("1_n2qlm")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_45led"]
+atlas = ExtResource("1_n2qlm")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_slndh"]
+atlas = ExtResource("1_n2qlm")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sg3lk"]
+atlas = ExtResource("1_n2qlm")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8edla"]
+atlas = ExtResource("1_n2qlm")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7gtde"]
+atlas = ExtResource("1_n2qlm")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v764n"]
+atlas = ExtResource("1_n2qlm")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_auqin"]
+atlas = ExtResource("1_n2qlm")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dewt1"]
+atlas = ExtResource("1_n2qlm")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hnvu4"]
+atlas = ExtResource("1_n2qlm")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6jq86"]
+atlas = ExtResource("1_n2qlm")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vkf75"]
+atlas = ExtResource("1_n2qlm")
+region = Rect2(96, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c5abf"]
+atlas = ExtResource("1_n2qlm")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ymlm2"]
+atlas = ExtResource("1_n2qlm")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aaxu8"]
+atlas = ExtResource("1_n2qlm")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cn4jx"]
+atlas = ExtResource("1_n2qlm")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nh4on"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iavqj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r412i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_45led")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_slndh")
+}],
+"loop": true,
+"name": &"head",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sg3lk")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8edla")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7gtde")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v764n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_auqin")
+}],
+"loop": false,
+"name": &"rest",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dewt1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hnvu4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6jq86")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vkf75")
+}],
+"loop": true,
+"name": &"run",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c5abf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ymlm2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aaxu8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cn4jx")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s31x2"]
+size = Vector2(281, 155)
+
+[sub_resource type="Animation" id="Animation_8wl07"]
+resource_name = "first_encounter"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharacterBody2D/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["", "No creas que te ayudaré"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CharacterBody2D/AnimatedSprite2D:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_mmpge"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharacterBody2D/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CharacterBody2D/AnimatedSprite2D:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_c7k3w"]
+resource_name = "second_encounter"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharacterBody2D/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["Tendras que alcanzarme primero", ""]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CharacterBody2D/AnimatedSprite2D:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_omcgq"]
+resource_name = "third_encounter"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharacterBody2D/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": ["Bien...", "Tu ganas, ire contigo", ""]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CharacterBody2D/AnimatedSprite2D:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fxwul"]
+_data = {
+"RESET": SubResource("Animation_mmpge"),
+"first_encounter": SubResource("Animation_8wl07"),
+"second_encounter": SubResource("Animation_c7k3w"),
+"third_encounter": SubResource("Animation_omcgq")
+}
+
+[node name="gallo" type="Node2D"]
+script = ExtResource("1_vdsuf")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CircleShape2D_3ybae")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+sprite_frames = SubResource("SpriteFrames_nh4on")
+animation = &"rest"
+autoplay = "idle"
+flip_h = true
+
+[node name="Label" type="Label" parent="CharacterBody2D"]
+offset_left = -123.0
+offset_top = -46.0
+offset_right = 134.0
+offset_bottom = -20.0
+horizontal_alignment = 1
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(9.5, -60.5)
+shape = SubResource("RectangleShape2D_s31x2")
+
+[node name="Label2" type="Label" parent="."]
+visible = false
+offset_left = -128.0
+offset_top = -52.0
+offset_right = 129.0
+offset_bottom = -26.0
+text = "Tendras que alcanzarme primero"
+
+[node name="Label3" type="Label" parent="."]
+visible = false
+offset_left = -72.0
+offset_top = -51.0
+offset_right = 69.0
+offset_bottom = -25.0
+text = "Esta bien tu ganas"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_fxwul")
+}
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.365
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

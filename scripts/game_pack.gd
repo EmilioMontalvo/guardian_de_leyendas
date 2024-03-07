@@ -35,7 +35,8 @@ func _get_damage():
 
 func _show_history():
 	#player.set_active(false)
-	DialogManager.start_dialog(player.global_position,history_dialog)
+	#Vector2(npc.global_position.x,npc.global_position.y-90)
+	DialogManager.start_dialog(npc.global_position,history_dialog)
 	#player.set_active(true)
 
 func reset_player():
