@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dd4mg2hmymxky"]
+[gd_scene load_steps=20 format=3 uid="uid://dd4mg2hmymxky"]
 
 [ext_resource type="Script" path="res://scripts/game_pack.gd" id="1_0miac"]
 [ext_resource type="PackedScene" uid="uid://kduuyif10l0j" path="res://scenes/music/level_1_music.tscn" id="3_ren8a"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" path="res://scenes/fire.tscn" id="14_w7ea7"]
 [ext_resource type="PackedScene" uid="uid://75wesux5fw67" path="res://scenes/inventory_item.tscn" id="16_ud18t"]
 [ext_resource type="Texture2D" uid="uid://16t0x3jcyk6n" path="res://assets/items/posion_healt.png" id="17_bgnxp"]
+[ext_resource type="Texture2D" uid="uid://c8b3uppw6rxiy" path="res://assets/items/apple.png" id="18_t7p4y"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xhuob"]
 atlas = ExtResource("13_88r73")
@@ -198,6 +199,20 @@ item_type = "Posion"
 item_name = "Health Posion"
 item_texture = ExtResource("17_bgnxp")
 item_effect = "25 Health"
+
+[node name="inventory_item3" parent="." instance=ExtResource("16_ud18t")]
+position = Vector2(2808, 223)
+item_type = "Posion"
+item_name = "Health Posion"
+item_texture = ExtResource("17_bgnxp")
+item_effect = "25 Health"
+
+[node name="inventory_item2" parent="." instance=ExtResource("16_ud18t")]
+position = Vector2(1695, 155)
+item_type = "Food"
+item_name = "Apple"
+item_texture = ExtResource("18_t7p4y")
+item_effect = "10 Health"
 
 [connection signal="hurt_signal" from="GamePack/Player" to="GamePack" method="_on_player_hurt_signal" flags=18]
 [connection signal="life_updated" from="GamePack/Player" to="GamePack" method="_on_player_life_updated" flags=18]

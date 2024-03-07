@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dfvnur2my1cvs"]
+[gd_scene load_steps=21 format=3 uid="uid://dfvnur2my1cvs"]
 
 [ext_resource type="Script" path="res://scripts/game_pack.gd" id="1_88m7n"]
 [ext_resource type="Texture2D" uid="uid://duit0aee77j02" path="res://assets/items/piano.png" id="2_o5qly"]
@@ -15,6 +15,10 @@
 [ext_resource type="PackedScene" uid="uid://c5s11217j6fsq" path="res://scenes/enemies/enemyI.tscn" id="13_dlo5k"]
 [ext_resource type="PackedScene" uid="uid://dawaw6ovel2vb" path="res://scenes/deathzone.tscn" id="13_los2i"]
 [ext_resource type="PackedScene" path="res://scenes/fire.tscn" id="14_cljt7"]
+[ext_resource type="PackedScene" uid="uid://75wesux5fw67" path="res://scenes/inventory_item.tscn" id="16_abnn3"]
+[ext_resource type="Texture2D" uid="uid://16t0x3jcyk6n" path="res://assets/items/posion_healt.png" id="17_10y4k"]
+[ext_resource type="Texture2D" uid="uid://c8b3uppw6rxiy" path="res://assets/items/apple.png" id="18_jg4yf"]
+[ext_resource type="Texture2D" uid="uid://cewg8jlnr02dk" path="res://assets/items/posion_damage.png" id="19_kcp7m"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bsn3w"]
 atlas = ExtResource("2_o5qly")
@@ -208,6 +212,34 @@ scale = Vector2(3, 3)
 
 [node name="Deathzone" parent="GamePack" instance=ExtResource("13_los2i")]
 position = Vector2(2034, 398)
+
+[node name="inventory_item3" parent="." instance=ExtResource("16_abnn3")]
+position = Vector2(2906, 218)
+item_type = "Posion"
+item_name = "Health Posion"
+item_texture = ExtResource("17_10y4k")
+item_effect = "25 Health"
+
+[node name="inventory_item2" parent="." instance=ExtResource("16_abnn3")]
+position = Vector2(1794, 196)
+item_type = "Food"
+item_name = "Apple"
+item_texture = ExtResource("18_jg4yf")
+item_effect = "10 Health"
+
+[node name="inventory_item4" parent="." instance=ExtResource("16_abnn3")]
+position = Vector2(4474, 217)
+item_type = "Food"
+item_name = "Apple"
+item_texture = ExtResource("18_jg4yf")
+item_effect = "10 Health"
+
+[node name="inventory_item5" parent="." instance=ExtResource("16_abnn3")]
+position = Vector2(4882, 215)
+item_type = "Posion"
+item_name = "Damage Posion"
+item_texture = ExtResource("19_kcp7m")
+item_effect = "25 Damage"
 
 [connection signal="hurt_signal" from="GamePack/Player" to="GamePack" method="_on_player_hurt_signal" flags=18]
 [connection signal="life_updated" from="GamePack/Player" to="GamePack" method="_on_player_life_updated" flags=18]
