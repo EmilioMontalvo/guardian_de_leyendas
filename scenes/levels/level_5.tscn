@@ -77,7 +77,6 @@ position = Vector2(237, 223)
 
 [node name="Player" parent="GamePack" instance=ExtResource("11_578n7")]
 position = Vector2(67, 222)
-life = 10000
 
 [node name="Item" parent="GamePack" instance=ExtResource("12_22qpx")]
 position = Vector2(3798, 90)
