@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dy2bxq1fqhdpm"]
+[gd_scene load_steps=25 format=3 uid="uid://dy2bxq1fqhdpm"]
 
 [ext_resource type="Script" path="res://scripts/game_pack.gd" id="1_ejhas"]
 [ext_resource type="Texture2D" uid="uid://dvut5d0u6eqso" path="res://assets/items/portrait50.png" id="2_24gck"]
@@ -8,11 +8,21 @@
 [ext_resource type="PackedScene" uid="uid://bjp0yscgyt6bd" path="res://scenes/levels/level_4.tscn" id="6_k6n5n"]
 [ext_resource type="Texture2D" uid="uid://dlqg707fhmgc6" path="res://assets/backgrounds/carondelet_interior.jpg" id="7_yun65"]
 [ext_resource type="PackedScene" uid="uid://cf0vg17dh1xxx" path="res://scenes/tile_map.tscn" id="9_lyb0p"]
-[ext_resource type="PackedScene" uid="uid://cdvlub3cdxmst" path="res://scenes/npc.tscn" id="10_n83hv"]
+[ext_resource type="PackedScene" uid="uid://xhpdlfg4fipa" path="res://scenes/npc.tscn" id="10_n83hv"]
 [ext_resource type="PackedScene" uid="uid://cc2tnqso80rdb" path="res://scenes/player.tscn" id="11_rcpcj"]
-[ext_resource type="PackedScene" path="res://scenes/item.tscn" id="12_184jg"]
+[ext_resource type="PackedScene" uid="uid://nxye476wpqax" path="res://scenes/item.tscn" id="12_184jg"]
 [ext_resource type="PackedScene" uid="uid://c5s11217j6fsq" path="res://scenes/enemies/enemyI.tscn" id="13_1u0bw"]
 [ext_resource type="PackedScene" uid="uid://dawaw6ovel2vb" path="res://scenes/deathzone.tscn" id="13_crwnc"]
+[ext_resource type="Texture2D" uid="uid://c1qmlykgmqd3d" path="res://assets/decorations/candelabrum_tall_1.png" id="14_su5tp"]
+[ext_resource type="Texture2D" uid="uid://ctwkh5vb3k5aa" path="res://assets/decorations/candelabrum_tall_2.png" id="15_w4t4i"]
+[ext_resource type="Texture2D" uid="uid://8p7p8lyn0vgm" path="res://assets/decorations/candelabrum_tall_3.png" id="16_vgaql"]
+[ext_resource type="Texture2D" uid="uid://d1l1xnwkjq31g" path="res://assets/decorations/candelabrum_tall_5.png" id="17_weey8"]
+[ext_resource type="Texture2D" uid="uid://dgqb2vgt5g0s3" path="res://assets/decorations/candelabrum_tall_6.png" id="18_vpx0t"]
+[ext_resource type="Texture2D" uid="uid://dmj81hijivdca" path="res://assets/decorations/candelabrum_tall_nofire.png" id="19_ach1s"]
+[ext_resource type="Texture2D" uid="uid://c1cw3lgkcohh2" path="res://assets/decorations/candelabrum_tall_4.png" id="20_o6e5m"]
+[ext_resource type="PackedScene" uid="uid://75wesux5fw67" path="res://scenes/inventory_item.tscn" id="21_h2yh3"]
+[ext_resource type="Texture2D" uid="uid://cewg8jlnr02dk" path="res://assets/items/posion_damage.png" id="22_okvwd"]
+[ext_resource type="Texture2D" uid="uid://c8b3uppw6rxiy" path="res://assets/items/apple.png" id="23_qgla6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vcese"]
 atlas = ExtResource("2_24gck")
@@ -128,6 +138,54 @@ position = Vector2(989, 129)
 
 [node name="decorations" type="Node2D" parent="GamePack"]
 
+[node name="CandelabrumTall1" type="Sprite2D" parent="GamePack/decorations"]
+position = Vector2(292, 204)
+texture = ExtResource("14_su5tp")
+
+[node name="CandelabrumTall2" type="Sprite2D" parent="GamePack/decorations"]
+position = Vector2(557, 123)
+texture = ExtResource("15_w4t4i")
+
+[node name="CandelabrumTall3" type="Sprite2D" parent="GamePack/decorations"]
+position = Vector2(762, 105)
+texture = ExtResource("16_vgaql")
+
+[node name="CandelabrumTall4" type="Sprite2D" parent="GamePack/decorations"]
+position = Vector2(972, 106)
+texture = ExtResource("16_vgaql")
+
+[node name="CandelabrumTall5" type="Sprite2D" parent="GamePack/decorations"]
+position = Vector2(1173, 107)
+texture = ExtResource("16_vgaql")
+
+[node name="CandelabrumTall6" type="Sprite2D" parent="GamePack/decorations"]
+position = Vector2(1395, 70)
+texture = ExtResource("17_weey8")
+
+[node name="CandelabrumTall7" type="Sprite2D" parent="GamePack/decorations"]
+position = Vector2(1655, 139)
+texture = ExtResource("18_vpx0t")
+
+[node name="CandelabrumTallNofire" type="Sprite2D" parent="GamePack/decorations"]
+position = Vector2(1854, 77)
+texture = ExtResource("19_ach1s")
+
+[node name="CandelabrumTallNofire2" type="Sprite2D" parent="GamePack/decorations"]
+position = Vector2(2006, 142)
+texture = ExtResource("19_ach1s")
+
+[node name="CandelabrumTall8" type="Sprite2D" parent="GamePack/decorations"]
+position = Vector2(2283, 87)
+texture = ExtResource("20_o6e5m")
+
+[node name="CandelabrumTall9" type="Sprite2D" parent="GamePack/decorations"]
+position = Vector2(2874, 90)
+texture = ExtResource("16_vgaql")
+
+[node name="CandelabrumTall10" type="Sprite2D" parent="GamePack/decorations"]
+position = Vector2(3106, 232)
+texture = ExtResource("14_su5tp")
+
 [node name="Deathzone" parent="GamePack" instance=ExtResource("13_crwnc")]
 position = Vector2(-1138, 379)
 scale = Vector2(5, 1)
@@ -135,6 +193,20 @@ scale = Vector2(5, 1)
 [node name="TileMap" parent="." instance=ExtResource("9_lyb0p")]
 position = Vector2(5, -18)
 layer_0/tile_data = PackedInt32Array(1048600, 589824, 0, 1048599, 589824, 0, 1048598, 720896, 0, 1048597, 589824, 0, 1048596, 524288, 0, 1048595, 655360, 0, 1048594, 524288, 0, 1048593, 524288, 0, 1048592, 720896, 0, 1048591, 720896, 0, 1048590, 786432, 0, 1048589, 655360, 0, 1048588, 589824, 0, 1048587, 655360, 0, 1048586, 589824, 0, 1048585, 589824, 0, 1048584, 720896, 0, 1048583, 786432, 0, 1048582, 786432, 0, 1048581, 589824, 0, 1048580, 589824, 0, 1048579, 720896, 0, 1048578, 524288, 0, 1048577, 786432, 0, 1048576, 720896, 0, 1114111, 589824, 0, 1114110, 720896, 0, 1114109, 786432, 0, 1114108, 655360, 0, 1114107, 786432, 0, 1114106, 524288, 0, 1114105, 524288, 0, 1114104, 589824, 0, 1114103, 720896, 0, 1048601, 589824, 0, 1048602, 589824, 0, 1048603, 786432, 0, 1048604, 720896, 0, 1048605, 655360, 0, 1048615, 655360, 0, 1048614, 655360, 0, 1048613, 524288, 0, 1048612, 720896, 0, 1048611, 786432, 0, 1048610, 524288, 0, 1048609, 786432, 0, 1048608, 524288, 0, 1048607, 655360, 0, 1048606, 524288, 0, 1114102, 589824, 0, 1114101, 655360, 0, 1114100, 524288, 0, 1114099, 655360, 0, 1114098, 720896, 0, 1114097, 655360, 0, 1114096, 786432, 0, 1114095, 655360, 0, 1114094, 786432, 0, 1114093, 720896, 0, 1114092, 720896, 0, 1114091, 720896, 0, 1114090, 720896, 0, 1114089, 786432, 0, 1114088, 720896, 0, 1114087, 589824, 0, 1114086, 589824, 0, 1114085, 524288, 0, 1114084, 786432, 0, 1114083, 720896, 0, 1114082, 524288, 0, 1114151, 655360, 1, 1114150, 589824, 1, 1114149, 655360, 1, 1114148, 524288, 1, 1114147, 524288, 1, 1114146, 589824, 1, 1114145, 589824, 1, 1114144, 655360, 1, 1114143, 720896, 1, 1114142, 524288, 1, 1114141, 655360, 1, 1114140, 524288, 1, 1114139, 786432, 1, 1114138, 655360, 1, 1114137, 524288, 1, 1114136, 786432, 1, 1114135, 786432, 1, 1114134, 786432, 1, 1114133, 720896, 1, 1114132, 786432, 1, 1114131, 655360, 1, 1114130, 524288, 1, 1114129, 786432, 1, 1114128, 786432, 1, 1114127, 786432, 1, 1114126, 655360, 1, 1114125, 589824, 1, 1114124, 786432, 1, 1114123, 786432, 1, 1114122, 720896, 1, 1114121, 655360, 1, 1114120, 655360, 1, 1114119, 589824, 1, 1114118, 786432, 1, 1114117, 524288, 1, 1114116, 655360, 1, 1114115, 524288, 1, 1114114, 589824, 1, 1114113, 655360, 1, 1114112, 786432, 1, 1179647, 524288, 1, 1179646, 655360, 1, 1179645, 589824, 1, 1179644, 655360, 1, 1179643, 655360, 1, 1179642, 655360, 1, 1179641, 524288, 1, 1179640, 655360, 1, 1179639, 786432, 1, 1179638, 524288, 1, 1179637, 589824, 1, 1179636, 524288, 1, 1179635, 589824, 1, 1179634, 786432, 1, 1179633, 786432, 1, 1179632, 589824, 1, 1179631, 786432, 1, 1179630, 786432, 1, 1179629, 589824, 1, 1179628, 589824, 1, 1179627, 655360, 1, 1179626, 589824, 1, 1179625, 655360, 1, 1179624, 720896, 1, 1179623, 786432, 1, 1179622, 655360, 1, 1179621, 655360, 1, 1179620, 720896, 1, 1179619, 524288, 1, 1179618, 524288, 1, 983070, 65537, 5, 983071, 131073, 5, 917535, 131073, 4, 917536, 65537, 4, 852000, 1, 4, 852001, 131073, 4, 786465, 131073, 4, 786466, 65537, 4, 720930, 196609, 4, 786467, 196609, 4, 852003, 1, 5, 852004, 196609, 5, 917540, 1, 4, 917541, 196609, 4, 983077, 65537, 5, 983076, 196609, 4, 983075, 65537, 5, 983074, 131073, 4, 983073, 65537, 4, 983072, 131073, 4, 917537, 65537, 4, 917538, 131073, 4, 917539, 196609, 4, 852002, 196609, 4, 983078, 196609, 4, 655404, 65537, 5, 655405, 65537, 5, 655406, 131073, 5, 655407, 65537, 5, 655408, 196609, 4, 655418, 65537, 5, 655419, 65537, 5, 655420, 131073, 5, 655421, 65537, 5, 655422, 196609, 4, 655431, 65537, 5, 655432, 65537, 5, 655433, 131073, 5, 655434, 196609, 4, 458838, 65537, 3, 458839, 65537, 3, 458840, 131073, 3, 458841, 65537, 3, 458842, 131073, 3, 458843, 196609, 3, 786532, 65537, 5, 786533, 131073, 5, 786534, 65537, 5, 786535, 196609, 4, 524401, 65537, 5, 524402, 131073, 5, 524403, 131073, 5, 524404, 131073, 5, 524405, 196609, 4, 786564, 65537, 5, 786565, 131073, 5, 786566, 131073, 5, 786567, 131073, 5, 786568, 196609, 4, 786556, 65537, 5, 786557, 196609, 4, 393364, 131073, 5, 393365, 131073, 5, 393366, 65537, 5, 393367, 196609, 4, 589966, 196609, 4, 721053, 131073, 5, 721054, 131073, 5, 721055, 65537, 5, 721056, 131073, 5, 721057, 65537, 5, 721058, 65537, 5, 721059, 196609, 4, 655537, 131073, 4, 721069, 65537, 5, 721070, 65537, 5, 721071, 65537, 5, 721072, 131073, 5, 721073, 65537, 5, 721074, 65537, 5, 721075, 131073, 5, 721076, 65537, 5, 655538, 65537, 4, 655539, 131073, 4, 590002, 65537, 4, 655540, 65537, 4, 590003, 65537, 4, 655541, 196609, 4, 721077, 131073, 5, 721078, 65537, 5, 721079, 131073, 5, 721080, 65537, 5, 721081, 196609, 4, 655542, 196609, 4, 590004, 196609, 4, 262135, 327681, 3, 327671, 327681, 3, 393207, 327681, 3, 458743, 327681, 3, 524279, 327681, 3, 589815, 327681, 3, 655351, 327681, 3, 720887, 327681, 3, 786423, 327681, 3, 851959, 327681, 3, 917495, 327681, 3, 983031, 327681, 3, 1048567, 327681, 3, 786527, 1, 5, 786528, 131073, 5, 786529, 65537, 5, 786530, 65537, 5, 786531, 65537, 5, 1179839, 1, 5, 1179840, 65537, 5, 1179841, 131073, 5, 1179842, 131073, 5, 1179843, 131073, 5, 1179844, 196609, 5, 786638, 196609, 5, 721102, 1, 5, 721103, 65537, 5, 721104, 65537, 5, 721105, 131073, 5, 721106, 196609, 5, 721107, 196609, 3, 786643, 1, 5, 786644, 131073, 5, 786645, 196609, 5, 1507408, 1, 5, 1507409, 65537, 5, 1441873, 1, 4, 1441874, 65537, 4, 1376338, 1, 4, 1376339, 131073, 4, 1310803, 1, 4, 1310804, 131073, 4, 1245268, 65537, 3, 1179732, 1, 5, 1179733, 65537, 4, 1114197, 65537, 4, 1048661, 131073, 4, 983125, 131073, 4, 917589, 65537, 3, 852053, 1, 5, 852054, 65537, 4, 786518, 65537, 4, 720982, 65537, 4, 655446, 65537, 4, 589910, 131073, 4, 524374, 131073, 4, 524375, 131073, 4, 917590, 65537, 4, 1245269, 131073, 4, 1310805, 131073, 4, 1310806, 131073, 4, 1376342, 196609, 4, 1441878, 65537, 4, 1441879, 65537, 3, 1441880, 131073, 4, 1441881, 131073, 4, 1376345, 131073, 4, 1376344, 1, 4, 1310808, 65537, 4, 1310807, 65537, 5, 1245271, 65537, 4, 1179735, 131073, 4, 1179734, 131073, 4, 1114198, 65537, 4, 1048662, 131073, 4, 983126, 65537, 4, 1245270, 131073, 4, 1376341, 131073, 4, 1441877, 131073, 4, 1441876, 65537, 4, 1441875, 65537, 4, 1441882, 131073, 4, 1441883, 196609, 3, 1441884, 196609, 3, 1507420, 196609, 5, 1507419, 131073, 5, 1507418, 131073, 5, 1507417, 65537, 5, 1507416, 131073, 5, 1507415, 131073, 5, 1507414, 131073, 5, 1507413, 65537, 5, 1507412, 65537, 5, 1507411, 65537, 5, 1507410, 131073, 5, 1376340, 131073, 4, 1376346, 196609, 3, 1310809, 196609, 3, 1245272, 196609, 4, 1179736, 196609, 3, 1114199, 196609, 4, 1048663, 196609, 4, 983127, 196609, 4, 917591, 196609, 4, 852055, 196609, 4, 786519, 196609, 4, 720983, 131073, 4, 655447, 65537, 4, 589911, 65537, 4, 524373, 131073, 4, 589909, 1, 4, 786517, 1, 4, 720981, 1, 4, 655445, 1, 4, 524372, 131073, 5, 524371, 1, 5, 524379, 196609, 5, 524378, 65537, 5, 589914, 196609, 5, 589913, 131073, 5, 655448, 196609, 4, 720984, 196609, 5, 589912, 65537, 4, 524376, 131073, 4, 524377, 131073, 4, 458837, 65537, 3, 458836, 131073, 3, 458835, 1, 3, 1048774, 131073, 5, 1048775, 65537, 4, 917705, 131073, 5, 917706, 65537, 4, 786636, 65537, 5, 786637, 131073, 4)
+
+[node name="inventory_item4" parent="." instance=ExtResource("21_h2yh3")]
+position = Vector2(1846, 92)
+item_type = "Posion"
+item_name = "Damage Posion"
+item_texture = ExtResource("22_okvwd")
+item_effect = "25 Damage"
+
+[node name="inventory_item2" parent="." instance=ExtResource("21_h2yh3")]
+position = Vector2(742, 127)
+item_type = "Food"
+item_name = "Apple"
+item_texture = ExtResource("23_qgla6")
+item_effect = "10 Health"
 
 [connection signal="hurt_signal" from="GamePack/Player" to="GamePack" method="_on_player_hurt_signal" flags=18]
 [connection signal="life_updated" from="GamePack/Player" to="GamePack" method="_on_player_life_updated" flags=18]

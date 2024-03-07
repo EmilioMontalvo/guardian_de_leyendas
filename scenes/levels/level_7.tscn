@@ -10,12 +10,12 @@
 [ext_resource type="PackedScene" uid="uid://o1rwg5twohkm" path="res://scenes/background_church.tscn" id="7_yf2ly"]
 [ext_resource type="Texture2D" uid="uid://c43v4gmgjqycv" path="res://assets/backgrounds/basilica_background.png" id="8_yhbkj"]
 [ext_resource type="PackedScene" uid="uid://cf0vg17dh1xxx" path="res://scenes/tile_map.tscn" id="9_uutxo"]
-[ext_resource type="PackedScene" uid="uid://cdvlub3cdxmst" path="res://scenes/npc.tscn" id="10_xqxfd"]
+[ext_resource type="PackedScene" uid="uid://xhpdlfg4fipa" path="res://scenes/npc.tscn" id="10_xqxfd"]
 [ext_resource type="PackedScene" uid="uid://cc2tnqso80rdb" path="res://scenes/player.tscn" id="11_klrdg"]
-[ext_resource type="PackedScene" path="res://scenes/item.tscn" id="12_nu74m"]
+[ext_resource type="PackedScene" uid="uid://nxye476wpqax" path="res://scenes/item.tscn" id="12_nu74m"]
 [ext_resource type="PackedScene" uid="uid://c5s11217j6fsq" path="res://scenes/enemies/enemyI.tscn" id="13_6n1ek"]
 [ext_resource type="PackedScene" uid="uid://dawaw6ovel2vb" path="res://scenes/deathzone.tscn" id="13_iyvcb"]
-[ext_resource type="PackedScene" path="res://scenes/fire.tscn" id="14_6b7dq"]
+[ext_resource type="PackedScene" uid="uid://11vpf0sg5742" path="res://scenes/fire.tscn" id="14_6b7dq"]
 [ext_resource type="PackedScene" uid="uid://dr1ux3lp0cd56" path="res://scenes/enemies/demon_boss.tscn" id="14_20gk8"]
 [ext_resource type="PackedScene" uid="uid://75wesux5fw67" path="res://scenes/inventory_item.tscn" id="16_mft57"]
 [ext_resource type="Texture2D" uid="uid://16t0x3jcyk6n" path="res://assets/items/posion_healt.png" id="17_2fmjs"]
@@ -265,6 +265,22 @@ tracks/18/keys = {
 "values": [false, true]
 }
 
+[sub_resource type="Animation" id="Animation_uoslr"]
+resource_name = "EnterItem"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GamePack/Item:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(5961, 174), Vector2(5961, -110)]
+}
+
 [sub_resource type="Animation" id="Animation_scmfk"]
 length = 0.001
 tracks/0/type = "value"
@@ -506,22 +522,6 @@ tracks/19/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
-}
-
-[sub_resource type="Animation" id="Animation_uoslr"]
-resource_name = "EnterItem"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("GamePack/Item:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(5961, 174), Vector2(5961, -110)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3vohg"]
