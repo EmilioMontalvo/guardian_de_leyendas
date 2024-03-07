@@ -6,16 +6,16 @@
 [ext_resource type="PackedScene" uid="uid://kduuyif10l0j" path="res://scenes/music/level_1_music.tscn" id="3_tnknc"]
 [ext_resource type="PackedScene" uid="uid://c35t54lh48252" path="res://scenes/hud.tscn" id="4_f076v"]
 [ext_resource type="PackedScene" uid="uid://w1tah6enxmdw" path="res://scenes/win_screen.tscn" id="5_23mwy"]
+[ext_resource type="PackedScene" uid="uid://gkrsh06calgh" path="res://scenes/levels/test.tscn" id="6_xjf56"]
 [ext_resource type="Texture2D" uid="uid://d23ylsr4lks51" path="res://assets/backgrounds/church.jpg" id="7_38oau"]
-[ext_resource type="PackedScene" uid="uid://ca6aahjmtolxd" path="res://scenes/levels/level_3.tscn" id="7_tanc1"]
-[ext_resource type="PackedScene" uid="uid://xhpdlfg4fipa" path="res://scenes/npc.tscn" id="8_4re1b"]
+[ext_resource type="PackedScene" uid="uid://cdvlub3cdxmst" path="res://scenes/npc.tscn" id="8_4re1b"]
 [ext_resource type="PackedScene" uid="uid://cc2tnqso80rdb" path="res://scenes/player.tscn" id="9_vqmto"]
-[ext_resource type="PackedScene" uid="uid://nxye476wpqax" path="res://scenes/item.tscn" id="10_6yvj8"]
+[ext_resource type="PackedScene" path="res://scenes/item.tscn" id="10_6yvj8"]
 [ext_resource type="PackedScene" uid="uid://dawaw6ovel2vb" path="res://scenes/deathzone.tscn" id="11_ckivv"]
 [ext_resource type="PackedScene" uid="uid://cf0vg17dh1xxx" path="res://scenes/tile_map.tscn" id="12_2b6vi"]
 [ext_resource type="PackedScene" uid="uid://c5s11217j6fsq" path="res://scenes/enemies/enemyI.tscn" id="12_ft6g7"]
 [ext_resource type="PackedScene" uid="uid://f4ndsfrrdywl" path="res://scenes/enemies/gallo.tscn" id="13_o2djv"]
-[ext_resource type="PackedScene" uid="uid://11vpf0sg5742" path="res://scenes/fire.tscn" id="16_jkwpi"]
+[ext_resource type="PackedScene" path="res://scenes/fire.tscn" id="16_jkwpi"]
 [ext_resource type="Texture2D" uid="uid://c1qmlykgmqd3d" path="res://assets/decorations/candelabrum_tall_1.png" id="17_5erf4"]
 [ext_resource type="Texture2D" uid="uid://ctwkh5vb3k5aa" path="res://assets/decorations/candelabrum_tall_2.png" id="18_db7mt"]
 [ext_resource type="Texture2D" uid="uid://8p7p8lyn0vgm" path="res://assets/decorations/candelabrum_tall_3.png" id="19_yvf05"]
@@ -67,7 +67,7 @@ offset_left = 302.0
 offset_top = 174.0
 offset_right = 302.0
 offset_bottom = 174.0
-nextLevel = ExtResource("7_tanc1")
+nextLevel = ExtResource("6_xjf56")
 newText = "Has encontrado al gallo de la catedral"
 
 [node name="Background" type="ParallaxBackground" parent="GamePack"]

@@ -24,6 +24,7 @@ region = Rect2(-0.0638847, 0.133696, 45.6187, 39.2419)
 
 [node name="GamePack" type="Node2D" parent="."]
 script = ExtResource("1_88m7n")
+history_dialog = Array[String](["¡Bienvenido/a al majestuoso Teatro Sucre, una joya neoclásica que ha presenciado siglos de arte y cultura en la hermosa Plaza del Teatro de Quito!", "En este desafío, tu misión es descubrir el misterioso artefacto conocido como el \"Piano del Teatro\".", "La leyenda cuenta que este piano, que yace en el escenario...", "perteneció a un compositor famoso,", " cuyas notas resonaron en las paredes de este teatro en el siglo XIX.", "Se dice que el alma del artista aún vive en cada acorde que emana de sus teclas.", "Tu tarea es encontrar este tesoro musical...", "pero ten en cuenta que el Teatro Sucre esconde secretos en cada rincón.", "Explora los palcos, escudriña entre las cortinas y maravíllate con la arquitectura que ha sido testigo de tantas actuaciones memorables.", "La música tiene el poder de abrir puertas ocultas,", "así que presta atención a las melodías que flotan en el aire.", "¡Interactúa con los personajes que encuentres y descifra los enigmas que el Teatro Sucre tiene reservados para ti!", "¡Que la armonía del pasado te guíe en esta búsqueda, explorador/a!", "Adelante, descubre el legado musical que aguarda entre los bastidores del Teatro Sucre.", "La ciudad de Quito confía en tu destreza y pasión por el arte.", "¡Buena suerte!"])
 textureAtlasItem = SubResource("AtlasTexture_bsn3w")
 
 [node name="LevelMusic" parent="GamePack" instance=ExtResource("3_ud3gi")]

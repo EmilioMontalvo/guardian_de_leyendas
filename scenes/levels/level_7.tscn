@@ -314,6 +314,7 @@ script = ExtResource("1_hy2cp")
 
 [node name="GamePack" type="Node2D" parent="."]
 script = ExtResource("1_c13ij")
+history_dialog = Array[String]([" ¡Bienvenido/a a la imponente Basílica del Voto Nacional,", "una maravilla neogótica que se alza en el corazón del centro histórico de Quito! ", "En este desafío, tu misión es descubrir el misterioso artefacto conocido como el \"Corazón de la Basílica\".", "Según las antiguas leyendas que flotan entre sus altas torres, ", "este corazón de piedra, situado en lo alto de una de ellas,", "representa el amor incondicional de Dios por la ciudad.", "Es más que una escultura, es un símbolo de la fe que se erige en el siglo XX.", "Para encontrar este tesoro espiritual, deberás ascender a las alturas de la Basílica, ", "explorando sus intrincados pasillos y subiendo sus escaleras de caracol.", "Pero ten en cuenta que el camino no será fácil...", "ya que la arquitectura gótica esconde secretos y misterios.", "Escucha atentamente las historias que susurran entre los vitrales y los pilares.", "Cada detalle de la Basílica cuenta una historia única.", "Interactúa con los personajes que se cruzan en tu camino y descifra los acertijos que te llevarán al corazón que late sobre las alturas.", "Que la luz divina te guíe en esta travesía, explorador/a. ", "La ciudad de Quito confía en que descubrirás el amor que se oculta entre las piedras de la Basílica del Voto Nacional.", "¡Adelante, que la fe te acompañe!"])
 textureAtlasItem = SubResource("AtlasTexture_alr7s")
 
 [node name="LevelMusic" parent="GamePack" instance=ExtResource("3_ghah3")]
@@ -361,7 +362,7 @@ layer_0/tile_data = PackedInt32Array(1048574, 458752, 0, 1048575, 589824, 0, 983
 position = Vector2(5845, -98)
 
 [node name="NPC" parent="GamePack" instance=ExtResource("10_xqxfd")]
-position = Vector2(237, 223)
+position = Vector2(370, 147)
 
 [node name="Player" parent="GamePack" instance=ExtResource("11_klrdg")]
 position = Vector2(34, 216)
