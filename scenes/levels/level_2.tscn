@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://kduuyif10l0j" path="res://scenes/music/level_1_music.tscn" id="3_tnknc"]
 [ext_resource type="PackedScene" uid="uid://c35t54lh48252" path="res://scenes/hud.tscn" id="4_f076v"]
 [ext_resource type="PackedScene" uid="uid://w1tah6enxmdw" path="res://scenes/win_screen.tscn" id="5_23mwy"]
-[ext_resource type="PackedScene" uid="uid://gkrsh06calgh" path="res://scenes/levels/test.tscn" id="6_xjf56"]
 [ext_resource type="Texture2D" uid="uid://d23ylsr4lks51" path="res://assets/backgrounds/church.jpg" id="7_38oau"]
+[ext_resource type="PackedScene" uid="uid://ca6aahjmtolxd" path="res://scenes/levels/level_3.tscn" id="7_tanc1"]
 [ext_resource type="PackedScene" uid="uid://xhpdlfg4fipa" path="res://scenes/npc.tscn" id="8_4re1b"]
 [ext_resource type="PackedScene" uid="uid://cc2tnqso80rdb" path="res://scenes/player.tscn" id="9_vqmto"]
 [ext_resource type="PackedScene" uid="uid://nxye476wpqax" path="res://scenes/item.tscn" id="10_6yvj8"]
@@ -67,7 +67,7 @@ offset_left = 302.0
 offset_top = 174.0
 offset_right = 302.0
 offset_bottom = 174.0
-nextLevel = ExtResource("6_xjf56")
+nextLevel = ExtResource("7_tanc1")
 newText = "Has encontrado al gallo de la catedral"
 
 [node name="Background" type="ParallaxBackground" parent="GamePack"]
