@@ -32,6 +32,7 @@ region = Rect2(36, 548, 26, 27)
 
 [node name="GamePack" type="Node2D" parent="."]
 script = ExtResource("1_y3cbe")
+history_dialog = Array[String](["Antes de enfrentarte al mal que se avecina", "necesitarás forjar tu camino y obtener los artefactos legendarios que solo un verdadero quiteño puede poseer", "Y para empezar, debes adentrarte en la leyenda de Cantuña", "te enfrentarás a los diablitos que el mal ha desatado sobre nuestra ciudad.", "Pero no te preocupes, sé que eres capaz de superarlos.", "Pero antes, permíteme darte un consejo:", "la leyenda cuenta que Cantuña resguardó un bloque especial.", "Ese bloque es tu llave para avanzar.", "Recógelo y sigue tu camino.", "¡Buena suerte, héroe quiteño!"])
 textureAtlasItem = SubResource("AtlasTexture_wndwk")
 
 [node name="LevelMusic" parent="GamePack" instance=ExtResource("3_uruo1")]
